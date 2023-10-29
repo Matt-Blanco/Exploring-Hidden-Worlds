@@ -1,6 +1,5 @@
 import * as d3 from 'd3'
-import * as heirarchyData from './data/data-original.json'
-import './public/style.css'
+import * as heirarchyData from '../data/data-original.json'
 import { updateNetwork } from './network'
 
 let dendogram
@@ -78,7 +77,6 @@ export function drawDendogram () {
       return tooltip.style('visibility', 'visible')
     })
     .on('mousemove', (e) => {
-      console.log(tooltip._groups[0][0].clientWidth, tooltip)
       const tooltipWidth = tooltip._groups[0][0].clientWidth
       return tooltip.style('top', (e.pageY - 10) + 'px').style('left', (e.pageX - (tooltipWidth - 30)) + 'px')
     })
@@ -107,6 +105,8 @@ export function drawDendogram () {
 }
 
 export function updateDendogram (hoverId) {
+  hoverNodeId = hoverId
+
   dendogram.selectAll('.d3Data').style('fill', (node) => {
     const color = node.data.id === hoverNodeId
       ? '#ffffff'

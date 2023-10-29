@@ -1,6 +1,5 @@
 import ForceGraph3D from '3d-force-graph'
-import * as data from './data/data.json'
-import './public/style.css'
+import * as data from '../data/data.json'
 import { updateDendogram } from './dendogram'
 
 const flatTree = (level = 0) => ({ children = [], ...object }) => [
@@ -100,6 +99,7 @@ export function drawNetwork () {
 }
 
 export function updateNetwork (hoverId) {
+  hoverNodeId = hoverId
   graph.nodeColor(graph.nodeColor())
     .linkWidth(graph.linkWidth())
 }
