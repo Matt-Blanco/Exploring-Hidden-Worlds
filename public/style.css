@@ -16,6 +16,10 @@
   color: white;
 }
 
+a:hover {
+  font-style: italic;
+}
+
 body {
   overflow-y: hidden;
   overflow-x: hidden;
@@ -32,7 +36,7 @@ body {
   opacity: 85%;
   z-index: 12;
   border: 1px white solid;
-  border-radius: 7%;
+  border-radius: 40px;
 }
 
 #loading > * {
@@ -50,20 +54,24 @@ body {
 }
 
 #loadingButton {
-  color: black;
+  color: white;
+  background-color: black;
   margin-top: 3%;
   width: 15%;
   height: 4rem;
-  border-radius: 8%;
+  border-radius: 20px;
   margin-left: 40%;
   border-color: transparent;
   opacity: 80%;
   font-weight: bold;
   font-size: 14pt;
+  border: 1px white solid;
 }
 
 #loadingButton:hover {
   opacity: 100%;
+  background-color: white;
+  color: black;
   cursor: pointer;
 }
 
@@ -178,10 +186,11 @@ body {
   position: absolute;
   background-color: transparent;
   border: 1px white solid;
-  border-radius: 7%;
-  width: 20%;
+  border-radius: 20px;
+  width: 15%;
   left: 2vw;
   top: 5vh;
+  font-size: 10pt;
 }
 
 #legend > * {
@@ -311,7 +320,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background-color: lightgray;
-  border-radius: 15%;
+  border-radius: 30px;
 }
 
 ::-webkit-scrollbar-corner {
