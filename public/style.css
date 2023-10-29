@@ -12,7 +12,7 @@
 
 
 * {
-  font-family: 'Franklin Gothic';
+  font-family: interstate;
   color: white;
 }
 
@@ -287,11 +287,11 @@ body {
 
 #code-tooltip-contents {
   display: flex;
-  top: 10%;
+  top: 5%;
   position: relative;
   white-space: pre;
   font-size: 10pt;
-  font-family: FiraCode;
+  font-family: interstate-mono, monospace;
 }
 
 #tooltip-close {

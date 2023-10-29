@@ -6,6 +6,9 @@ let dendogram
 
 let hoverNodeId = -1
 
+// const highlightNodes = new Set()
+// const highlightLinks = new Set()
+
 export function drawDendogram () {
   const width = window.innerWidth * 0.25
   const height = window.innerHeight * 1.3

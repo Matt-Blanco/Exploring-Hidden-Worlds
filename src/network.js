@@ -23,8 +23,8 @@ export function drawNetwork () {
     .showNavInfo(false)
     .linkOpacity(0.3)
     .linkCurvature(0.33)
-    // .linkDirectionalParticles(1)
-    // .linkDirectionalParticleWidth(1.5)
+    .linkDirectionalParticles(1)
+    .linkDirectionalParticleWidth(1.5)
     .linkWidth((link) => highlightLinks.has(link) ? 3 : 1)
     .linkColor((link) => link.ref ? 0xf7b831 : 0xffffff)
     .nodeOpacity(0.5)
@@ -72,14 +72,10 @@ export function drawNetwork () {
       if (node !== null) {
         hoverNodeId = node.id
         highlightNodes.add(node)
-        console.log(node)
-        // node.neighbors.forEach(n => highlightNodes.add(n))
         node.links.forEach(l => highlightLinks.add(l))
       } else {
         hoverNodeId = -1
       }
-
-      console.log(highlightNodes, highlightLinks)
 
       graph.nodeColor(graph.nodeColor())
         .linkWidth(graph.linkWidth())
