@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<style> body { margin: 0; } </style>
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+  
+  <body>
+		<div id="loading">
+			<h3 id="loadingTitle">Exploring Hidden Worlds</h3>
+			<p id="loadingText">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultricies mi eget mauris pharetra et ultrices. Ipsum nunc aliquet bibendum enim facilisis. Facilisi morbi tempus iaculis urna id volutpat. Amet consectetur adipiscing elit duis tristique sollicitudin nibh. Adipiscing diam donec adipiscing tristique risus nec feugiat in. Turpis tincidunt id aliquet risus feugiat in. Risus viverra adipiscing at in tellus integer feugiat scelerisque varius. Euismod quis viverra nibh cras pulvinar mattis nunc sed blandit. Feugiat nisl pretium fusce id velit ut tortor.
+			</p>
+			<div class="lds-dual-ring" id="loadingSpinner"></div>
+			<button type="button" class="hidden" id="loadingButton">Explore</button>
+		</div>
+		<div id="vis-container">
+			<div id="legend">
+				<h3>Legend:</h3>
+				<p class="legend-title">Node types:</p>
+				<ul id="node-types">
+					<li><div class="node" id="node-dir"></div>Directory</li>
+					<li><div class="node" id="node-file"></div>File</li>
+					<li><div class="node" id="node-class"></div>Class</li>
+					<li><div class="node" id="node-stmnt"></div>Statement</li>
+				</ul>
+				<p class="legend-title">Link types:</p>
+				<ul id="link-types">
+					<li><div class="link" id="link-heir"></div>File Structure</li>
+					<li><div class="link" id="link-ref"></div>Code Reference</li>
+				</ul>
+				<p class="legend-title">Controls:</p>
+				<ul id="controls">
+					<li>Left-Click: Rotate</li>
+					<li>Right-Click: Pan</li>
+					<li>Mousewheel: Zoom</li>
+					<li>Shift + Left-Click: Center</li>
+				</ul>
+			</div>
+			<div id="code-tooltip" class="hidden">
+				<p id="tooltip-close">Close</p>
+				<div id="code-tooltip-contents"></div>
+			</div>
+			<div id="dendogram"></div>
+			<div id="vis-border">
+				<img id="chevron" src="/assets/chevron.png"/>
+				<div id="vis-divider"></div>
+			</div>
+			<div id="main-graph"></div>
+			<script type="module" src="/index.js"></script>
+		</div>
+		<script src="utils.js"></script>
+  </body>
+</html>
