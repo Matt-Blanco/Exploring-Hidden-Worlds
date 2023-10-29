@@ -1,5 +1,5 @@
 import * as d3 from 'd3'
-import * as heirarchyData from '../data/data-original.json'
+import * as heirarchyData from '../data/data.json'
 import { updateNetwork } from './network'
 
 let dendogram
@@ -49,6 +49,7 @@ export function drawDendogram () {
     })
     .style('fill', 'none')
     .attr('stroke', '#ccc')
+    .attr('class', 'd3Link')
 
   // Add a circle for each node.
   dendogram.selectAll('g')
@@ -72,8 +73,12 @@ export function drawDendogram () {
     .on('mouseover', (d) => {
       d3.select(d.target)
         .style('fill', '#ffffff')
+        .attr('r', 8)
       tooltip.text(d.target.__data__.data.name)
       hoverNodeId = d.target.__data__.data.id
+
+      d3.selectAll('.d3Link')
+        .attr('stroke-width', (d) => console.log(d))
 
       updateNetwork(hoverNodeId)
 
@@ -81,7 +86,7 @@ export function drawDendogram () {
     })
     .on('mousemove', (e) => {
       const tooltipWidth = tooltip._groups[0][0].clientWidth
-      return tooltip.style('top', (e.pageY - 10) + 'px').style('left', (e.pageX - (tooltipWidth - 30)) + 'px')
+      return tooltip.style('top', (e.pageY - 10) + 'px').style('left', (e.pageX - (tooltipWidth + 15)) + 'px')
     })
     .on('mouseout', (e) => {
       hoverNodeId = -1
@@ -94,16 +99,20 @@ export function drawDendogram () {
               : node.data.type === 'file' ? '#32fcee' : node.data.type === 'class' ? '#d14ee8' : '#fc8a32'
           return color
         })
+        .attr('r', 3)
 
       updateNetwork(hoverNodeId)
 
       return tooltip.style('visibility', 'hidden')
     })
     .on('click', (d) => {
-      const tooltip = document.getElementById('code-tooltip')
-      tooltip.classList.remove('hidden')
-      const tooltipContents = document.getElementById('code-tooltip-contents')
-      tooltipContents.innerText = d.target.__data__.contents
+      if (d.target.__data__.data !== 'dir') {
+        const tooltip = document.getElementById('code-tooltip')
+        tooltip.classList.remove('hidden')
+        const tooltipContents = document.getElementById('code-tooltip-contents')
+        console.log(d.target.__data__)
+        tooltipContents.innerText = d.target.__data__.data.contents
+      }
     })
 }
 
@@ -118,6 +127,7 @@ export function updateDendogram (hoverId) {
         : node.data.type === 'file' ? '#32fcee' : node.data.type === 'class' ? '#d14ee8' : '#fc8a32'
     return color
   })
+    .attr('r', (node) => node.data.id === hoverNodeId ? 10 : 3)
 }
 
 // Code to minimize and expand the dendogram visualization

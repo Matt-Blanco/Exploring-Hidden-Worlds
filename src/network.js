@@ -98,6 +98,24 @@ export function updateNetwork (hoverId) {
   hoverNodeId = hoverId
   graph.nodeColor(graph.nodeColor())
     .linkWidth(graph.linkWidth())
+
+  const hoverNode = flattenedData.find(n => n.id === hoverNodeId)
+  console.log('hover node', hoverNode)
+
+  if (hoverNodeId !== -1) {
+    const distance = 1000
+    const distRatio = 1 + distance / Math.hypot(hoverNode.x, hoverNode.y, hoverNode.z)
+
+    const newPos = hoverNode.x || hoverNode.y || hoverNode.z
+      ? { x: hoverNode.x * distRatio, y: hoverNode.y * distRatio, z: hoverNode.z * distRatio }
+      : { x: 0, y: 0, z: distance }
+
+    graph.cameraPosition(
+      newPos,
+      hoverNode,
+      2000
+    )
+  }
 }
 
 // Code to close the code modal
