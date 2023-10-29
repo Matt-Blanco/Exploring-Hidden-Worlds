@@ -3,6 +3,7 @@ import * as d3 from 'd3'
 import * as data from './data/data.json'
 import * as heirarchyData from './data/data-original.json'
 import './public/style.css'
+import 'utils.js'
 
 const flatTree = (level = 0) => ({ children = [], ...object }) => [
   { ...object, level }, ...children.flatMap(flatTree(level + 1))
