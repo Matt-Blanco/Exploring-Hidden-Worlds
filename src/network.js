@@ -103,3 +103,12 @@ export function updateNetwork (hoverId) {
   graph.nodeColor(graph.nodeColor())
     .linkWidth(graph.linkWidth())
 }
+
+// Code to close the code modal
+const tooltipClose = document.getElementById('tooltip-close')
+const tooltip = document.getElementById('code-tooltip')
+
+tooltipClose.onclick = (e) => {
+  console.info('Close Code Modal')
+  tooltip.classList.add('hidden')
+}
