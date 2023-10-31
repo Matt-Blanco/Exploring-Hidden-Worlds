@@ -11,7 +11,7 @@ let hoverNodeId = -1
 
 export function drawDendogram () {
   const width = window.innerWidth * 0.25
-  const height = window.innerHeight * 1.3
+  const height = window.innerHeight * 0.99
 
   dendogram = d3.select('#dendogram')
     .append('svg')
@@ -71,14 +71,12 @@ export function drawDendogram () {
       return color
     })
     .on('mouseover', (d) => {
+      hoverNodeId = d.target.__data__.data.id
+
       d3.select(d.target)
         .style('fill', '#ffffff')
         .attr('r', 8)
       tooltip.text(d.target.__data__.data.name)
-      hoverNodeId = d.target.__data__.data.id
-
-      d3.selectAll('.d3Link')
-        .attr('stroke-width', (d) => console.log(d))
 
       updateNetwork(hoverNodeId)
 
@@ -110,7 +108,6 @@ export function drawDendogram () {
         const tooltip = document.getElementById('code-tooltip')
         tooltip.classList.remove('hidden')
         const tooltipContents = document.getElementById('code-tooltip-contents')
-        console.log(d.target.__data__)
         tooltipContents.innerText = d.target.__data__.data.contents
       }
     })

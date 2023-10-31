@@ -23,8 +23,8 @@ export function drawNetwork () {
     .showNavInfo(false)
     .linkOpacity(0.3)
     .linkCurvature(0.33)
-    .linkDirectionalParticles(1)
-    .linkDirectionalParticleWidth(1.5)
+    // .linkDirectionalParticles(1)
+    // .linkDirectionalParticleWidth(1.5)
     .linkWidth((link) => highlightLinks.has(link) ? 3 : 1)
     .linkColor((link) => link.ref ? 0xf7b831 : 0xffffff)
     .nodeOpacity(0.5)
@@ -50,14 +50,7 @@ export function drawNetwork () {
           3000
         )
       } else {
-        if (node.type === 'file' ||
-        node.type === 'class' ||
-        node.type === 'cond' ||
-        node.type === 'for' ||
-        node.type === 'while' ||
-        node.type === 'switch' ||
-        node.type === 'obj' ||
-        node.type === 'func') {
+        if (node.type !== 'dir') {
           const tooltip = document.getElementById('code-tooltip')
           tooltip.classList.remove('hidden')
           const tooltipContents = document.getElementById('code-tooltip-contents')
@@ -100,10 +93,9 @@ export function updateNetwork (hoverId) {
     .linkWidth(graph.linkWidth())
 
   const hoverNode = flattenedData.find(n => n.id === hoverNodeId)
-  console.log('hover node', hoverNode)
 
   if (hoverNodeId !== -1) {
-    const distance = 1000
+    const distance = 200
     const distRatio = 1 + distance / Math.hypot(hoverNode.x, hoverNode.y, hoverNode.z)
 
     const newPos = hoverNode.x || hoverNode.y || hoverNode.z
@@ -115,6 +107,10 @@ export function updateNetwork (hoverId) {
       hoverNode,
       2000
     )
+
+    hoverNodeId = hoverNode.id
+    graph.nodeColor(graph.nodeColor())
+      .linkWidth(graph.linkWidth())
   }
 }
 
@@ -123,6 +119,5 @@ const tooltipClose = document.getElementById('tooltip-close')
 const tooltip = document.getElementById('code-tooltip')
 
 tooltipClose.onclick = (e) => {
-  console.info('Close Code Modal')
   tooltip.classList.add('hidden')
 }
