@@ -10,10 +10,13 @@
   font-weight: regular;
 }
 
-
 * {
   font-family: interstate;
   color: white;
+}
+
+html {
+  background-color: #000011;
 }
 
 a:hover {
@@ -87,6 +90,7 @@ body {
   width: 80px;
   height: 80px;
 }
+
 .lds-dual-ring:after {
   content: " ";
   display: block;
@@ -107,7 +111,7 @@ body {
   }
 }
 
-#main-graph {
+#network {
   position: absolute;
   width: 75%;
   z-index: 1;
@@ -279,9 +283,9 @@ body {
   width: 50%;
   background-color: #353547;
   opacity: 85%;
-  height: 30%;
+  /* height: 30%; */
   overflow: auto;
-  padding-left: 1rem;
+  padding: 1rem;
   overflow-x: hidden;
 }
 
@@ -325,4 +329,45 @@ body {
 
 ::-webkit-scrollbar-corner {
   background-color: transparent;
+}
+
+#onboardingTitle {
+  text-align: center;
+}
+
+#onboarding {
+  position: absolute;
+}
+
+#onboardInfo {
+  position: inherit;
+  width: 25%;
+  left: 20%;
+  top: 25%;
+  z-index: 3;
+  color: white;
+}
+
+#nextOnboardingStep {
+  border: white 1px solid;
+  padding: .5rem;
+  border-radius: 7px;
+  background-color: transparent;
+}
+
+#nextOnboardingStep:hover {
+  border: white 1px solid;
+  border-radius: 7px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+#footer {
+  width: 100%;
+  position: absolute;
+  top: 96%;
+  font-size: 8pt;
+  text-align: center;
+  opacity: 50%;
 }

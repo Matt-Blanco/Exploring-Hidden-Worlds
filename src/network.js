@@ -15,11 +15,11 @@ const highlightLinks = new Set()
 
 let graph
 
-export function drawNetwork () {
-  const visualizationElement = document.getElementById('main-graph')
+export const codeData = { nodes: flattenedData, links: flattenedData.map(node => node.links).flat() }
 
-  graph = ForceGraph3D()(visualizationElement)
-    .graphData({ nodes: flattenedData, links: flattenedData.map(node => node.links).flat() })
+export function drawNetwork (d, el, hasDendogram) {
+  graph = ForceGraph3D()(el)
+    .graphData(d)
     .showNavInfo(false)
     .linkOpacity(0.3)
     .linkCurvature(0.33)
@@ -73,7 +73,9 @@ export function drawNetwork () {
       graph.nodeColor(graph.nodeColor())
         .linkWidth(graph.linkWidth())
 
-      updateDendogram(hoverNodeId)
+      if (hasDendogram) {
+        updateDendogram(hoverNodeId)
+      }
     })
     .dagMode('radialin')
     .enableNodeDrag(false)

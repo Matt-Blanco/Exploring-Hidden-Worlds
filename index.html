@@ -8,55 +8,66 @@
 	</head>
   
   <body>
-		<div id="loading">
-			<h3 id="loadingTitle">Exploring Hidden Worlds</h3>
-			<p id="loadingText">
-				Our world is complex, and so too is the software it's built upon whether we're aware of it or not. 
-				<em>Exploring Hidden Worlds</em> is an example of what it takes to build modern software and the complexity of code. 
-				This visualization explores <a href="https://leafletjs.com/">Leaflet</a>. 
-				An open source JavaScript library for building interactive maps. A popular tool that you may have never noticed before.
-				<br><br>
-				The visualization is broken into two parts: First the 3D network of the codebase showing the heirarchy of the project and how different files and pieces of code reference each other.
-				Second, on the right side of the screen, is a dendogram only showing the file structure of the project. Interacting with either manipulate both visualizations, so explore and enjoy!
-			</p>
-			<div class="lds-dual-ring" id="loadingSpinner"></div>
-			<button type="button" class="hidden" id="loadingButton">Explore</button>
+		<div id="code-tooltip" class="hidden">
+			<p id="tooltip-close">Close</p>
+			<div id="code-tooltip-contents"></div>
 		</div>
-		<div id="vis-container">
-			<div id="legend">
-				<h3>Legend:</h3>
-				<p class="legend-title">Node types:</p>
-				<ul id="node-types">
-					<li><div class="node" id="node-dir"></div>Directory</li>
-					<li><div class="node" id="node-file"></div>File</li>
-					<li><div class="node" id="node-class"></div>Class</li>
-					<li><div class="node" id="node-stmnt"></div>Statement</li>
-				</ul>
-				<p class="legend-title">Link types:</p>
-				<ul id="link-types">
-					<li><div class="link" id="link-heir"></div>File Structure</li>
-					<li><div class="link" id="link-ref"></div>Code Reference</li>
-				</ul>
-				<p class="legend-title">Controls:</p>
-				<ul id="controls">
-					<li>Left-Click: Rotate</li>
-					<li>Right-Click: Pan</li>
-					<li>Mousewheel: Zoom</li>
-					<li>Shift + Left-Click: Center</li>
-				</ul>
+		<div id="onboarding">
+			<h2 id="onboardingTitle">Exploring Hidden Worlds</h2>
+			<div id="onboardInfo">
+				<p id="onboardingText"></p>
+				<p id="onboardingAlt"></p>
+				<button id="nextOnboardingStep">Next -></button>
 			</div>
-			<div id="code-tooltip" class="hidden">
-				<p id="tooltip-close">Close</p>
-				<div id="code-tooltip-contents"></div>
-			</div>
-			<div id="dendogram"></div>
-			<div id="vis-border">
-				<img id="chevron" src="/assets/chevron.png"/>
-				<div id="vis-divider"></div>
-			</div>
-			<div id="main-graph"></div>
-			<script type="module" src="/index.js"></script>
+			<div id="onboardingVis"></div>
 		</div>
-		<script src="utils.js"></script>
+		<div id="main" class="hidden">
+			<div id="loading">
+				<h3 id="loadingTitle">Exploring Hidden Worlds</h3>
+				<p id="loadingText">
+					Our world is complex, and so too is the software it's built upon whether we're aware of it or not. 
+					<em>Exploring Hidden Worlds</em> is an example of what it takes to build modern software and the complexity of code. 
+					This visualization explores <a href="https://leafletjs.com/">Leaflet</a>. 
+					An open source JavaScript library for building interactive maps. A popular tool that you may have never noticed before.
+					<br><br>
+					The visualization is broken into two parts: First the 3D network of the codebase showing the heirarchy of the project and how different files and pieces of code reference each other.
+					Second, on the right side of the screen, is a dendogram only showing the file structure of the project. Interacting with either manipulate both visualizations, so explore and enjoy!
+				</p>
+				<div class="lds-dual-ring" id="loadingSpinner"></div>
+				<button type="button" class="hidden" id="loadingButton">Explore</button>
+			</div>
+			<div id="vis-container">
+				<div id="legend">
+					<h3>Legend:</h3>
+					<p class="legend-title">Node types:</p>
+					<ul id="node-types">
+						<li><div class="node" id="node-dir"></div>Directory</li>
+						<li><div class="node" id="node-file"></div>File</li>
+						<li><div class="node" id="node-class"></div>Class</li>
+						<li><div class="node" id="node-stmnt"></div>Statement</li>
+					</ul>
+					<p class="legend-title">Link types:</p>
+					<ul id="link-types">
+						<li><div class="link" id="link-heir"></div>File Structure</li>
+						<li><div class="link" id="link-ref"></div>Code Reference</li>
+					</ul>
+					<p class="legend-title">Controls:</p>
+					<ul id="controls">
+						<li>Left-Click: Rotate</li>
+						<li>Right-Click: Pan</li>
+						<li>Mousewheel: Zoom</li>
+						<li>Shift + Left-Click: Center</li>
+					</ul>
+				</div>
+				<div id="dendogram"></div>
+				<div id="vis-border">
+					<img id="chevron" src="/assets/chevron.png"/>
+					<div id="vis-divider"></div>
+				</div>
+				<div id="network"></div>
+				<script type="module" src="/index.js"></script>
+			</div>
+		</div>
+		<div id="footer">This project was created by <a href="https://matt-blanco.github.io" target="_blank">Matt Blanco</a></div>
   </body>
 </html>
