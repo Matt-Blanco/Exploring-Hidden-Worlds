@@ -75,8 +75,6 @@ const readFileContents = (path, depth, contents) => {
     const fileContents = findScopeContexts(contents, (start + 1), 'class', importRefs)
     const nameIndex = line.split(' ').findIndex((w) => w === '=')
 
-    console.log(fileContents)
-
     const obj = {
       path,
       type: 'class',
@@ -148,4 +146,3 @@ const searchForFileId = (schema, path) => {
 }
 
 analyze(RootPath)
-// analyze("C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\data\\test-code\\")

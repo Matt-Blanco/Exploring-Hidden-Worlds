@@ -21,10 +21,8 @@ export function drawNetwork (d, el, hasDendogram) {
   graph = ForceGraph3D()(el)
     .graphData(d)
     .showNavInfo(false)
-    .linkOpacity(0.3)
+    .linkOpacity(0.4)
     .linkCurvature(0.33)
-    // .linkDirectionalParticles(1)
-    // .linkDirectionalParticleWidth(1.5)
     .linkWidth((link) => highlightLinks.has(link) ? 3 : 1)
     .linkColor((link) => link.ref ? 0xf7b831 : 0xffffff)
     .nodeOpacity(0.5)
@@ -59,19 +57,23 @@ export function drawNetwork (d, el, hasDendogram) {
       }
     })
     .onNodeHover((node, previousNode) => {
+      console.log(node)
       highlightNodes.clear()
       highlightLinks.clear()
 
       if (node !== null) {
         hoverNodeId = node.id
         highlightNodes.add(node)
+        // console.log(node.children, node, node.__threeObj.material.color)
+        // node.__threeObj.material.color = new Color(0xffffff)
+        // node.children.forEach(ch => highlightNodes.add(ch))
         node.links.forEach(l => highlightLinks.add(l))
       } else {
         hoverNodeId = -1
       }
 
-      graph.nodeColor(graph.nodeColor())
-        .linkWidth(graph.linkWidth())
+      // graph.nodeColor(graph.nodeColor())
+      //   .linkWidth(graph.linkWidth())
 
       if (hasDendogram) {
         updateDendogram(hoverNodeId)
@@ -119,7 +121,19 @@ export function updateNetwork (hoverId) {
 // Code to close the code modal
 const tooltipClose = document.getElementById('tooltip-close')
 const tooltip = document.getElementById('code-tooltip')
+const legendChevron = document.getElementById('simpleChevron')
+const legend = document.getElementById('legend')
 
 tooltipClose.onclick = (e) => {
   tooltip.classList.add('hidden')
+}
+
+legendChevron.onclick = (e) => {
+  if (!legendChevron.classList.contains('legendClick')) {
+    legendChevron.classList.add('legendClick')
+    legend.classList.add('expand')
+  } else {
+    legendChevron.classList.remove('legendClick')
+    legend.classList.remove('expand')
+  }
 }

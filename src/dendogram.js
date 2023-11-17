@@ -128,18 +128,18 @@ export function updateDendogram (hoverId) {
 }
 
 // Code to minimize and expand the dendogram visualization
-const divider = document.getElementById('chevron')
-const verticalDivider = document.getElementById('vis-divider')
-const dendogramDOM = document.getElementById('dendogram')
+// const divider = document.getElementById('chevron')
+// const verticalDivider = document.getElementById('vis-divider')
+// const dendogramDOM = document.getElementById('dendogram')
 
-divider.onclick = (e) => {
-  if (divider.classList.contains('clicked')) {
-    divider.classList.remove('clicked')
-    verticalDivider.classList.remove('clicked')
-    dendogramDOM.classList.remove('clicked')
-  } else {
-    divider.classList.add('clicked')
-    verticalDivider.classList.add('clicked')
-    dendogramDOM.classList.add('clicked')
-  }
-}
+// divider.onclick = (e) => {
+//   if (divider.classList.contains('clicked')) {
+//     divider.classList.remove('clicked')
+//     verticalDivider.classList.remove('clicked')
+//     dendogramDOM.classList.remove('clicked')
+//   } else {
+//     divider.classList.add('clicked')
+//     verticalDivider.classList.add('clicked')
+//     dendogramDOM.classList.add('clicked')
+//   }
+// }
