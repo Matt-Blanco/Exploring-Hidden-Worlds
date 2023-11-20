@@ -337,7 +337,7 @@ body {
   width: 50%;
   background-color: #353547;
   opacity: 85%;
-  /* height: 30%; */
+  height: 30%;
   overflow: auto;
   padding: 1rem;
   overflow-x: hidden;

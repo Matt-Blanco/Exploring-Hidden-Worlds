@@ -8,7 +8,7 @@ const onboardingData = data.default
 let step = 0
 
 export function onboarding () {
-  if (step === 8) {
+  if (step >= 6) {
     document.getElementById('main').classList.remove('hidden')
     closeOnboarding()
   } else {
