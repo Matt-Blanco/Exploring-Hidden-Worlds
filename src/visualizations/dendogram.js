@@ -1,13 +1,10 @@
 import * as d3 from 'd3'
-import * as heirarchyData from '../data/data.json'
+import * as heirarchyData from '../../data/data.json'
 import { updateNetwork } from './network'
 
 let dendogram
 
 let hoverNodeId = -1
-
-// const highlightNodes = new Set()
-// const highlightLinks = new Set()
 
 export function drawDendogram () {
   const width = window.innerWidth * 0.25

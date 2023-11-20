@@ -1,5 +1,5 @@
 import ForceGraph3D from '3d-force-graph'
-import * as data from '../data/data.json'
+import * as data from '../../data/data.json'
 import { updateDendogram } from './dendogram'
 
 const flatTree = (level = 0) => ({ children = [], ...object }) => [
@@ -64,16 +64,10 @@ export function drawNetwork (d, el, hasDendogram) {
       if (node !== null) {
         hoverNodeId = node.id
         highlightNodes.add(node)
-        // console.log(node.children, node, node.__threeObj.material.color)
-        // node.__threeObj.material.color = new Color(0xffffff)
-        // node.children.forEach(ch => highlightNodes.add(ch))
         node.links.forEach(l => highlightLinks.add(l))
       } else {
         hoverNodeId = -1
       }
-
-      // graph.nodeColor(graph.nodeColor())
-      //   .linkWidth(graph.linkWidth())
 
       if (hasDendogram) {
         updateDendogram(hoverNodeId)

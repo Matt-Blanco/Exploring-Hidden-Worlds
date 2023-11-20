@@ -1,0 +1,18 @@
+[
+  {
+    "main": "Creating software is an intricate and complex ecosystem built from dozens of interconnected parts. \n    While as our technology has become better the code behind it is becoming increasingly difficult to understand. \n    In order to combat this new forms of representation are needed.",
+    "alt": "The next few steps explain the basics of the visualization, and how modern software is built."
+  },
+  {
+    "main": "At it's heart code is made up of statements. Using terms such as \"for\", \"while\", \"if\", etc. ",
+    "alt": "You can use the mousewheel to zoom into the nodes, hover over each node to get their name, or click on each node to see it's code."
+  },
+  {
+    "main": "Usually statements are a part of classes. Classes organize code into pieces that are related to one another",
+    "alt": ""
+  },
+  {
+    "main": "There can be multiple classes and independent statements in a single file, or spread across multiple files.",
+    "alt": "When code is spread out like this it's common for classes to refer to code from other files."
+  }
+]

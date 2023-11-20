@@ -1,0 +1,203 @@
+[
+  {
+    "nodes": [
+      {
+        "path": "",
+        "type": "dir",
+        "name": "src",
+        "id": 1,
+        "collapsed": false,
+        "links": [],
+        "children": [],
+        "contents": "",
+        "references": []
+      },
+      {
+        "path": "",
+        "type": "dir",
+        "name": "roles",
+        "id": 2,
+        "collapsed": false,
+        "links": [],
+        "children": [],
+        "contents": "",
+        "references": []
+      },
+      {
+        "path": "",
+        "type": "file",
+        "name": "Professor.js",
+        "id": 3,
+        "collapsed": false,
+        "links": [],
+        "children": [],
+        "contents": "",
+        "references": []
+      },
+      {
+        "path": "",
+        "type": "file",
+        "name": "Professor.js",
+        "id": 4,
+        "collapsed": false,
+        "links": [],
+        "children": [],
+        "contents": "",
+        "references": []
+      },
+      {
+        "path": "",
+        "type": "class",
+        "name": "Class Professor {",
+        "id": 5,
+        "collapsed": false,
+        "links": [],
+        "children": [],
+        "contents": "",
+        "references": []
+      },
+      {
+        "path": "",
+        "type": "func",
+        "name": "function getCourseList() {",
+        "id": 6,
+        "collapsed": false,
+        "links": [],
+        "children": [],
+        "contents": "",
+        "references": []
+      },
+      {
+        "path": "",
+        "type": "file",
+        "name": "Student.js",
+        "id": 7,
+        "collapsed": false,
+        "links": [],
+        "children": [],
+        "contents": "",
+        "references": []
+      },
+      {
+        "path": "",
+        "type": "class",
+        "name": "new Class Student {",
+        "id": 8,
+        "collapsed": false,
+        "links": [],
+        "children": [],
+        "contents": "",
+        "references": []
+      },
+      {
+        "path": "",
+        "type": "func",
+        "name": "function getSchedule() {",
+        "id": 9,
+        "collapsed": false,
+        "links": [],
+        "children": [],
+        "contents": "",
+        "references": []
+      }
+    ],
+    "links": [
+      {
+        "source": 1,
+        "target": 2
+      },
+      {
+        "source": 2,
+        "target": 3
+      },
+      {
+        "source": 2,
+        "target": 7
+      },
+      {
+        "source": 3,
+        "target": 4
+      },
+      {
+        "source": 4,
+        "target": 5
+      },
+      {
+        "source": 5,
+        "target": 6
+      },
+      {
+        "source": 7,
+        "target": 8
+      },
+      {
+        "source": 8,
+        "target": 9
+      },
+      {
+        "source": 3,
+        "target": 6,
+        "ref": true
+      },
+      {
+        "source": 7,
+        "target": 9,
+        "ref": true
+      }
+    ]
+  },
+  {
+    "nodes": [
+      {
+        "path": "C:\\Users\\Matt's PC\\Documents\\Code\\Leaflet\\src\\control\\Control.js",
+        "type": "func",
+        "name": "\tgetContainer() {\r",
+        "id": 0,
+        "collapsed": false,
+        "links": [],
+        "children": [],
+        "contents": "\t// Returns the HTMLElement that contains the control.\r\tgetContainer() {\r\t\treturn this._container;\r\t},\r",
+        "references": []
+      }
+    ],
+    "links": [
+      {
+        "sourse": 0,
+        "target": 0
+      }
+    ]
+  },
+  {
+    "nodes": [
+      {
+        "path": "C:\\Users\\Matt's PC\\Documents\\Code\\Leaflet\\src\\control\\Control.js",
+        "type": "func",
+        "name": "\tgetContainer() {\r",
+        "id": 0,
+        "collapsed": false,
+        "links": [],
+        "children": [],
+        "contents": "\t// Returns the HTMLElement that contains the control.\r\tgetContainer() {\r\t\treturn this._container;\r\t},\r",
+        "references": []
+      },
+      {
+        "path": "C:\\Users\\Matt's PC\\Documents\\Code\\Leaflet\\src\\control\\Control.js",
+        "type": "class",
+        "name": "\tClass Animal {\r",
+        "id": 1,
+        "collapsed": false,
+        "links": [],
+        "children": [],
+        "contents": "\t// Returns the HTMLElement that contains the control.\r\tgetContainer() {\r\t\treturn this._container;\r\t},\r",
+        "references": []
+      }
+    ],
+    "links": [
+      {
+        "target": 0,
+        "source": 1,
+        "ref": false
+      }
+    ]
+  }
+]
