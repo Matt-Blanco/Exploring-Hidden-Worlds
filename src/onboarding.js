@@ -1,8 +1,11 @@
 import { codeData, drawNetwork } from './visualizations/network'
-import * as onboardingData from '../data/onboarding-data.json'
-import * as copy from '../data/onboarding-copy.json'
+import * as data from '../data/onboarding-data.json'
+import * as copyData from '../data/onboarding-copy.json'
 
-let step = 8
+const copy = copyData.default
+const onboardingData = data.default
+
+let step = 0
 
 export function onboarding () {
   if (step === 8) {

@@ -57,7 +57,6 @@ export function drawNetwork (d, el, hasDendogram) {
       }
     })
     .onNodeHover((node, previousNode) => {
-      console.log(node)
       highlightNodes.clear()
       highlightLinks.clear()
 
@@ -72,6 +71,8 @@ export function drawNetwork (d, el, hasDendogram) {
       if (hasDendogram) {
         updateDendogram(hoverNodeId)
       }
+
+      graph.nodeColor(graph.nodeColor())
     })
     .dagMode('radialin')
     .enableNodeDrag(false)
