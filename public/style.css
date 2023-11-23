@@ -337,7 +337,7 @@ body {
   width: 50%;
   background-color: #353547;
   opacity: 85%;
-  height: 30%;
+  max-height: 30%;
   overflow: auto;
   padding: 1rem;
   overflow-x: hidden;
@@ -396,20 +396,25 @@ body {
 #onboardInfo {
   position: inherit;
   width: 25%;
-  left: 20%;
+  left: 10%;
   top: 25%;
   z-index: 3;
   color: white;
 }
 
-#nextOnboardingStep {
+#onboardingControls {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.onboardingButton {
   border: white 1px solid;
   padding: .5rem;
   border-radius: 7px;
   background-color: transparent;
 }
 
-#nextOnboardingStep:hover {
+.onboardingButton:hover {
   border: white 1px solid;
   border-radius: 7px;
   background-color: white;

@@ -32,6 +32,8 @@ function closeOnboarding () {
 const loadingButton = document.getElementById('loadingButton')
 const welcomeModal = document.getElementById('loading')
 const nextOnboardingStep = document.getElementById('nextOnboardingStep')
+const prevOnboardingStep = document.getElementById('prevOnboardingStep')
+const skipOnboarding = document.getElementById('skipOnboarding')
 const helpIcon = document.getElementById('helpIcon')
 const onboardingIcon = document.getElementById('onboardingIcon')
 
@@ -43,6 +45,20 @@ loadingButton.onclick = (e) => {
 nextOnboardingStep.onclick = (e) => {
   document.getElementById('onboardingVis').innerHTML = ''
   step += 1
+  onboarding()
+}
+
+prevOnboardingStep.onclick = (e) => {
+  if (step >= 1) {
+    document.getElementById('onboardingVis').innerHTML = ''
+    step -= 1
+    onboarding()
+  }
+}
+
+skipOnboarding.onclick = (e) => {
+  document.getElementById('onboardingVis').innerHTML = ''
+  step = 7
   onboarding()
 }
 
