@@ -3,15 +3,16 @@ import * as heirarchyData from '../../data/data.json'
 import { updateNetwork } from './network'
 
 let dendogram
-const showDendogram = false
+let show = false
 
 let hoverNodeId = -1
 
-export function drawDendogram () {
+export function drawDendogram (data, id, showDendogram) {
+  show = showDendogram
   const width = window.innerWidth * 0.25
   const height = window.innerHeight * 0.99
 
-  dendogram = d3.select('#dendogram')
+  dendogram = d3.select(`#${id}`)
     .append('svg')
     .attr('width', width)
     .attr('height', height)
@@ -109,6 +110,25 @@ export function drawDendogram () {
         tooltipContents.innerText = d.target.__data__.data.contents
       }
     })
+
+  // Code to minimize and expand the dendogram visualization
+  if (show) {
+    const divider = document.getElementById('chevron')
+    const verticalDivider = document.getElementById('vis-divider')
+    const dendogramDOM = document.getElementById('dendogram')
+
+    divider.onclick = (e) => {
+      if (divider.classList.contains('clicked')) {
+        divider.classList.remove('clicked')
+        verticalDivider.classList.remove('clicked')
+        dendogramDOM.classList.remove('clicked')
+      } else {
+        divider.classList.add('clicked')
+        verticalDivider.classList.add('clicked')
+        dendogramDOM.classList.add('clicked')
+      }
+    }
+  }
 }
 
 export function updateDendogram (hoverId) {
@@ -123,23 +143,4 @@ export function updateDendogram (hoverId) {
     return color
   })
     .attr('r', (node) => node.data.id === hoverNodeId ? 10 : 3)
-}
-
-// Code to minimize and expand the dendogram visualization
-if (showDendogram) {
-  const divider = document.getElementById('chevron')
-  const verticalDivider = document.getElementById('vis-divider')
-  const dendogramDOM = document.getElementById('dendogram')
-
-  divider.onclick = (e) => {
-    if (divider.classList.contains('clicked')) {
-      divider.classList.remove('clicked')
-      verticalDivider.classList.remove('clicked')
-      dendogramDOM.classList.remove('clicked')
-    } else {
-      divider.classList.add('clicked')
-      verticalDivider.classList.add('clicked')
-      dendogramDOM.classList.add('clicked')
-    }
-  }
 }

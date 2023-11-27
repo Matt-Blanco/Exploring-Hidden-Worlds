@@ -1,6 +1,7 @@
 import { codeData, drawNetwork } from './visualizations/network'
 import * as data from '../data/onboarding-data.json'
 import * as copyData from '../data/onboarding-copy.json'
+import { drawDendogram } from './visualizations/dendogram'
 
 const copy = copyData.default
 const onboardingData = data.default
@@ -25,7 +26,8 @@ function incrementOnboarding () {
 
 function closeOnboarding () {
   document.getElementById('onboarding').classList.add('hidden')
-  drawNetwork(codeData, document.getElementById('network'), false)
+  drawNetwork(codeData, document.getElementById('network'), true)
+  drawDendogram(codeData, 'dendogram', true)
 }
 
 // Code to setup event listeners on elements
