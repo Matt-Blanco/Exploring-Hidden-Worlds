@@ -29,11 +29,11 @@ body {
 }
 
 #loading {
-  width: 94%;
-  height: 20rem;
   padding-bottom: 2rem;
-  left: 3%;
+  margin-left: 25%;
+  margin-right: auto;
   margin-top: 10%;
+  width: min-content;
   position: absolute;
   background-color: #000011;
   opacity: 85%;
@@ -42,14 +42,17 @@ body {
   border-radius: 10px;
 }
 
+#loadingTitle {
+  width: auto;
+}
+
 #loading > * {
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 #loadingText {
-  width: 80%;
+  width: 500px
 }
 
 .hidden {
@@ -60,15 +63,16 @@ body {
   color: white;
   background-color: black;
   margin-top: 3%;
-  width: 15%;
-  height: 4rem;
+  margin-bottom: 6%;
+  width: 10rem;
+  height: 3rem;
   border-radius: 10px;
-  margin-left: 40%;
   border-color: transparent;
   opacity: 80%;
   font-weight: bold;
   font-size: 14pt;
   border: 1px white solid;
+  margin-left: 3rem;
 }
 
 #loadingButton:hover {
@@ -83,10 +87,8 @@ body {
 }
 
 .lds-dual-ring {
-  /* position: absolute; */
-  margin-left: auto;
+  /* margin-left: 35%; */
   margin-top: 5%;
-  /* display: inline-block; */
   width: 80px;
   height: 80px;
 }
