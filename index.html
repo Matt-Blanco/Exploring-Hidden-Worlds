@@ -2,12 +2,17 @@
 <html lang="en">
 	<head>
 		<link rel="stylesheet" href="https://use.typekit.net/dzr8kuf.css">
-		<!-- <link rel="stylesheet" href="https://use.typekit.net/dzr8kuf.css"> -->
 		<style> body { margin: 0; } </style>
 		<link rel="stylesheet" href="./style.css" />
 	</head>
-  
   <body>
+		<div id="nav" class="hidden">
+			<ul id="links">
+				<li class="navLink" id="onboardingLink">Introduction</li>
+				<li class="navLink selected" id="visLink">Visualization</li>
+				<li class="navLink" id="aboutLink">About</li>
+			</ul>
+		</div>
 		<div id="code-tooltip" class="hidden">
 			<p id="tooltip-close">Close</p>
 			<div id="code-tooltip-contents"></div>
@@ -63,10 +68,6 @@
 							<li>Mousewheel: Zoom</li>
 							<li>Shift + Left-Click: Center</li>
 						</ul>
-						<div id="iconContainer">
-							<img id="helpIcon" class="icon" src="/assets/help.png"/>
-							<img id="onboardingIcon" class="icon" src="/assets/onboarding.png"/>
-						</div>
 					</div>
 				</div>
 				<div id="dendogram" class="clicked"></div>
@@ -78,6 +79,19 @@
 				<script type="module" src="/index.js"></script>
 			</div>
 		</div>
+		<div id="about" class="hidden">
+      <h2 id="aboutTitle">
+        About the project
+      </h2>
+      <p id="summary">
+        We are becoming more dependent on technology, and yet fewer people know how it works. Software should not be created behind closed doors especially when it can have larger ramifications on our day-to-day lives. 
+        <em>Exploring Hidden Worlds</em> aims to lift the veil on what it takes to build modern software through an explorable 3D visualization. Through learning what it takes to build modern software, 
+        and having the ability to understand it people can have more agency when deciding whether to adopt new, potentially harmful, technologies
+        <br><br>
+        Created by <a href="http:/www.mattblanco.me">Matt Blanco</a> as a Honors in the Discipline project at Northeastern University, the project combines software engineering with information design to create something beautiful but usable.
+        Building off of an idea from 2020, the project explores how software can look different posing the question: what does it mean to code?. 
+      </p>
+    </div>
 		<div id="footer">This project was created by <a href="https://matt-blanco.github.io" target="_blank">Matt Blanco</a></div>
   </body>
 </html>

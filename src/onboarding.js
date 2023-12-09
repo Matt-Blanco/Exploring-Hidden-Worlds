@@ -26,6 +26,7 @@ function incrementOnboarding () {
 
 function closeOnboarding () {
   document.getElementById('onboarding').classList.add('hidden')
+  document.getElementById('nav').classList.remove('hidden')
   drawNetwork(codeData, document.getElementById('network'), true)
   drawDendogram(codeData, 'dendogram', true)
 }
@@ -36,11 +37,11 @@ const welcomeModal = document.getElementById('loading')
 const nextOnboardingStep = document.getElementById('nextOnboardingStep')
 const prevOnboardingStep = document.getElementById('prevOnboardingStep')
 const skipOnboarding = document.getElementById('skipOnboarding')
-const helpIcon = document.getElementById('helpIcon')
-const onboardingIcon = document.getElementById('onboardingIcon')
+const visLink = document.getElementById('visLink')
+const onboardingLink = document.getElementById('onboardingLink')
+const aboutLink = document.getElementById('aboutLink')
 
 loadingButton.onclick = (e) => {
-  console.info('Close Welcome Modal')
   welcomeModal.classList.add('hidden')
 }
 
@@ -59,18 +60,34 @@ prevOnboardingStep.onclick = (e) => {
 }
 
 skipOnboarding.onclick = (e) => {
+  welcomeModal.classList.remove('hidden')
   document.getElementById('onboardingVis').innerHTML = ''
   step = 7
   onboarding()
 }
 
-helpIcon.onclick = (e) => {
+visLink.onclick = (e) => {
+  document.getElementById('about').classList.add('hidden')
   welcomeModal.classList.remove('hidden')
+  step = 7
+  onboarding()
 }
 
-onboardingIcon.onclick = (e) => {
+onboardingLink.onclick = (e) => {
   step = 0
+  document.getElementById('nav').classList.add('hidden')
   document.getElementById('main').classList.add('hidden')
+  document.getElementById('about').classList.add('hidden')
   document.getElementById('onboarding').classList.remove('hidden')
   onboarding()
+}
+
+aboutLink.onclick = (e) => {
+  const about = document.getElementById('about')
+  const onboarding = document.getElementById('onboarding')
+  const vis = document.getElementById('main')
+
+  onboarding.classList.add('hidden')
+  vis.classList.add('hidden')
+  about.classList.remove('hidden')
 }

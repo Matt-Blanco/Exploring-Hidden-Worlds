@@ -21,7 +21,7 @@ export function drawDendogram (data, id, showDendogram) {
     .attr('opacity', '70%')
 
   const cluster = d3.cluster()
-    .size([height * 0.95, width - 100])
+    .size([(height * 0.85), width - 100])
 
   const root = d3.hierarchy(heirarchyData.default[0], d => d.children)
 

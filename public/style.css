@@ -19,13 +19,47 @@ html {
   background-color: #000011;
 }
 
+a {
+  text-decoration: none;
+}
+
 a:hover {
   font-style: italic;
+}
+
+.navLink {
+  text-decoration: none;
+}
+
+.navLink:hover {
+  text-decoration: underline;
+  font-style: italic;
+  cursor: pointer;
 }
 
 body {
   overflow-y: hidden;
   overflow-x: hidden;
+}
+
+#nav {
+  position: relative;
+  width: 100%;
+  background-color: transparent;
+  /* background-color: #000011; */
+  /* border-bottom: #ccc solid 1px; */
+  z-index: 6;
+}
+
+#nav > ul {
+  list-style: none;
+  display: flex;
+  margin-top: 2vh;
+  margin-left: 70vw;
+}
+
+#links > li {
+  padding-left: 1rem;
 }
 
 #loading {
@@ -121,14 +155,14 @@ body {
 
 #dendogram {
   position: absolute;
-  width: 25%;
-  left:75%;
+  width: 30%;
+  left: 70%;
   height: 100%;
   z-index: 5;
   background-color: #000011;
   overflow-y: hidden;
   overflow-x: hidden;
-  padding-top: 1rem;
+  padding-top: 10vh;
   transition: ease-in-out 0.5s;
 }
 
@@ -146,7 +180,7 @@ body {
   position: absolute;
   z-index: 8;
   top: 50%;
-  left: 73%;
+  left: 67%;
   transform: rotate(180deg);
   transition: ease-in-out 0.5s;
   opacity: 80%;
@@ -170,7 +204,7 @@ body {
   position: absolute;
   height: 100%;
   z-index: 7;
-  left: 75%;
+  left: 70%;
   opacity: 30%;
   transition: ease-in-out 0.5s;
   background-color: lightgray;
@@ -191,7 +225,7 @@ body {
   opacity: 60%;
   z-index: 2;
   left: 2vw;
-  top: 5vh;
+  top: 8vh;
   width: 13%;
 }
 
@@ -388,6 +422,9 @@ body {
 
 #onboardingTitle {
   text-align: center;
+  background-color: #000011;
+  margin: 0;
+  padding-top: 2vh;
 }
 
 #onboarding {
@@ -430,4 +467,10 @@ body {
   text-align: center;
   opacity: 50%;
   z-index: 4;
+}
+
+#about {
+  margin-left: 10vw;
+  max-width: 30vw;
+  margin-top: 10vh;
 }
