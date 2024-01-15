@@ -1,6 +1,6 @@
 import ForceGraph3D from '3d-force-graph'
 import * as data from '../../data/data.json'
-import { updateDendogram } from './dendogram'
+import { updateDendogram } from './vertical-dendogram'
 
 const flatTree = (level = 0) => ({ children = [], ...object }) => [
   { ...object, level }, ...children.flatMap(flatTree(level + 1))

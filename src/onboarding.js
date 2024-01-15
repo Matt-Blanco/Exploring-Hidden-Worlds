@@ -1,7 +1,7 @@
 import { codeData, drawNetwork } from './visualizations/network'
 import * as data from '../data/onboarding-data.json'
 import * as copyData from '../data/onboarding-copy.json'
-import { drawDendogram } from './visualizations/dendogram'
+import { drawDendogram } from './visualizations/vertical-dendogram'
 
 const copy = copyData.default
 const onboardingData = data.default
