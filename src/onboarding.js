@@ -6,7 +6,7 @@ import { drawDendogram } from './visualizations/vertical-dendogram'
 const copy = copyData.default
 const onboardingData = data.default
 
-let step = 0
+let step = 7
 
 export function onboarding () {
   if (step >= 6) {

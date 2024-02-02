@@ -16,12 +16,14 @@ export function drawDendogram (data, id, showDendogram) {
     .append('svg')
     .attr('width', width)
     .attr('height', height)
-    .append('g')
-    .attr('transform', 'translate(40,0)')
+    .attr('transform', 'translate(' + width + ',' + width + ')')
+    // .append('g')
+    // .attr('transform', 'translate(40,0)')
     .attr('opacity', '70%')
 
-  const cluster = d3.cluster()
-    .size([(height * 0.85), width - 100])
+  const cluster = d3
+    .cluster()
+    .size([360, width])
 
   const root = d3.hierarchy(heirarchyData.default[0], d => d.children)
 
@@ -35,17 +37,21 @@ export function drawDendogram (data, id, showDendogram) {
     .style('background', '#000')
     .text('a simple tooltip')
 
+  // const linksGenerator = d3.linkRadial()
+  //   .angle(d => { console.log(d); return d.x / 180 * Math.PI })
+  //   .radius(d => { return d.y })
+
+  console.log(root.descendants().slice(1), root.links())
+
   // Add the links between nodes:
   dendogram.selectAll('path')
-    .data(root.descendants().slice(1))
+    // .data(root.descendants().slice(1))
+    .data(root.links())
     .enter()
     .append('path')
-    .attr('d', function (d) {
-      return 'M' + d.y + ',' + d.x +
-                'C' + (d.parent.y + 50) + ',' + d.x +
-                ' ' + (d.parent.y + 150) + ',' + d.parent.x + // 50 and 150 are coordinates of inflexion, play with it to change links shape
-                ' ' + d.parent.y + ',' + d.parent.x
-    })
+    .attr('d', d3.linkRadial()
+      .angle(d => d.x)
+      .radius(d => d.y))
     .style('fill', 'none')
     .attr('stroke', '#ccc')
     .attr('class', 'd3Link')
@@ -55,9 +61,10 @@ export function drawDendogram (data, id, showDendogram) {
     .data(root.descendants())
     .enter()
     .append('g')
-    .attr('transform', function (d) {
-      return 'translate(' + d.y + ',' + d.x + ')'
-    })
+    .attr('transform', d => `
+    rotate(${d.x * 180 / Math.PI - 90}) 
+    translate(${d.y},0)
+  `)
     .append('circle')
     .attr('class', 'd3Data')
     .attr('r', 3)
