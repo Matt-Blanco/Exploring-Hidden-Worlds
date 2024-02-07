@@ -9,21 +9,20 @@ let hoverNodeId = -1
 
 export function drawDendogram (data, id, showDendogram) {
   show = showDendogram
-  const width = window.innerWidth * 0.25
-  const height = window.innerHeight * 0.99
+  const width = window.innerWidth * 0.3
+  const height = window.innerHeight / 2
 
   dendogram = d3.select(`#${id}`)
     .append('svg')
     .attr('width', width)
     .attr('height', height)
-    .attr('transform', 'translate(' + width + ',' + width + ')')
-    // .append('g')
-    // .attr('transform', 'translate(40,0)')
+    .append('g')
+    .attr('transform', `translate(${width / 2}, ${height / 2})`)
     .attr('opacity', '70%')
 
   const cluster = d3
     .cluster()
-    .size([360, width])
+    .size([360, width / 3])
 
   const root = d3.hierarchy(heirarchyData.default[0], d => d.children)
 
@@ -37,11 +36,9 @@ export function drawDendogram (data, id, showDendogram) {
     .style('background', '#000')
     .text('a simple tooltip')
 
-  // const linksGenerator = d3.linkRadial()
-  //   .angle(d => { console.log(d); return d.x / 180 * Math.PI })
-  //   .radius(d => { return d.y })
-
-  console.log(root.descendants().slice(1), root.links())
+  const linksGenerator = d3.linkRadial()
+    .angle(d => { console.log(d); return d.x / 180 * Math.PI })
+    .radius(d => { return d.y })
 
   // Add the links between nodes:
   dendogram.selectAll('path')
@@ -49,9 +46,10 @@ export function drawDendogram (data, id, showDendogram) {
     .data(root.links())
     .enter()
     .append('path')
-    .attr('d', d3.linkRadial()
-      .angle(d => d.x)
-      .radius(d => d.y))
+    // .attr('d', d3.linkRadial()
+    //   .angle(d => d.x)
+    //   .radius(d => d.y))
+    .attr('d', linksGenerator)
     .style('fill', 'none')
     .attr('stroke', '#ccc')
     .attr('class', 'd3Link')
@@ -61,10 +59,13 @@ export function drawDendogram (data, id, showDendogram) {
     .data(root.descendants())
     .enter()
     .append('g')
-    .attr('transform', d => `
-    rotate(${d.x * 180 / Math.PI - 90}) 
-    translate(${d.y},0)
-  `)
+  //   .attr('transform', d => `
+  //   rotate(${d.x * 180 / Math.PI - 90})
+  //   translate(${d.y},0)
+  // `)
+    .attr('transform', d => {
+      return 'rotate(' + (d.x - 90) + ')translate(' + d.y + ')'
+    })
     .append('circle')
     .attr('class', 'd3Data')
     .attr('r', 3)
