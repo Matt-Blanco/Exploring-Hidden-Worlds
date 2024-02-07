@@ -156,18 +156,15 @@ body {
 #dendogram {
   position: absolute;
   width: 30%;
-  left: 70%;
-  height: 100%;
-  z-index: 5;
-  background-color: #000011;
+  top: 50%;
+  z-index: 7;
   overflow-y: hidden;
   overflow-x: hidden;
-  padding-top: 10vh;
   transition: ease-in-out 0.5s;
+  opacity: 80%;
 }
 
 #dendogram.clicked {
-  left: 125%;
   transition: ease-in-out 0.5s;
 }
 
@@ -224,7 +221,7 @@ body {
   position: absolute;
   opacity: 60%;
   z-index: 2;
-  left: 2vw;
+  left: 8vw;
   top: 8vh;
   width: 13%;
 }
