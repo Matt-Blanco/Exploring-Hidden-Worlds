@@ -1,6 +1,7 @@
 import * as d3 from 'd3'
-import * as heirarchyData from '../../data/data.json'
+import * as heirarchyData from '../../data/new-data.json'
 import { updateNetwork } from './network'
+import { getNodeColor } from '../utils'
 
 let dendogram
 let show = false
@@ -37,7 +38,7 @@ export function drawDendogram (data, id, showDendogram) {
     .text('a simple tooltip')
 
   const linksGenerator = d3.linkRadial()
-    .angle(d => { console.log(d); return d.x / 180 * Math.PI })
+    .angle(d => { return d.x / 180 * Math.PI })
     .radius(d => { return d.y })
 
   // Add the links between nodes:
@@ -46,9 +47,6 @@ export function drawDendogram (data, id, showDendogram) {
     .data(root.links())
     .enter()
     .append('path')
-    // .attr('d', d3.linkRadial()
-    //   .angle(d => d.x)
-    //   .radius(d => d.y))
     .attr('d', linksGenerator)
     .style('fill', 'none')
     .attr('stroke', '#ccc')
@@ -59,24 +57,13 @@ export function drawDendogram (data, id, showDendogram) {
     .data(root.descendants())
     .enter()
     .append('g')
-  //   .attr('transform', d => `
-  //   rotate(${d.x * 180 / Math.PI - 90})
-  //   translate(${d.y},0)
-  // `)
     .attr('transform', d => {
       return 'rotate(' + (d.x - 90) + ')translate(' + d.y + ')'
     })
     .append('circle')
     .attr('class', 'd3Data')
     .attr('r', 3)
-    .style('fill', (node) => {
-      const color = node.data.id === hoverNodeId
-        ? '#ffffff'
-        : node.data.type === 'dir'
-          ? '#5ffcab'
-          : node.data.type === 'file' ? '#32fcee' : node.data.type === 'class' ? '#d14ee8' : '#fc8a32'
-      return color
-    })
+    .style('fill', (node) => getNodeColor(node.data, hoverNodeId))
     .on('mouseover', (d) => {
       hoverNodeId = d.target.__data__.data.id
 
@@ -96,14 +83,7 @@ export function drawDendogram (data, id, showDendogram) {
     .on('mouseout', (e) => {
       hoverNodeId = -1
       d3.select(e.target)
-        .style('fill', (node) => {
-          const color = node.data.id === hoverNodeId
-            ? '#ffffff'
-            : node.data.type === 'dir'
-              ? '#5ffcab'
-              : node.data.type === 'file' ? '#32fcee' : node.data.type === 'class' ? '#d14ee8' : '#fc8a32'
-          return color
-        })
+        .style('fill', (node) => getNodeColor(node.data, hoverNodeId))
         .attr('r', 3)
 
       updateNetwork(hoverNodeId)
@@ -142,13 +122,6 @@ export function drawDendogram (data, id, showDendogram) {
 export function updateDendogram (hoverId) {
   hoverNodeId = hoverId
 
-  dendogram.selectAll('.d3Data').style('fill', (node) => {
-    const color = node.data.id === hoverNodeId
-      ? '#ffffff'
-      : node.data.type === 'dir'
-        ? '#5ffcab'
-        : node.data.type === 'file' ? '#32fcee' : node.data.type === 'class' ? '#d14ee8' : '#fc8a32'
-    return color
-  })
+  dendogram.selectAll('.d3Data').style('fill', (node) => getNodeColor(node.data, hoverNodeId))
     .attr('r', (node) => node.data.id === hoverNodeId ? 10 : 3)
 }
