@@ -18,9 +18,23 @@ let graph
 
 export const codeData = { nodes: flattenedData, links: flattenedData.map(node => node.links).flat() }
 
-export function drawNetwork (d, el, hasDendogram) {
+export function drawNetwork (d, el, hasDendogram, options) {
+  const defaultData = { ...d }
+  const nd = { nodes: [], links: [] }
+  const filterData = () => {
+    if (options === undefined) {
+      return defaultData
+    } else {
+      nd.nodes = d.nodes.filter((node) => options[node.type])
+      const nodeIds = new Set(nd.nodes.map((node) => node.id))
+      nd.links = d.links.filter((link) => nodeIds.has(link.source.id) && nodeIds.has(link.target.id))
+      console.log(nd)
+      return nd
+    }
+  }
+
   graph = ForceGraph3D()(el)
-    .graphData(d)
+    .graphData(filterData(d))
     .showNavInfo(false)
     .linkOpacity(0.25)
     .linkCurvature(0.33)
