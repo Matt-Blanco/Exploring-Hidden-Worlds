@@ -1,3 +1,5 @@
+import { codeData, drawNetwork } from './visualizations/network'
+
 export const getNodeColor = (node, hoverId) => {
   if (node.id === hoverId) {
     return '#ffffff'
@@ -21,10 +23,16 @@ export const getNodeColor = (node, hoverId) => {
     }
   }
 }
-/*
-node => node.id === hoverNodeId
-      ? 0xffffff
-      : node.type === 'dir'
-        ? 0x5ffcab
-        : node.type === 'file' ? 0x32fcee : node.type === 'class' ? 0xd14ee8 : 0xfc8a32)
-*/
+
+const settingOptions = document.getElementsByClassName('option')
+const optionMap = {}
+Object.keys(settingOptions).forEach((o, i) => {
+  if (optionMap[settingOptions.item(i).value] === undefined) {
+    optionMap[settingOptions.item(i).value] = (settingOptions.item(i).checked)
+  }
+  settingOptions.item(i).onclick = (valToFilter) => {
+    const option = valToFilter.target.checked
+    optionMap[valToFilter.target.value] = option
+    drawNetwork(codeData, document.getElementById('network'), true, optionMap)
+  }
+})
