@@ -131,6 +131,11 @@
                     "source": 7,
                     "target": 6,
                     "ref": false
+                  },
+                  {
+                    "source": 6,
+                    "target": 27,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -368,7 +373,18 @@
                 "collapsed": false,
                 "name": "Map.mergeOptions({\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 23,
+                    "target": 1790,
+                    "ref": true
+                  },
+                  {
+                    "source": 23,
+                    "target": 27,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "../map/Map.js",
@@ -416,6 +432,11 @@
                     "source": 25,
                     "target": 24,
                     "ref": false
+                  },
+                  {
+                    "source": 24,
+                    "target": 1790,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -792,6 +813,11 @@
                         "source": 42,
                         "target": 43,
                         "ref": false
+                      },
+                      {
+                        "source": 42,
+                        "target": 1790,
+                        "ref": true
                       }
                     ],
                     "references": [
@@ -936,6 +962,11 @@
                     "source": 48,
                     "target": 45,
                     "ref": false
+                  },
+                  {
+                    "source": 45,
+                    "target": 1790,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -1189,6 +1220,11 @@
                         "source": 57,
                         "target": 60,
                         "ref": false
+                      },
+                      {
+                        "source": 57,
+                        "target": 27,
+                        "ref": true
                       }
                     ],
                     "references": [
@@ -1263,7 +1299,13 @@
                     "collapsed": false,
                     "name": "\taddTo(map) {\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 65,
+                        "target": 27,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "./Control.js",
@@ -2052,6 +2094,11 @@
                     "source": 106,
                     "target": 104,
                     "ref": false
+                  },
+                  {
+                    "source": 104,
+                    "target": 27,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -2162,6 +2209,11 @@
                     "source": 113,
                     "target": 112,
                     "ref": false
+                  },
+                  {
+                    "source": 112,
+                    "target": 27,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -2942,7 +2994,13 @@
                 "collapsed": false,
                 "name": "\t_createButton(html, title, className, container, fn) {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 150,
+                    "target": 1790,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "../map/Map.js",
@@ -3015,7 +3073,18 @@
                 "collapsed": false,
                 "name": "Map.mergeOptions({\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 154,
+                    "target": 1790,
+                    "ref": true
+                  },
+                  {
+                    "source": 154,
+                    "target": 27,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "../map/Map.js",
@@ -3071,6 +3140,11 @@
                     "source": 156,
                     "target": 155,
                     "ref": false
+                  },
+                  {
+                    "source": 155,
+                    "target": 1790,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -5899,6 +5973,11 @@
                     "source": 336,
                     "target": 335,
                     "ref": false
+                  },
+                  {
+                    "source": 335,
+                    "target": 293,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -6124,6 +6203,16 @@
                     "source": 349,
                     "target": 348,
                     "ref": false
+                  },
+                  {
+                    "source": 348,
+                    "target": 375,
+                    "ref": true
+                  },
+                  {
+                    "source": 348,
+                    "target": 611,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -7467,7 +7556,13 @@
                 "collapsed": false,
                 "name": "\t\tif (this._moving) { return; }\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 413,
+                    "target": 611,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "../geometry/Point.js",
@@ -8439,7 +8534,13 @@
                 "collapsed": false,
                 "name": "\tdistanceTo(other) {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 490,
+                    "target": 441,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "./crs/CRS.Earth.js",
@@ -8458,7 +8559,13 @@
                 "collapsed": false,
                 "name": "\twrap() {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 491,
+                    "target": 441,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "./crs/CRS.Earth.js",
@@ -8477,7 +8584,13 @@
                 "collapsed": false,
                 "name": "\ttoBounds(sizeInMeters) {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 492,
+                    "target": 502,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "./LatLngBounds.js",
@@ -9019,7 +9132,13 @@
                 "collapsed": false,
                 "name": "\t\tif (typeof obj[0] === 'number' || obj instanceof LatLng || 'lat' in obj) {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 521,
+                    "target": 483,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "./LatLng.js",
@@ -9052,7 +9171,13 @@
                 "collapsed": false,
                 "name": "\tintersects(bounds) {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 523,
+                    "target": 483,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "./LatLng.js",
@@ -9071,7 +9196,13 @@
                 "collapsed": false,
                 "name": "\toverlaps(bounds) {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 524,
+                    "target": 483,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "./LatLng.js",
@@ -9152,6 +9283,11 @@
                     "source": 529,
                     "target": 528,
                     "ref": false
+                  },
+                  {
+                    "source": 528,
+                    "target": 483,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -9369,6 +9505,11 @@
                         "source": 537,
                         "target": 535,
                         "ref": false
+                      },
+                      {
+                        "source": 535,
+                        "target": 549,
+                        "ref": true
                       }
                     ],
                     "references": [
@@ -9467,6 +9608,11 @@
                         "source": 541,
                         "target": 539,
                         "ref": false
+                      },
+                      {
+                        "source": 539,
+                        "target": 549,
+                        "ref": true
                       }
                     ],
                     "references": [
@@ -9794,7 +9940,13 @@
                 "collapsed": false,
                 "name": "\tgetCenter(round) {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 557,
+                    "target": 611,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "./Point.js",
@@ -9813,7 +9965,13 @@
                 "collapsed": false,
                 "name": "\tgetBottomLeft() {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 558,
+                    "target": 611,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "./Point.js",
@@ -9942,7 +10100,18 @@
                 "collapsed": false,
                 "name": "\tpad(bufferRatio) {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 566,
+                    "target": 611,
+                    "ref": true
+                  },
+                  {
+                    "source": 566,
+                    "target": 611,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "./Point.js",
@@ -10794,6 +10963,26 @@
                     "source": 609,
                     "target": 602,
                     "ref": false
+                  },
+                  {
+                    "source": 602,
+                    "target": 483,
+                    "ref": true
+                  },
+                  {
+                    "source": 602,
+                    "target": 643,
+                    "ref": true
+                  },
+                  {
+                    "source": 602,
+                    "target": 483,
+                    "ref": true
+                  },
+                  {
+                    "source": 602,
+                    "target": 502,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -11375,6 +11564,11 @@
                     "source": 637,
                     "target": 614,
                     "ref": false
+                  },
+                  {
+                    "source": 614,
+                    "target": 260,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -11761,6 +11955,21 @@
                     "source": 656,
                     "target": 650,
                     "ref": false
+                  },
+                  {
+                    "source": 650,
+                    "target": 483,
+                    "ref": true
+                  },
+                  {
+                    "source": 650,
+                    "target": 483,
+                    "ref": true
+                  },
+                  {
+                    "source": 650,
+                    "target": 502,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -11814,6 +12023,11 @@
                     "source": 658,
                     "target": 657,
                     "ref": false
+                  },
+                  {
+                    "source": 657,
+                    "target": 483,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -12448,7 +12662,13 @@
                 "collapsed": false,
                 "name": "\tgetLatLng() {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 715,
+                    "target": 483,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "../geo/LatLng.js",
@@ -12487,6 +12707,16 @@
                     "source": 717,
                     "target": 716,
                     "ref": false
+                  },
+                  {
+                    "source": 716,
+                    "target": 483,
+                    "ref": true
+                  },
+                  {
+                    "source": 716,
+                    "target": 483,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -12621,7 +12851,13 @@
                 "collapsed": false,
                 "name": "\tisOpen() {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 725,
+                    "target": 881,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "./Layer.js",
@@ -12765,6 +13001,11 @@
                     "source": 732,
                     "target": 731,
                     "ref": false
+                  },
+                  {
+                    "source": 731,
+                    "target": 753,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -12805,6 +13046,16 @@
                     "source": 735,
                     "target": 734,
                     "ref": false
+                  },
+                  {
+                    "source": 734,
+                    "target": 483,
+                    "ref": true
+                  },
+                  {
+                    "source": 734,
+                    "target": 483,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -12829,7 +13080,13 @@
                 "collapsed": false,
                 "name": "\t\t\t} else {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 736,
+                    "target": 483,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "../geo/LatLng.js",
@@ -13051,6 +13308,11 @@
                     "source": 747,
                     "target": 746,
                     "ref": false
+                  },
+                  {
+                    "source": 746,
+                    "target": 1790,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -13112,6 +13374,11 @@
                     "source": 751,
                     "target": 750,
                     "ref": false
+                  },
+                  {
+                    "source": 750,
+                    "target": 881,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -13324,6 +13591,11 @@
                         "source": 755,
                         "target": 756,
                         "ref": false
+                      },
+                      {
+                        "source": 755,
+                        "target": 919,
+                        "ref": true
                       }
                     ],
                     "references": [
@@ -13400,6 +13672,11 @@
                     "source": 759,
                     "target": 757,
                     "ref": false
+                  },
+                  {
+                    "source": 757,
+                    "target": 919,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -13524,6 +13801,11 @@
                     "source": 764,
                     "target": 763,
                     "ref": false
+                  },
+                  {
+                    "source": 763,
+                    "target": 502,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -14103,7 +14385,13 @@
                 "collapsed": false,
                 "name": "function _pointToLayer(pointToLayerFn, geojson, latlng, options) {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 794,
+                    "target": 1000,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "./marker/Marker.js",
@@ -14349,6 +14637,11 @@
                     "source": 805,
                     "target": 798,
                     "ref": false
+                  },
+                  {
+                    "source": 798,
+                    "target": 483,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -14466,6 +14759,11 @@
                     "source": 812,
                     "target": 811,
                     "ref": false
+                  },
+                  {
+                    "source": 811,
+                    "target": 1529,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -14551,6 +14849,11 @@
                     "source": 815,
                     "target": 814,
                     "ref": false
+                  },
+                  {
+                    "source": 814,
+                    "target": 1507,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -14751,6 +15054,11 @@
                     "source": 822,
                     "target": 818,
                     "ref": false
+                  },
+                  {
+                    "source": 818,
+                    "target": 919,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -15295,6 +15603,21 @@
                     "source": 852,
                     "target": 851,
                     "ref": false
+                  },
+                  {
+                    "source": 851,
+                    "target": 549,
+                    "ref": true
+                  },
+                  {
+                    "source": 851,
+                    "target": 502,
+                    "ref": true
+                  },
+                  {
+                    "source": 851,
+                    "target": 549,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -15391,7 +15714,13 @@
                 "collapsed": false,
                 "name": "\tgetBounds() {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 857,
+                    "target": 549,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "../geometry/Bounds.js",
@@ -15563,6 +15892,16 @@
                     "source": 866,
                     "target": 864,
                     "ref": false
+                  },
+                  {
+                    "source": 864,
+                    "target": 881,
+                    "ref": true
+                  },
+                  {
+                    "source": 864,
+                    "target": 549,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -15831,7 +16170,13 @@
                 "collapsed": false,
                 "name": "export {FeatureGroup, featureGroup} from './FeatureGroup.js';\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 876,
+                    "target": 768,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "./GeoJSON.js",
@@ -16321,6 +16666,11 @@
                     "source": 902,
                     "target": 895,
                     "ref": false
+                  },
+                  {
+                    "source": 895,
+                    "target": 1790,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -16792,6 +17142,16 @@
                     "source": 925,
                     "target": 924,
                     "ref": false
+                  },
+                  {
+                    "source": 924,
+                    "target": 881,
+                    "ref": true
+                  },
+                  {
+                    "source": 924,
+                    "target": 881,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -16841,6 +17201,16 @@
                     "source": 927,
                     "target": 926,
                     "ref": false
+                  },
+                  {
+                    "source": 926,
+                    "target": 881,
+                    "ref": true
+                  },
+                  {
+                    "source": 926,
+                    "target": 881,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -16865,7 +17235,18 @@
                 "collapsed": false,
                 "name": "\thasLayer(layer) {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 928,
+                    "target": 881,
+                    "ref": true
+                  },
+                  {
+                    "source": 928,
+                    "target": 881,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "./Layer.js",
@@ -16888,7 +17269,18 @@
                 "collapsed": false,
                 "name": "\tclearLayers() {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 929,
+                    "target": 881,
+                    "ref": true
+                  },
+                  {
+                    "source": 929,
+                    "target": 881,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "./Layer.js",
@@ -16988,7 +17380,13 @@
                 "collapsed": false,
                 "name": "\tonAdd(map) {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 934,
+                    "target": 881,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "./Layer.js",
@@ -17007,7 +17405,13 @@
                 "collapsed": false,
                 "name": "\tonRemove(map) {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 935,
+                    "target": 881,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "./Layer.js",
@@ -17067,6 +17471,11 @@
                     "source": 937,
                     "target": 936,
                     "ref": false
+                  },
+                  {
+                    "source": 936,
+                    "target": 881,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -17087,7 +17496,13 @@
                 "collapsed": false,
                 "name": "\tgetLayer(id) {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 939,
+                    "target": 881,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "./Layer.js",
@@ -17106,7 +17521,18 @@
                 "collapsed": false,
                 "name": "\tgetLayers() {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 940,
+                    "target": 881,
+                    "ref": true
+                  },
+                  {
+                    "source": 940,
+                    "target": 881,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "./Layer.js",
@@ -17143,7 +17569,13 @@
                 "collapsed": false,
                 "name": "\tgetLayerId(layer) {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 942,
+                    "target": 881,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "./Layer.js",
@@ -17162,7 +17594,13 @@
                 "collapsed": false,
                 "name": "export const layerGroup = function (layers, options) {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 943,
+                    "target": 881,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "./Layer.js",
@@ -17315,6 +17753,16 @@
                             "source": 948,
                             "target": 949,
                             "ref": false
+                          },
+                          {
+                            "source": 948,
+                            "target": 960,
+                            "ref": true
+                          },
+                          {
+                            "source": 948,
+                            "target": 960,
+                            "ref": true
                           }
                         ],
                         "references": [
@@ -17339,7 +17787,13 @@
                         "collapsed": false,
                         "name": "\t\tif (options.bgPos) {\r",
                         "children": [],
-                        "links": [],
+                        "links": [
+                          {
+                            "source": 950,
+                            "target": 611,
+                            "ref": true
+                          }
+                        ],
                         "references": [
                           {
                             "path": "../../geometry/Point.js",
@@ -17399,7 +17853,18 @@
                     "collapsed": false,
                     "name": "export function divIcon(options) {\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 952,
+                        "target": 960,
+                        "ref": true
+                      },
+                      {
+                        "source": 952,
+                        "target": 960,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "./Icon.js",
@@ -17473,7 +17938,18 @@
                         "collapsed": false,
                         "name": "\t_getIconUrl(name) {\r",
                         "children": [],
-                        "links": [],
+                        "links": [
+                          {
+                            "source": 956,
+                            "target": 960,
+                            "ref": true
+                          },
+                          {
+                            "source": 956,
+                            "target": 960,
+                            "ref": true
+                          }
+                        ],
                         "references": [
                           {
                             "path": "./Icon.js",
@@ -17536,7 +18012,13 @@
                     "collapsed": false,
                     "name": "\t_detectIconPath() {\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 958,
+                        "target": 960,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "./Icon.js",
@@ -17625,7 +18107,13 @@
                         "collapsed": false,
                         "name": "\tinitialize(options) {\r",
                         "children": [],
-                        "links": [],
+                        "links": [
+                          {
+                            "source": 963,
+                            "target": 260,
+                            "ref": true
+                          }
+                        ],
                         "references": [
                           {
                             "path": "../../core/Util.js",
@@ -17981,7 +18469,23 @@
                     "collapsed": false,
                     "name": "export {icon} from './Icon.js';\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 980,
+                        "target": 960,
+                        "ref": true
+                      },
+                      {
+                        "source": 980,
+                        "target": 960,
+                        "ref": true
+                      },
+                      {
+                        "source": 980,
+                        "target": 953,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "./Icon.js",
@@ -18008,7 +18512,13 @@
                     "collapsed": false,
                     "name": "export {DivIcon, divIcon} from './DivIcon.js';\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 981,
+                        "target": 960,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "./Icon.js",
@@ -18225,6 +18735,11 @@
                             "source": 992,
                             "target": 993,
                             "ref": false
+                          },
+                          {
+                            "source": 992,
+                            "target": 549,
+                            "ref": true
                           }
                         ],
                         "references": [
@@ -18371,7 +18886,13 @@
                     "collapsed": false,
                     "name": "\t_onDragEnd(e) {\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 999,
+                        "target": 260,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "../../core/Util.js",
@@ -18437,7 +18958,13 @@
                         "collapsed": false,
                         "name": "\toptions: {\r",
                         "children": [],
-                        "links": [],
+                        "links": [
+                          {
+                            "source": 1002,
+                            "target": 953,
+                            "ref": true
+                          }
+                        ],
                         "references": [
                           {
                             "path": "./Icon.Default.js",
@@ -18456,7 +18983,13 @@
                         "collapsed": false,
                         "name": "\tinitialize(latlng, options) {\r",
                         "children": [],
-                        "links": [],
+                        "links": [
+                          {
+                            "source": 1003,
+                            "target": 483,
+                            "ref": true
+                          }
+                        ],
                         "references": [
                           {
                             "path": "../../geo/LatLng.js",
@@ -18613,7 +19146,13 @@
                         "collapsed": false,
                         "name": "\tsetLatLng(latlng) {\r",
                         "children": [],
-                        "links": [],
+                        "links": [
+                          {
+                            "source": 1012,
+                            "target": 483,
+                            "ref": true
+                          }
+                        ],
                         "references": [
                           {
                             "path": "../../geo/LatLng.js",
@@ -19238,7 +19777,18 @@
                     "collapsed": false,
                     "name": "\t_animateZoom(opt) {\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1046,
+                        "target": 881,
+                        "ref": true
+                      },
+                      {
+                        "source": 1046,
+                        "target": 483,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "../Layer.js",
@@ -19314,6 +19864,16 @@
                         "source": 1050,
                         "target": 1048,
                         "ref": false
+                      },
+                      {
+                        "source": 1048,
+                        "target": 982,
+                        "ref": true
+                      },
+                      {
+                        "source": 1048,
+                        "target": 982,
+                        "ref": true
                       }
                     ],
                     "references": [
@@ -19784,6 +20344,11 @@
                         "source": 1066,
                         "target": 1067,
                         "ref": false
+                      },
+                      {
+                        "source": 1066,
+                        "target": 694,
+                        "ref": true
                       }
                     ],
                     "references": [
@@ -19804,7 +20369,13 @@
                     "collapsed": false,
                     "name": "\tonAdd(map) {\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1068,
+                        "target": 694,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "./DivOverlay.js",
@@ -19837,7 +20408,13 @@
                     "collapsed": false,
                     "name": "\t\t\tif (!(this._source instanceof Path)) {\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1070,
+                        "target": 1489,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "./vector/Path.js",
@@ -19893,7 +20470,13 @@
                 "collapsed": false,
                 "name": "\tonRemove(map) {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 1071,
+                    "target": 694,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "./DivOverlay.js",
@@ -19926,7 +20509,13 @@
                 "collapsed": false,
                 "name": "\t\t\tif (!(this._source instanceof Path)) {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 1073,
+                    "target": 1489,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "./vector/Path.js",
@@ -19984,6 +20573,11 @@
                     "source": 1076,
                     "target": 1074,
                     "ref": false
+                  },
+                  {
+                    "source": 1074,
+                    "target": 694,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -20116,7 +20710,13 @@
                 "collapsed": false,
                 "name": "\t_animateZoom(e) {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 1085,
+                    "target": 881,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "./Layer.js",
@@ -20169,6 +20769,21 @@
                     "source": 1088,
                     "target": 1087,
                     "ref": false
+                  },
+                  {
+                    "source": 1087,
+                    "target": 611,
+                    "ref": true
+                  },
+                  {
+                    "source": 1087,
+                    "target": 611,
+                    "ref": true
+                  },
+                  {
+                    "source": 1087,
+                    "target": 611,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -20232,7 +20847,13 @@
                 "collapsed": false,
                 "name": "\t_getAnchor() {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 1091,
+                    "target": 611,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "../geometry/Point.js",
@@ -20265,7 +20886,13 @@
                 "collapsed": false,
                 "name": "Map.mergeOptions({\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 1093,
+                    "target": 1790,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "../map/Map.js",
@@ -20344,6 +20971,11 @@
                     "source": 1096,
                     "target": 1094,
                     "ref": false
+                  },
+                  {
+                    "source": 1094,
+                    "target": 1790,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -20820,6 +21452,11 @@
                     "source": 1117,
                     "target": 1098,
                     "ref": false
+                  },
+                  {
+                    "source": 1098,
+                    "target": 881,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -21503,7 +22140,13 @@
                     "collapsed": false,
                     "name": "\tgetTileSize() {\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1153,
+                        "target": 611,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "../../geometry/Point.js",
@@ -22270,6 +22913,11 @@
                         "source": 1196,
                         "target": 1195,
                         "ref": false
+                      },
+                      {
+                        "source": 1195,
+                        "target": 611,
+                        "ref": true
                       }
                     ],
                     "references": [
@@ -22324,6 +22972,11 @@
                         "source": 1199,
                         "target": 1198,
                         "ref": false
+                      },
+                      {
+                        "source": 1198,
+                        "target": 611,
+                        "ref": true
                       }
                     ],
                     "references": [
@@ -22901,6 +23554,21 @@
                         "source": 1226,
                         "target": 1206,
                         "ref": false
+                      },
+                      {
+                        "source": 1206,
+                        "target": 549,
+                        "ref": true
+                      },
+                      {
+                        "source": 1206,
+                        "target": 549,
+                        "ref": true
+                      },
+                      {
+                        "source": 1206,
+                        "target": 549,
+                        "ref": true
                       }
                     ],
                     "references": [
@@ -23098,7 +23766,18 @@
                     "collapsed": false,
                     "name": "\t_keyToBounds(key) {\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1238,
+                        "target": 549,
+                        "ref": true
+                      },
+                      {
+                        "source": 1238,
+                        "target": 549,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "../../geometry/Bounds.js",
@@ -23121,7 +23800,28 @@
                     "collapsed": false,
                     "name": "\t_tileCoordsToNwSe(coords) {\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1239,
+                        "target": 611,
+                        "ref": true
+                      },
+                      {
+                        "source": 1239,
+                        "target": 611,
+                        "ref": true
+                      },
+                      {
+                        "source": 1239,
+                        "target": 611,
+                        "ref": true
+                      },
+                      {
+                        "source": 1239,
+                        "target": 611,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "../../geometry/Point.js",
@@ -23177,6 +23877,16 @@
                         "source": 1241,
                         "target": 1240,
                         "ref": false
+                      },
+                      {
+                        "source": 1240,
+                        "target": 549,
+                        "ref": true
+                      },
+                      {
+                        "source": 1240,
+                        "target": 549,
+                        "ref": true
                       }
                     ],
                     "references": [
@@ -23215,7 +23925,13 @@
                     "collapsed": false,
                     "name": "\t_keyToTileCoords(key) {\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1243,
+                        "target": 611,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "../../geometry/Point.js",
@@ -23517,7 +24233,13 @@
                     "collapsed": false,
                     "name": "\t_wrapCoords(coords) {\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1261,
+                        "target": 611,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "../../geometry/Point.js",
@@ -23536,7 +24258,18 @@
                     "collapsed": false,
                     "name": "\t_pxBoundsToTileRange(bounds) {\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1262,
+                        "target": 549,
+                        "ref": true
+                      },
+                      {
+                        "source": 1262,
+                        "target": 549,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "../../geometry/Bounds.js",
@@ -23594,7 +24327,18 @@
                     "collapsed": false,
                     "name": "export function gridLayer(options) {\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1265,
+                        "target": 881,
+                        "ref": true
+                      },
+                      {
+                        "source": 1265,
+                        "target": 881,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "../Layer.js",
@@ -23930,7 +24674,18 @@
                     "collapsed": false,
                     "name": "export {GridLayer, gridLayer} from './GridLayer.js';\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1267,
+                        "target": 1268,
+                        "ref": true
+                      },
+                      {
+                        "source": 1267,
+                        "target": 1302,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "./TileLayer.js",
@@ -24532,6 +25287,11 @@
                         "source": 1298,
                         "target": 1281,
                         "ref": false
+                      },
+                      {
+                        "source": 1281,
+                        "target": 1129,
+                        "ref": true
                       }
                     ],
                     "references": [
@@ -24572,6 +25332,11 @@
                         "source": 1300,
                         "target": 1299,
                         "ref": false
+                      },
+                      {
+                        "source": 1299,
+                        "target": 1129,
+                        "ref": true
                       }
                     ],
                     "references": [
@@ -24776,7 +25541,13 @@
                         "collapsed": false,
                         "name": "\tonAdd(map) {\r",
                         "children": [],
-                        "links": [],
+                        "links": [
+                          {
+                            "source": 1310,
+                            "target": 1268,
+                            "ref": true
+                          }
+                        ],
                         "references": [
                           {
                             "path": "./TileLayer.js",
@@ -24795,7 +25566,28 @@
                         "collapsed": false,
                         "name": "\tgetTileUrl(coords) {\r",
                         "children": [],
-                        "links": [],
+                        "links": [
+                          {
+                            "source": 1311,
+                            "target": 549,
+                            "ref": true
+                          },
+                          {
+                            "source": 1311,
+                            "target": 452,
+                            "ref": true
+                          },
+                          {
+                            "source": 1311,
+                            "target": 1268,
+                            "ref": true
+                          },
+                          {
+                            "source": 1311,
+                            "target": 260,
+                            "ref": true
+                          }
+                        ],
                         "references": [
                           {
                             "path": "../../geometry/Bounds.js",
@@ -24893,7 +25685,13 @@
                     "collapsed": false,
                     "name": "export function tileLayerWMS(url, options) {\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1314,
+                        "target": 1268,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "./TileLayer.js",
@@ -24982,7 +25780,13 @@
                     "collapsed": false,
                     "name": "\tonAdd(map) {\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1318,
+                        "target": 694,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "./DivOverlay.js",
@@ -25042,7 +25846,13 @@
                 "collapsed": false,
                 "name": "\tonRemove(map) {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 1320,
+                    "target": 694,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "./DivOverlay.js",
@@ -25095,6 +25905,11 @@
                     "source": 1323,
                     "target": 1322,
                     "ref": false
+                  },
+                  {
+                    "source": 1322,
+                    "target": 694,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -25177,6 +25992,11 @@
                     "source": 1328,
                     "target": 1327,
                     "ref": false
+                  },
+                  {
+                    "source": 1327,
+                    "target": 611,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -25239,7 +26059,13 @@
                 "collapsed": false,
                 "name": "\t_updatePosition() {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 1332,
+                    "target": 881,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "./Layer.js",
@@ -25293,7 +26119,13 @@
                 "collapsed": false,
                 "name": "\t_animateZoom(e) {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 1335,
+                    "target": 881,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "./Layer.js",
@@ -25312,7 +26144,13 @@
                 "collapsed": false,
                 "name": "\t_getAnchor() {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 1336,
+                    "target": 611,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "../geometry/Point.js",
@@ -25384,6 +26222,11 @@
                     "source": 1340,
                     "target": 1338,
                     "ref": false
+                  },
+                  {
+                    "source": 1338,
+                    "target": 1790,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -25587,6 +26430,11 @@
                     "source": 1349,
                     "target": 1341,
                     "ref": false
+                  },
+                  {
+                    "source": 1341,
+                    "target": 881,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -25894,6 +26742,16 @@
                     "source": 1366,
                     "target": 1365,
                     "ref": false
+                  },
+                  {
+                    "source": 1365,
+                    "target": 881,
+                    "ref": true
+                  },
+                  {
+                    "source": 1365,
+                    "target": 881,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -26092,7 +26950,13 @@
                         "collapsed": false,
                         "name": "\tgetEvents() {\r",
                         "children": [],
-                        "links": [],
+                        "links": [
+                          {
+                            "source": 1384,
+                            "target": 1592,
+                            "ref": true
+                          }
+                        ],
                         "references": [
                           {
                             "path": "./Renderer.js",
@@ -26125,7 +26989,13 @@
                         "collapsed": false,
                         "name": "\tonAdd(map) {\r",
                         "children": [],
-                        "links": [],
+                        "links": [
+                          {
+                            "source": 1386,
+                            "target": 1592,
+                            "ref": true
+                          }
+                        ],
                         "references": [
                           {
                             "path": "./Renderer.js",
@@ -26158,7 +27028,13 @@
                         "collapsed": false,
                         "name": "\t_destroyContainer() {\r",
                         "children": [],
-                        "links": [],
+                        "links": [
+                          {
+                            "source": 1388,
+                            "target": 1592,
+                            "ref": true
+                          }
+                        ],
                         "references": [
                           {
                             "path": "./Renderer.js",
@@ -26177,7 +27053,13 @@
                         "collapsed": false,
                         "name": "\t_resizeContainer() {\r",
                         "children": [],
-                        "links": [],
+                        "links": [
+                          {
+                            "source": 1389,
+                            "target": 1592,
+                            "ref": true
+                          }
+                        ],
                         "references": [
                           {
                             "path": "./Renderer.js",
@@ -26354,6 +27236,11 @@
                         "source": 1396,
                         "target": 1395,
                         "ref": false
+                      },
+                      {
+                        "source": 1395,
+                        "target": 1592,
+                        "ref": true
                       }
                     ],
                     "references": [
@@ -26472,7 +27359,13 @@
                     "collapsed": false,
                     "name": "\t_updatePath(layer) {\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1403,
+                        "target": 549,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "../../geometry/Bounds.js",
@@ -26946,6 +27839,11 @@
                         "source": 1423,
                         "target": 1409,
                         "ref": false
+                      },
+                      {
+                        "source": 1409,
+                        "target": 549,
+                        "ref": true
                       }
                     ],
                     "references": [
@@ -27706,7 +28604,13 @@
                     "collapsed": false,
                     "name": "\tgetBounds() {\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1461,
+                        "target": 502,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "../../geo/LatLngBounds.js",
@@ -27870,7 +28774,13 @@
                         "collapsed": false,
                         "name": "\tinitialize(latlng, options) {\r",
                         "children": [],
-                        "links": [],
+                        "links": [
+                          {
+                            "source": 1469,
+                            "target": 483,
+                            "ref": true
+                          }
+                        ],
                         "references": [
                           {
                             "path": "../../geo/LatLng.js",
@@ -27889,7 +28799,13 @@
                         "collapsed": false,
                         "name": "\tsetLatLng(latlng) {\r",
                         "children": [],
-                        "links": [],
+                        "links": [
+                          {
+                            "source": 1470,
+                            "target": 483,
+                            "ref": true
+                          }
+                        ],
                         "references": [
                           {
                             "path": "../../geo/LatLng.js",
@@ -27977,7 +28893,13 @@
                     "collapsed": false,
                     "name": "\tsetStyle(options) {\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1474,
+                        "target": 1489,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "./Path.js",
@@ -27996,7 +28918,13 @@
                     "collapsed": false,
                     "name": "\t_project() {\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1475,
+                        "target": 549,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "../../geometry/Bounds.js",
@@ -28015,7 +28943,18 @@
                     "collapsed": false,
                     "name": "\t_updateBounds() {\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1476,
+                        "target": 549,
+                        "ref": true
+                      },
+                      {
+                        "source": 1476,
+                        "target": 549,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "../../geometry/Bounds.js",
@@ -28078,7 +29017,13 @@
                     "collapsed": false,
                     "name": "\t_updatePath() {\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1479,
+                        "target": 1489,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "./Path.js",
@@ -28097,7 +29042,13 @@
                     "collapsed": false,
                     "name": "\t_empty() {\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1480,
+                        "target": 549,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "../../geometry/Bounds.js",
@@ -28231,7 +29182,18 @@
                     "collapsed": false,
                     "name": "export {SVG, svg};\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1485,
+                        "target": 1607,
+                        "ref": true
+                      },
+                      {
+                        "source": 1485,
+                        "target": 1607,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "./SVG.js",
@@ -29076,6 +30038,11 @@
                             "source": 1511,
                             "target": 1526,
                             "ref": false
+                          },
+                          {
+                            "source": 1511,
+                            "target": 549,
+                            "ref": true
                           }
                         ],
                         "references": [
@@ -29342,6 +30309,26 @@
                             "source": 1536,
                             "target": 1540,
                             "ref": false
+                          },
+                          {
+                            "source": 1536,
+                            "target": 611,
+                            "ref": true
+                          },
+                          {
+                            "source": 1536,
+                            "target": 611,
+                            "ref": true
+                          },
+                          {
+                            "source": 1536,
+                            "target": 611,
+                            "ref": true
+                          },
+                          {
+                            "source": 1536,
+                            "target": 611,
+                            "ref": true
                           }
                         ],
                         "references": [
@@ -30063,6 +31050,21 @@
                             "source": 1541,
                             "target": 1570,
                             "ref": false
+                          },
+                          {
+                            "source": 1541,
+                            "target": 611,
+                            "ref": true
+                          },
+                          {
+                            "source": 1541,
+                            "target": 611,
+                            "ref": true
+                          },
+                          {
+                            "source": 1541,
+                            "target": 1489,
+                            "ref": true
                           }
                         ],
                         "references": [
@@ -30091,7 +31093,13 @@
                         "collapsed": false,
                         "name": "\t_updatePath() {\r",
                         "children": [],
-                        "links": [],
+                        "links": [
+                          {
+                            "source": 1571,
+                            "target": 1489,
+                            "ref": true
+                          }
+                        ],
                         "references": [
                           {
                             "path": "./Path.js",
@@ -30110,7 +31118,13 @@
                         "collapsed": false,
                         "name": "\t_containsPoint(p, closed) {\r",
                         "children": [],
-                        "links": [],
+                        "links": [
+                          {
+                            "source": 1572,
+                            "target": 611,
+                            "ref": true
+                          }
+                        ],
                         "references": [
                           {
                             "path": "../../geometry/Point.js",
@@ -30295,7 +31309,13 @@
                         "collapsed": false,
                         "name": "\tinitialize(latLngBounds, options) {\r",
                         "children": [],
-                        "links": [],
+                        "links": [
+                          {
+                            "source": 1579,
+                            "target": 1507,
+                            "ref": true
+                          }
+                        ],
                         "references": [
                           {
                             "path": "./Polygon.js",
@@ -30328,7 +31348,13 @@
                         "collapsed": false,
                         "name": "\t_boundsToLatLngs(latLngBounds) {\r",
                         "children": [],
-                        "links": [],
+                        "links": [
+                          {
+                            "source": 1581,
+                            "target": 502,
+                            "ref": true
+                          }
+                        ],
                         "references": [
                           {
                             "path": "../../geo/LatLngBounds.js",
@@ -30530,6 +31556,11 @@
                         "source": 1588,
                         "target": 1584,
                         "ref": false
+                      },
+                      {
+                        "source": 1584,
+                        "target": 1790,
+                        "ref": true
                       }
                     ],
                     "references": [
@@ -30550,7 +31581,18 @@
                     "collapsed": false,
                     "name": "\t_createRenderer(options) {\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1591,
+                        "target": 1381,
+                        "ref": true
+                      },
+                      {
+                        "source": 1591,
+                        "target": 1607,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "./Canvas.js",
@@ -30636,7 +31678,13 @@
                     "collapsed": false,
                     "name": "\tonAdd(map) {\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1595,
+                        "target": 670,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "../BlanketOverlay.js",
@@ -30655,7 +31703,13 @@
                     "collapsed": false,
                     "name": "\tonRemove() {\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1596,
+                        "target": 670,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "../BlanketOverlay.js",
@@ -31121,6 +32175,11 @@
                         "source": 1618,
                         "target": 1608,
                         "ref": false
+                      },
+                      {
+                        "source": 1608,
+                        "target": 1634,
+                        "ref": true
                       }
                     ],
                     "references": [
@@ -31141,7 +32200,13 @@
                     "collapsed": false,
                     "name": "\t_removePath(layer) {\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1619,
+                        "target": 260,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "../../core/Util.js",
@@ -31265,7 +32330,13 @@
                     "collapsed": false,
                     "name": "\t_updatePoly(layer, closed) {\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1627,
+                        "target": 1634,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "./SVG.Util.js",
@@ -31984,7 +33055,13 @@
                     "collapsed": false,
                     "name": "Map.mergeOptions({\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1658,
+                        "target": 1790,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "../Map.js",
@@ -32236,6 +33313,11 @@
                         "source": 1671,
                         "target": 1670,
                         "ref": false
+                      },
+                      {
+                        "source": 1670,
+                        "target": 549,
+                        "ref": true
                       }
                     ],
                     "references": [
@@ -32338,7 +33420,23 @@
                     "collapsed": false,
                     "name": "\t\tif (!this._moved) { return; }\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1677,
+                        "target": 502,
+                        "ref": true
+                      },
+                      {
+                        "source": 1677,
+                        "target": 549,
+                        "ref": true
+                      },
+                      {
+                        "source": 1677,
+                        "target": 549,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "../../geo/LatLngBounds.js",
@@ -32453,7 +33551,13 @@
                     "collapsed": false,
                     "name": "Map.mergeOptions({\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1681,
+                        "target": 1790,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "../Map.js",
@@ -32594,7 +33698,13 @@
                     "collapsed": false,
                     "name": "Map.mergeOptions({\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1688,
+                        "target": 1790,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "../Map.js",
@@ -33160,7 +34270,13 @@
                     "collapsed": false,
                     "name": "Map.mergeOptions({\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1716,
+                        "target": 1790,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "../Map.js",
@@ -33811,7 +34927,13 @@
                     "collapsed": false,
                     "name": "Map.mergeOptions({\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1749,
+                        "target": 1790,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "../Map.js",
@@ -34009,7 +35131,13 @@
                     "collapsed": false,
                     "name": "Map.mergeOptions({\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1759,
+                        "target": 1790,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "../Map.js",
@@ -34157,7 +35285,13 @@
                     "collapsed": false,
                     "name": "\t_onMove(e) {\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1767,
+                        "target": 611,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "../../geometry/Point.js",
@@ -34273,7 +35407,13 @@
                     "collapsed": false,
                     "name": "Map.mergeOptions({\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1772,
+                        "target": 1790,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "../Map.js",
@@ -34665,7 +35805,13 @@
                     "collapsed": false,
                     "name": "\toptions: {\r",
                     "children": [],
-                    "links": [],
+                    "links": [
+                      {
+                        "source": 1792,
+                        "target": 448,
+                        "ref": true
+                      }
+                    ],
                     "references": [
                       {
                         "path": "../geo/crs/CRS.EPSG3857.js",
@@ -34759,6 +35905,11 @@
                     "source": 1796,
                     "target": 1793,
                     "ref": false
+                  },
+                  {
+                    "source": 1793,
+                    "target": 483,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -34793,7 +35944,13 @@
                 "collapsed": false,
                 "name": "\tsetView(center, zoom, options) {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 1798,
+                    "target": 483,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "../geo/LatLng.js",
@@ -35021,6 +36178,16 @@
                     "source": 1812,
                     "target": 1811,
                     "ref": false
+                  },
+                  {
+                    "source": 1811,
+                    "target": 483,
+                    "ref": true
+                  },
+                  {
+                    "source": 1811,
+                    "target": 502,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -35073,7 +36240,13 @@
                 "collapsed": false,
                 "name": "\tpanBy(offset, options) {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 1815,
+                    "target": 611,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "../geometry/Point.js",
@@ -35140,6 +36313,11 @@
                     "source": 1819,
                     "target": 1818,
                     "ref": false
+                  },
+                  {
+                    "source": 1818,
+                    "target": 428,
+                    "ref": true
                   }
                 ],
                 "references": [
@@ -36583,7 +37761,13 @@
                 "collapsed": false,
                 "name": "\tgetPixelBounds(center, zoom) {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 1900,
+                    "target": 611,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "../geometry/Point.js",
@@ -36700,7 +37884,13 @@
                 "collapsed": false,
                 "name": "\tproject(latlng, zoom) {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 1908,
+                    "target": 483,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "../geo/LatLng.js",
@@ -36719,7 +37909,13 @@
                 "collapsed": false,
                 "name": "\tunproject(point, zoom) {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 1909,
+                    "target": 611,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "../geometry/Point.js",
@@ -36738,7 +37934,13 @@
                 "collapsed": false,
                 "name": "\tlayerPointToLatLng(point) {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 1910,
+                    "target": 611,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "../geometry/Point.js",
@@ -36757,7 +37959,13 @@
                 "collapsed": false,
                 "name": "\tlatLngToLayerPoint(latlng) {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 1911,
+                    "target": 483,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "../geo/LatLng.js",
@@ -36776,7 +37984,13 @@
                 "collapsed": false,
                 "name": "\twrapLatLng(latlng) {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 1912,
+                    "target": 483,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "../geo/LatLng.js",
@@ -36795,7 +38009,18 @@
                 "collapsed": false,
                 "name": "\twrapLatLngBounds(latlng) {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 1913,
+                    "target": 483,
+                    "ref": true
+                  },
+                  {
+                    "source": 1913,
+                    "target": 502,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "../geo/LatLng.js",
@@ -36818,7 +38043,13 @@
                 "collapsed": false,
                 "name": "\tdistance(latlng1, latlng2) {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 1914,
+                    "target": 483,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "../geo/LatLng.js",
@@ -36837,7 +38068,13 @@
                 "collapsed": false,
                 "name": "\tcontainerPointToLatLng(point) {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 1915,
+                    "target": 611,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "../geometry/Point.js",
@@ -36856,7 +38093,13 @@
                 "collapsed": false,
                 "name": "\tlatLngToContainerPoint(latlng) {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 1916,
+                    "target": 483,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "../geo/LatLng.js",
@@ -38087,7 +39330,18 @@
                 "collapsed": false,
                 "name": "\t_latLngBoundsToNewLayerBounds(latLngBounds, zoom, center) {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 1988,
+                    "target": 549,
+                    "ref": true
+                  },
+                  {
+                    "source": 1988,
+                    "target": 549,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "../geometry/Bounds.js",
@@ -38180,7 +39434,18 @@
                 "collapsed": false,
                 "name": "\t_getBoundsOffset(pxBounds, maxBounds, zoom) {\r",
                 "children": [],
-                "links": [],
+                "links": [
+                  {
+                    "source": 1994,
+                    "target": 549,
+                    "ref": true
+                  },
+                  {
+                    "source": 1994,
+                    "target": 549,
+                    "ref": true
+                  }
+                ],
                 "references": [
                   {
                     "path": "../geometry/Bounds.js",

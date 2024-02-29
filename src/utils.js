@@ -1,3 +1,4 @@
+import { drawDendogram } from './visualizations/dendogram'
 import { codeData, drawNetwork } from './visualizations/network'
 
 export const getNodeColor = (node, hoverId) => {
@@ -34,5 +35,27 @@ Object.keys(settingOptions).forEach((o, i) => {
     const option = valToFilter.target.checked
     optionMap[valToFilter.target.value] = option
     drawNetwork(codeData, document.getElementById('network'), true, optionMap)
+    drawDendogram(codeData, 'dendogram', optionMap)
   }
 })
+
+export const filterData = (data, nd, options) => {
+  if (options === undefined) {
+    return data
+  } else {
+    nd.nodes = data.nodes.filter((node) => options[node.type])
+    const nodeIds = new Set(nd.nodes.map((node) => node.id))
+    nd.links = data.links.filter((link) => {
+      const hasNodes = nodeIds.has(link.source.id) && nodeIds.has(link.target.id)
+      const showRef = options.ref
+      const showHeirarchy = options.heir
+
+      if ((showHeirarchy && !link.ref) || (showRef && link.ref)) {
+        return hasNodes
+      }
+
+      return false
+    })
+    return nd
+  }
+}

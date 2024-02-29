@@ -1,7 +1,7 @@
 import ForceGraph3D from '3d-force-graph'
 import * as data from '../../data/new-data.json'
 import { updateDendogram } from './dendogram'
-import { getNodeColor } from '../utils'
+import { filterData, getNodeColor } from '../utils'
 
 const flatTree = (level = 0) => ({ children = [], ...object }) => [
   { ...object, level }, ...children.flatMap(flatTree(level + 1))
@@ -20,21 +20,10 @@ export const codeData = { nodes: flattenedData, links: flattenedData.map(node =>
 
 export function drawNetwork (d, el, hasDendogram, options) {
   const copy = { ...d }
-
   const nd = { nodes: [], links: [] }
-  const filterData = () => {
-    if (options === undefined) {
-      return copy
-    } else {
-      nd.nodes = copy.nodes.filter((node) => options[node.type])
-      const nodeIds = new Set(nd.nodes.map((node) => node.id))
-      nd.links = copy.links.filter((link) => nodeIds.has(link.source.id) && nodeIds.has(link.target.id))
-      return nd
-    }
-  }
 
   graph = ForceGraph3D()(el)
-    .graphData(filterData(d))
+    .graphData(filterData(copy, nd, options))
     .showNavInfo(false)
     .linkOpacity(0.25)
     .linkCurvature(0.33)
@@ -89,7 +78,7 @@ export function drawNetwork (d, el, hasDendogram, options) {
     .enableNodeDrag(false)
     .zoomToFit()
 
-  graph.camera().position.z = 5000
+  graph.cameraPosition({ z: 5000 })
   graph.onEngineStop(() => {
     const spinner = document.getElementById('loadingSpinner')
     const button = document.getElementById('loadingButton')
@@ -97,6 +86,7 @@ export function drawNetwork (d, el, hasDendogram, options) {
     spinner.classList.add('hidden')
     button.classList.remove('hidden')
   })
+  return graph
 }
 
 export function updateNetwork (hoverId) {
