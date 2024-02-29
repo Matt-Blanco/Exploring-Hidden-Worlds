@@ -43,7 +43,7 @@ body {
 }
 
 #nav {
-  position: relative;
+  position: absolute;
   width: 100%;
   background-color: transparent;
   /* background-color: #000011; */
@@ -156,18 +156,15 @@ body {
 #dendogram {
   position: absolute;
   width: 30%;
-  left: 70%;
-  height: 100%;
-  z-index: 5;
-  background-color: #000011;
+  top: 50%;
+  z-index: 7;
   overflow-y: hidden;
   overflow-x: hidden;
-  padding-top: 10vh;
   transition: ease-in-out 0.5s;
+  opacity: 80%;
 }
 
 #dendogram.clicked {
-  left: 125%;
   transition: ease-in-out 0.5s;
 }
 
@@ -175,44 +172,68 @@ body {
   cursor: pointer;
 }
 
+#options {
+  z-index: 13;
+}
+
 #chevron {
-  width: 1rem;
   position: absolute;
   z-index: 8;
   top: 50%;
   left: 67%;
-  transform: rotate(180deg);
   transition: ease-in-out 0.5s;
-  opacity: 80%;
+  opacity: 50%;
+}
+
+#chevron > p {
+  left: -1.5rem;
+  margin: 0;
+  position: inherit;
+}
+
+#chevron-icon {
+  width: 1rem;
+  transform: rotate(180deg);
+}
+
+#chevron.clicked > #chevron-icon {
+  transform: rotate(0deg);
 }
 
 #chevron.clicked {
-  left: 98%;
-  transform: rotate(0deg);
+  left: 95%;
   transition: ease-in-out 0.5s;
 }
 
 #chevron:hover {
-  width: 1.25rem;
   opacity: 90%;
   transition: ease-in-out 0.5s;
   cursor: pointer;
 }
 
 #vis-divider {
-  width: 0.05rem;
+  width: 30%;
+  border-left: lightgray solid 1px;
   position: absolute;
   height: 100%;
   z-index: 7;
   left: 70%;
-  opacity: 30%;
+  opacity: 100%;
   transition: ease-in-out 0.5s;
-  background-color: lightgray;
+  background-color: #000011;
 }
 
 #vis-divider.clicked {
   left: 100%;
   transition: ease-in-out 0.5s;
+}
+
+#settings {
+  margin-left: 1rem;
+}
+
+#settings > ul {
+  list-style: none;
 }
 
 #canvas {
@@ -224,7 +245,7 @@ body {
   position: absolute;
   opacity: 60%;
   z-index: 2;
-  left: 2vw;
+  left: 8vw;
   top: 8vh;
   width: 13%;
 }

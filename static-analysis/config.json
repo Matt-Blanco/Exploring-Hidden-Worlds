@@ -1,0 +1,7 @@
+{
+  "language": "js",
+  "keywords": ["new", "class", "interface", "extends", "if", "for", "while", "switch", "=> {", "= {"],
+  "keywordsToIgonore": ["//"],
+  "source": "src",
+  "root": "./"
+}

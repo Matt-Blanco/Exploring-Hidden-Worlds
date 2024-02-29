@@ -1,0 +1,948 @@
+[
+  {
+    "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src",
+    "type": "dir",
+    "name": "src",
+    "id": 0,
+    "children": [
+      {
+        "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\onboarding.js",
+        "name": "onboarding.js",
+        "id": 1,
+        "collapsed": false,
+        "references": [],
+        "type": "file",
+        "contents": "import { codeData, drawNetwork } from './visualizations/network'\r\nimport * as data from '../data/onboarding-data.json'\r\nimport * as copyData from '../data/onboarding-copy.json'\r\nimport { drawDendogram } from './visualizations/dendogram'\r\n\r\nconst copy = copyData.default\r\nconst onboardingData = data.default\r\n\r\nlet step = 7\r\n\r\nexport function onboarding () {\r\n  if (step >= 6) {\r\n    document.getElementById('main').classList.remove('hidden')\r\n    closeOnboarding()\r\n  } else {\r\n    incrementOnboarding()\r\n  }\r\n}\r\n\r\nfunction incrementOnboarding () {\r\n  document.getElementById('onboardingText').innerHTML = copy[step].main\r\n  document.getElementById('onboardingAlt').innerHTML = copy[step].alt\r\n\r\n  drawNetwork(onboardingData[step], document.getElementById('onboardingVis'))\r\n}\r\n\r\nfunction closeOnboarding () {\r\n  document.getElementById('onboarding').classList.add('hidden')\r\n  document.getElementById('nav').classList.remove('hidden')\r\n  drawNetwork(codeData, document.getElementById('network'), true)\r\n  drawDendogram(codeData, 'dendogram', true)\r\n}\r\n\r\n// Code to setup event listeners on elements\r\nconst loadingButton = document.getElementById('loadingButton')\r\nconst welcomeModal = document.getElementById('loading')\r\nconst nextOnboardingStep = document.getElementById('nextOnboardingStep')\r\nconst prevOnboardingStep = document.getElementById('prevOnboardingStep')\r\nconst skipOnboarding = document.getElementById('skipOnboarding')\r\nconst visLink = document.getElementById('visLink')\r\nconst onboardingLink = document.getElementById('onboardingLink')\r\nconst aboutLink = document.getElementById('aboutLink')\r\n\r\nloadingButton.onclick = (e) => {\r\n  welcomeModal.classList.add('hidden')\r\n}\r\n\r\nnextOnboardingStep.onclick = (e) => {\r\n  document.getElementById('onboardingVis').innerHTML = ''\r\n  step += 1\r\n  onboarding()\r\n}\r\n\r\nprevOnboardingStep.onclick = (e) => {\r\n  if (step >= 1) {\r\n    document.getElementById('onboardingVis').innerHTML = ''\r\n    step -= 1\r\n    onboarding()\r\n  }\r\n}\r\n\r\nskipOnboarding.onclick = (e) => {\r\n  welcomeModal.classList.remove('hidden')\r\n  document.getElementById('onboardingVis').innerHTML = ''\r\n  step = 7\r\n  onboarding()\r\n}\r\n\r\nvisLink.onclick = (e) => {\r\n  document.getElementById('about').classList.add('hidden')\r\n  welcomeModal.classList.remove('hidden')\r\n  step = 7\r\n  onboarding()\r\n}\r\n\r\nonboardingLink.onclick = (e) => {\r\n  step = 0\r\n  document.getElementById('nav').classList.add('hidden')\r\n  document.getElementById('main').classList.add('hidden')\r\n  document.getElementById('about').classList.add('hidden')\r\n  document.getElementById('onboarding').classList.remove('hidden')\r\n  onboarding()\r\n}\r\n\r\naboutLink.onclick = (e) => {\r\n  const about = document.getElementById('about')\r\n  const onboarding = document.getElementById('onboarding')\r\n  const vis = document.getElementById('main')\r\n\r\n  onboarding.classList.add('hidden')\r\n  vis.classList.add('hidden')\r\n  about.classList.remove('hidden')\r\n}\r\n",
+        "children": [
+          {
+            "start": 10,
+            "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\onboarding.js",
+            "depth": 1,
+            "id": 2,
+            "type": "func",
+            "collapsed": false,
+            "name": "export function onboarding () {\r",
+            "children": [
+              {
+                "start": 11,
+                "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\onboarding.js",
+                "depth": 1,
+                "id": 3,
+                "type": "cond",
+                "collapsed": false,
+                "name": "  if (step >= 6) {\r",
+                "children": [],
+                "links": [],
+                "references": [],
+                "end": 14,
+                "contents": "  if (step >= 6) {\r\n    document.getElementById('main').classList.remove('hidden')\r\n    closeOnboarding()\r\n  } else {\r"
+              }
+            ],
+            "links": [
+              {
+                "source": 3,
+                "target": 2,
+                "ref": false
+              }
+            ],
+            "references": [],
+            "end": 16,
+            "contents": "export function onboarding () {\r\n  if (step >= 6) {\r\n    document.getElementById('main').classList.remove('hidden')\r\n    closeOnboarding()\r\n  } else {\r\n    incrementOnboarding()\r\n  }\r"
+          },
+          {
+            "start": 19,
+            "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\onboarding.js",
+            "depth": 1,
+            "id": 4,
+            "type": "func",
+            "collapsed": false,
+            "name": "function incrementOnboarding () {\r",
+            "children": [],
+            "links": [],
+            "references": [
+              {
+                "path": "./visualizations/network",
+                "name": "drawNetwork"
+              }
+            ],
+            "end": 24,
+            "contents": "function incrementOnboarding () {\r\n  document.getElementById('onboardingText').innerHTML = copy[step].main\r\n  document.getElementById('onboardingAlt').innerHTML = copy[step].alt\r\n\r\n  drawNetwork(onboardingData[step], document.getElementById('onboardingVis'))\r\n}\r"
+          },
+          {
+            "start": 26,
+            "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\onboarding.js",
+            "depth": 1,
+            "id": 5,
+            "type": "func",
+            "collapsed": false,
+            "name": "function closeOnboarding () {\r",
+            "children": [],
+            "links": [],
+            "references": [
+              {
+                "path": "./visualizations/network",
+                "name": "codeData,"
+              },
+              {
+                "path": "./visualizations/network",
+                "name": "drawNetwork"
+              },
+              {
+                "path": "./visualizations/network",
+                "name": "codeData,"
+              },
+              {
+                "path": "./visualizations/dendogram",
+                "name": "drawDendogram"
+              }
+            ],
+            "end": 31,
+            "contents": "function closeOnboarding () {\r\n  document.getElementById('onboarding').classList.add('hidden')\r\n  document.getElementById('nav').classList.remove('hidden')\r\n  drawNetwork(codeData, document.getElementById('network'), true)\r\n  drawDendogram(codeData, 'dendogram', true)\r\n}\r"
+          },
+          {
+            "start": 43,
+            "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\onboarding.js",
+            "depth": 1,
+            "id": 6,
+            "type": "other",
+            "collapsed": false,
+            "name": "loadingButton.onclick = (e) => {\r",
+            "children": [],
+            "links": [],
+            "references": [],
+            "end": 45,
+            "contents": "loadingButton.onclick = (e) => {\r\n  welcomeModal.classList.add('hidden')\r\n}\r"
+          },
+          {
+            "start": 47,
+            "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\onboarding.js",
+            "depth": 1,
+            "id": 7,
+            "type": "other",
+            "collapsed": false,
+            "name": "nextOnboardingStep.onclick = (e) => {\r",
+            "children": [],
+            "links": [],
+            "references": [],
+            "end": 51,
+            "contents": "nextOnboardingStep.onclick = (e) => {\r\n  document.getElementById('onboardingVis').innerHTML = ''\r\n  step += 1\r\n  onboarding()\r\n}\r"
+          },
+          {
+            "start": 53,
+            "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\onboarding.js",
+            "depth": 1,
+            "id": 8,
+            "type": "other",
+            "collapsed": false,
+            "name": "prevOnboardingStep.onclick = (e) => {\r",
+            "children": [
+              {
+                "start": 54,
+                "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\onboarding.js",
+                "depth": 1,
+                "id": 9,
+                "type": "cond",
+                "collapsed": false,
+                "name": "  if (step >= 1) {\r",
+                "children": [],
+                "links": [],
+                "references": [],
+                "end": 58,
+                "contents": "  if (step >= 1) {\r\n    document.getElementById('onboardingVis').innerHTML = ''\r\n    step -= 1\r\n    onboarding()\r\n  }\r"
+              }
+            ],
+            "links": [
+              {
+                "source": 9,
+                "target": 8,
+                "ref": false
+              }
+            ],
+            "references": [],
+            "end": 59,
+            "contents": "prevOnboardingStep.onclick = (e) => {\r\n  if (step >= 1) {\r\n    document.getElementById('onboardingVis').innerHTML = ''\r\n    step -= 1\r\n    onboarding()\r\n  }\r\n}\r"
+          },
+          {
+            "start": 61,
+            "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\onboarding.js",
+            "depth": 1,
+            "id": 10,
+            "type": "other",
+            "collapsed": false,
+            "name": "skipOnboarding.onclick = (e) => {\r",
+            "children": [],
+            "links": [],
+            "references": [],
+            "end": 66,
+            "contents": "skipOnboarding.onclick = (e) => {\r\n  welcomeModal.classList.remove('hidden')\r\n  document.getElementById('onboardingVis').innerHTML = ''\r\n  step = 7\r\n  onboarding()\r\n}\r"
+          },
+          {
+            "start": 68,
+            "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\onboarding.js",
+            "depth": 1,
+            "id": 11,
+            "type": "other",
+            "collapsed": false,
+            "name": "visLink.onclick = (e) => {\r",
+            "children": [],
+            "links": [],
+            "references": [],
+            "end": 73,
+            "contents": "visLink.onclick = (e) => {\r\n  document.getElementById('about').classList.add('hidden')\r\n  welcomeModal.classList.remove('hidden')\r\n  step = 7\r\n  onboarding()\r\n}\r"
+          },
+          {
+            "start": 75,
+            "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\onboarding.js",
+            "depth": 1,
+            "id": 12,
+            "type": "other",
+            "collapsed": false,
+            "name": "onboardingLink.onclick = (e) => {\r",
+            "children": [],
+            "links": [],
+            "references": [],
+            "end": 82,
+            "contents": "onboardingLink.onclick = (e) => {\r\n  step = 0\r\n  document.getElementById('nav').classList.add('hidden')\r\n  document.getElementById('main').classList.add('hidden')\r\n  document.getElementById('about').classList.add('hidden')\r\n  document.getElementById('onboarding').classList.remove('hidden')\r\n  onboarding()\r\n}\r"
+          },
+          {
+            "start": 84,
+            "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\onboarding.js",
+            "depth": 1,
+            "id": 13,
+            "type": "other",
+            "collapsed": false,
+            "name": "aboutLink.onclick = (e) => {\r",
+            "children": [],
+            "links": [],
+            "references": [],
+            "end": 92,
+            "contents": "aboutLink.onclick = (e) => {\r\n  const about = document.getElementById('about')\r\n  const onboarding = document.getElementById('onboarding')\r\n  const vis = document.getElementById('main')\r\n\r\n  onboarding.classList.add('hidden')\r\n  vis.classList.add('hidden')\r\n  about.classList.remove('hidden')\r\n}\r"
+          }
+        ],
+        "links": [
+          {
+            "source": 2,
+            "target": 1,
+            "ref": false
+          },
+          {
+            "source": 4,
+            "target": 1,
+            "ref": false
+          },
+          {
+            "source": 5,
+            "target": 1,
+            "ref": false
+          },
+          {
+            "source": 6,
+            "target": 1,
+            "ref": false
+          },
+          {
+            "source": 7,
+            "target": 1,
+            "ref": false
+          },
+          {
+            "source": 8,
+            "target": 1,
+            "ref": false
+          },
+          {
+            "source": 10,
+            "target": 1,
+            "ref": false
+          },
+          {
+            "source": 11,
+            "target": 1,
+            "ref": false
+          },
+          {
+            "source": 12,
+            "target": 1,
+            "ref": false
+          },
+          {
+            "source": 13,
+            "target": 1,
+            "ref": false
+          }
+        ]
+      },
+      {
+        "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\visualizations",
+        "name": "visualizations",
+        "id": 14,
+        "collapsed": false,
+        "references": [],
+        "type": "dir",
+        "children": [
+          {
+            "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\visualizations\\dendogram.js",
+            "name": "dendogram.js",
+            "id": 15,
+            "collapsed": false,
+            "references": [],
+            "type": "file",
+            "contents": "import * as d3 from 'd3'\r\nimport * as heirarchyData from '../../data/new-data.json'\r\nimport { updateNetwork } from './network'\r\n\r\nlet dendogram\r\nlet show = false\r\n\r\nlet hoverNodeId = -1\r\n\r\nexport function drawDendogram (data, id, showDendogram) {\r\n  show = showDendogram\r\n  const width = window.innerWidth * 0.3\r\n  const height = window.innerHeight / 2\r\n\r\n  dendogram = d3.select(`#${id}`)\r\n    .append('svg')\r\n    .attr('width', width)\r\n    .attr('height', height)\r\n    .append('g')\r\n    .attr('transform', `translate(${width / 2}, ${height / 2})`)\r\n    .attr('opacity', '70%')\r\n\r\n  const cluster = d3\r\n    .cluster()\r\n    .size([360, width / 3])\r\n\r\n  const root = d3.hierarchy(heirarchyData.default[0], d => d.children)\r\n\r\n  cluster(root)\r\n\r\n  const tooltip = d3.select('body')\r\n    .append('div')\r\n    .style('position', 'absolute')\r\n    .style('z-index', '10')\r\n    .style('visibility', 'hidden')\r\n    .style('background', '#000')\r\n    .text('a simple tooltip')\r\n\r\n  const linksGenerator = d3.linkRadial()\r\n    .angle(d => { return d.x / 180 * Math.PI })\r\n    .radius(d => { return d.y })\r\n\r\n  // Add the links between nodes:\r\n  dendogram.selectAll('path')\r\n    // .data(root.descendants().slice(1))\r\n    .data(root.links())\r\n    .enter()\r\n    .append('path')\r\n    // .attr('d', d3.linkRadial()\r\n    //   .angle(d => d.x)\r\n    //   .radius(d => d.y))\r\n    .attr('d', linksGenerator)\r\n    .style('fill', 'none')\r\n    .attr('stroke', '#ccc')\r\n    .attr('class', 'd3Link')\r\n\r\n  // Add a circle for each node.\r\n  dendogram.selectAll('g')\r\n    .data(root.descendants())\r\n    .enter()\r\n    .append('g')\r\n  //   .attr('transform', d => `\r\n  //   rotate(${d.x * 180 / Math.PI - 90})\r\n  //   translate(${d.y},0)\r\n  // `)\r\n    .attr('transform', d => {\r\n      return 'rotate(' + (d.x - 90) + ')translate(' + d.y + ')'\r\n    })\r\n    .append('circle')\r\n    .attr('class', 'd3Data')\r\n    .attr('r', 3)\r\n    .style('fill', (node) => {\r\n      const color = node.data.id === hoverNodeId\r\n        ? '#ffffff'\r\n        : node.data.type === 'dir'\r\n          ? '#5ffcab'\r\n          : node.data.type === 'file' ? '#32fcee' : node.data.type === 'class' ? '#d14ee8' : '#fc8a32'\r\n      return color\r\n    })\r\n    .on('mouseover', (d) => {\r\n      hoverNodeId = d.target.__data__.data.id\r\n\r\n      d3.select(d.target)\r\n        .style('fill', '#ffffff')\r\n        .attr('r', 8)\r\n      tooltip.text(d.target.__data__.data.name)\r\n\r\n      updateNetwork(hoverNodeId)\r\n\r\n      return tooltip.style('visibility', 'visible')\r\n    })\r\n    .on('mousemove', (e) => {\r\n      const tooltipWidth = tooltip._groups[0][0].clientWidth\r\n      return tooltip.style('top', (e.pageY - 10) + 'px').style('left', (e.pageX - (tooltipWidth + 15)) + 'px')\r\n    })\r\n    .on('mouseout', (e) => {\r\n      hoverNodeId = -1\r\n      d3.select(e.target)\r\n        .style('fill', (node) => {\r\n          const color = node.data.id === hoverNodeId\r\n            ? '#ffffff'\r\n            : node.data.type === 'dir'\r\n              ? '#5ffcab'\r\n              : node.data.type === 'file' ? '#32fcee' : node.data.type === 'class' ? '#d14ee8' : '#fc8a32'\r\n          return color\r\n        })\r\n        .attr('r', 3)\r\n\r\n      updateNetwork(hoverNodeId)\r\n\r\n      return tooltip.style('visibility', 'hidden')\r\n    })\r\n    .on('click', (d) => {\r\n      if (d.target.__data__.data !== 'dir') {\r\n        const tooltip = document.getElementById('code-tooltip')\r\n        tooltip.classList.remove('hidden')\r\n        const tooltipContents = document.getElementById('code-tooltip-contents')\r\n        tooltipContents.innerText = d.target.__data__.data.contents\r\n      }\r\n    })\r\n\r\n  // Code to minimize and expand the dendogram visualization\r\n  if (show) {\r\n    const divider = document.getElementById('chevron')\r\n    const verticalDivider = document.getElementById('vis-divider')\r\n    const dendogramDOM = document.getElementById('dendogram')\r\n\r\n    divider.onclick = (e) => {\r\n      if (divider.classList.contains('clicked')) {\r\n        divider.classList.remove('clicked')\r\n        verticalDivider.classList.remove('clicked')\r\n        dendogramDOM.classList.remove('clicked')\r\n      } else {\r\n        divider.classList.add('clicked')\r\n        verticalDivider.classList.add('clicked')\r\n        dendogramDOM.classList.add('clicked')\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\nexport function updateDendogram (hoverId) {\r\n  hoverNodeId = hoverId\r\n\r\n  dendogram.selectAll('.d3Data').style('fill', (node) => {\r\n    const color = node.data.id === hoverNodeId\r\n      ? '#ffffff'\r\n      : node.data.type === 'dir'\r\n        ? '#5ffcab'\r\n        : node.data.type === 'file' ? '#32fcee' : node.data.type === 'class' ? '#d14ee8' : '#fc8a32'\r\n    return color\r\n  })\r\n    .attr('r', (node) => node.data.id === hoverNodeId ? 10 : 3)\r\n}\r\n",
+            "children": [
+              {
+                "start": 9,
+                "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\visualizations\\dendogram.js",
+                "depth": 2,
+                "id": 16,
+                "type": "func",
+                "collapsed": false,
+                "name": "export function drawDendogram (data, id, showDendogram) {\r",
+                "children": [],
+                "links": [],
+                "references": [],
+                "end": 14,
+                "contents": "export function drawDendogram (data, id, showDendogram) {\r\n  show = showDendogram\r\n  const width = window.innerWidth * 0.3\r\n  const height = window.innerHeight / 2\r\n\r\n  dendogram = d3.select(`#${id}`)\r"
+              },
+              {
+                "start": 19,
+                "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\visualizations\\dendogram.js",
+                "depth": 2,
+                "id": 17,
+                "type": "loop",
+                "collapsed": false,
+                "name": "    .attr('transform', `translate(${width / 2}, ${height / 2})`)\r",
+                "children": [],
+                "links": [],
+                "references": [],
+                "end": 40,
+                "contents": "    .attr('transform', `translate(${width / 2}, ${height / 2})`)\r\n    .attr('opacity', '70%')\r\n\r\n  const cluster = d3\r\n    .cluster()\r\n    .size([360, width / 3])\r\n\r\n  const root = d3.hierarchy(heirarchyData.default[0], d => d.children)\r\n\r\n  cluster(root)\r\n\r\n  const tooltip = d3.select('body')\r\n    .append('div')\r\n    .style('position', 'absolute')\r\n    .style('z-index', '10')\r\n    .style('visibility', 'hidden')\r\n    .style('background', '#000')\r\n    .text('a simple tooltip')\r\n\r\n  const linksGenerator = d3.linkRadial()\r\n    .angle(d => { return d.x / 180 * Math.PI })\r\n    .radius(d => { return d.y })\r"
+              },
+              {
+                "start": 65,
+                "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\visualizations\\dendogram.js",
+                "depth": 2,
+                "id": 18,
+                "type": "loop",
+                "collapsed": false,
+                "name": "    .attr('transform', d => {\r",
+                "children": [],
+                "links": [],
+                "references": [],
+                "end": 67,
+                "contents": "    .attr('transform', d => {\r\n      return 'rotate(' + (d.x - 90) + ')translate(' + d.y + ')'\r\n    })\r"
+              },
+              {
+                "start": 71,
+                "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\visualizations\\dendogram.js",
+                "depth": 2,
+                "id": 19,
+                "type": "other",
+                "collapsed": false,
+                "name": "    .style('fill', (node) => {\r",
+                "children": [],
+                "links": [],
+                "references": [],
+                "end": 78,
+                "contents": "    .style('fill', (node) => {\r\n      const color = node.data.id === hoverNodeId\r\n        ? '#ffffff'\r\n        : node.data.type === 'dir'\r\n          ? '#5ffcab'\r\n          : node.data.type === 'file' ? '#32fcee' : node.data.type === 'class' ? '#d14ee8' : '#fc8a32'\r\n      return color\r\n    })\r"
+              },
+              {
+                "start": 79,
+                "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\visualizations\\dendogram.js",
+                "depth": 2,
+                "id": 20,
+                "type": "other",
+                "collapsed": false,
+                "name": "    .on('mouseover', (d) => {\r",
+                "children": [],
+                "links": [],
+                "references": [
+                  {
+                    "path": "./network",
+                    "name": "updateNetwork"
+                  }
+                ],
+                "end": 90,
+                "contents": "    .on('mouseover', (d) => {\r\n      hoverNodeId = d.target.__data__.data.id\r\n\r\n      d3.select(d.target)\r\n        .style('fill', '#ffffff')\r\n        .attr('r', 8)\r\n      tooltip.text(d.target.__data__.data.name)\r\n\r\n      updateNetwork(hoverNodeId)\r\n\r\n      return tooltip.style('visibility', 'visible')\r\n    })\r"
+              },
+              {
+                "start": 91,
+                "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\visualizations\\dendogram.js",
+                "depth": 2,
+                "id": 21,
+                "type": "other",
+                "collapsed": false,
+                "name": "    .on('mousemove', (e) => {\r",
+                "children": [],
+                "links": [],
+                "references": [],
+                "end": 94,
+                "contents": "    .on('mousemove', (e) => {\r\n      const tooltipWidth = tooltip._groups[0][0].clientWidth\r\n      return tooltip.style('top', (e.pageY - 10) + 'px').style('left', (e.pageX - (tooltipWidth + 15)) + 'px')\r\n    })\r"
+              },
+              {
+                "start": 95,
+                "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\visualizations\\dendogram.js",
+                "depth": 2,
+                "id": 22,
+                "type": "other",
+                "collapsed": false,
+                "name": "    .on('mouseout', (e) => {\r",
+                "children": [
+                  {
+                    "start": 98,
+                    "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\visualizations\\dendogram.js",
+                    "depth": 2,
+                    "id": 23,
+                    "type": "other",
+                    "collapsed": false,
+                    "name": "        .style('fill', (node) => {\r",
+                    "children": [],
+                    "links": [],
+                    "references": [],
+                    "end": 105,
+                    "contents": "        .style('fill', (node) => {\r\n          const color = node.data.id === hoverNodeId\r\n            ? '#ffffff'\r\n            : node.data.type === 'dir'\r\n              ? '#5ffcab'\r\n              : node.data.type === 'file' ? '#32fcee' : node.data.type === 'class' ? '#d14ee8' : '#fc8a32'\r\n          return color\r\n        })\r"
+                  }
+                ],
+                "links": [
+                  {
+                    "source": 23,
+                    "target": 22,
+                    "ref": false
+                  }
+                ],
+                "references": [
+                  {
+                    "path": "./network",
+                    "name": "updateNetwork"
+                  }
+                ],
+                "end": 111,
+                "contents": "    .on('mouseout', (e) => {\r\n      hoverNodeId = -1\r\n      d3.select(e.target)\r\n        .style('fill', (node) => {\r\n          const color = node.data.id === hoverNodeId\r\n            ? '#ffffff'\r\n            : node.data.type === 'dir'\r\n              ? '#5ffcab'\r\n              : node.data.type === 'file' ? '#32fcee' : node.data.type === 'class' ? '#d14ee8' : '#fc8a32'\r\n          return color\r\n        })\r\n        .attr('r', 3)\r\n\r\n      updateNetwork(hoverNodeId)\r\n\r\n      return tooltip.style('visibility', 'hidden')\r\n    })\r"
+              },
+              {
+                "start": 112,
+                "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\visualizations\\dendogram.js",
+                "depth": 2,
+                "id": 24,
+                "type": "other",
+                "collapsed": false,
+                "name": "    .on('click', (d) => {\r",
+                "children": [
+                  {
+                    "start": 113,
+                    "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\visualizations\\dendogram.js",
+                    "depth": 2,
+                    "id": 25,
+                    "type": "cond",
+                    "collapsed": false,
+                    "name": "      if (d.target.__data__.data !== 'dir') {\r",
+                    "children": [],
+                    "links": [],
+                    "references": [],
+                    "end": 118,
+                    "contents": "      if (d.target.__data__.data !== 'dir') {\r\n        const tooltip = document.getElementById('code-tooltip')\r\n        tooltip.classList.remove('hidden')\r\n        const tooltipContents = document.getElementById('code-tooltip-contents')\r\n        tooltipContents.innerText = d.target.__data__.data.contents\r\n      }\r"
+                  }
+                ],
+                "links": [
+                  {
+                    "source": 25,
+                    "target": 24,
+                    "ref": false
+                  }
+                ],
+                "references": [],
+                "end": 119,
+                "contents": "    .on('click', (d) => {\r\n      if (d.target.__data__.data !== 'dir') {\r\n        const tooltip = document.getElementById('code-tooltip')\r\n        tooltip.classList.remove('hidden')\r\n        const tooltipContents = document.getElementById('code-tooltip-contents')\r\n        tooltipContents.innerText = d.target.__data__.data.contents\r\n      }\r\n    })\r"
+              },
+              {
+                "start": 122,
+                "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\visualizations\\dendogram.js",
+                "depth": 2,
+                "id": 26,
+                "type": "cond",
+                "collapsed": false,
+                "name": "  if (show) {\r",
+                "children": [
+                  {
+                    "start": 127,
+                    "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\visualizations\\dendogram.js",
+                    "depth": 2,
+                    "id": 27,
+                    "type": "other",
+                    "collapsed": false,
+                    "name": "    divider.onclick = (e) => {\r",
+                    "children": [
+                      {
+                        "start": 128,
+                        "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\visualizations\\dendogram.js",
+                        "depth": 2,
+                        "id": 28,
+                        "type": "cond",
+                        "collapsed": false,
+                        "name": "      if (divider.classList.contains('clicked')) {\r",
+                        "children": [],
+                        "links": [],
+                        "references": [],
+                        "end": 132,
+                        "contents": "      if (divider.classList.contains('clicked')) {\r\n        divider.classList.remove('clicked')\r\n        verticalDivider.classList.remove('clicked')\r\n        dendogramDOM.classList.remove('clicked')\r\n      } else {\r"
+                      }
+                    ],
+                    "links": [
+                      {
+                        "source": 27,
+                        "target": 28,
+                        "ref": false
+                      }
+                    ],
+                    "references": [],
+                    "end": 136,
+                    "contents": "    divider.onclick = (e) => {\r\n      if (divider.classList.contains('clicked')) {\r\n        divider.classList.remove('clicked')\r\n        verticalDivider.classList.remove('clicked')\r\n        dendogramDOM.classList.remove('clicked')\r\n      } else {\r\n        divider.classList.add('clicked')\r\n        verticalDivider.classList.add('clicked')\r\n        dendogramDOM.classList.add('clicked')\r\n      }\r"
+                  }
+                ],
+                "links": [
+                  {
+                    "source": 27,
+                    "target": 26,
+                    "ref": false
+                  }
+                ],
+                "references": [],
+                "end": 137,
+                "contents": "  if (show) {\r\n    const divider = document.getElementById('chevron')\r\n    const verticalDivider = document.getElementById('vis-divider')\r\n    const dendogramDOM = document.getElementById('dendogram')\r\n\r\n    divider.onclick = (e) => {\r\n      if (divider.classList.contains('clicked')) {\r\n        divider.classList.remove('clicked')\r\n        verticalDivider.classList.remove('clicked')\r\n        dendogramDOM.classList.remove('clicked')\r\n      } else {\r\n        divider.classList.add('clicked')\r\n        verticalDivider.classList.add('clicked')\r\n        dendogramDOM.classList.add('clicked')\r\n      }\r\n    }\r"
+              },
+              {
+                "start": 141,
+                "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\visualizations\\dendogram.js",
+                "depth": 2,
+                "id": 29,
+                "type": "func",
+                "collapsed": false,
+                "name": "export function updateDendogram (hoverId) {\r",
+                "children": [
+                  {
+                    "start": 144,
+                    "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\visualizations\\dendogram.js",
+                    "depth": 2,
+                    "id": 30,
+                    "type": "other",
+                    "collapsed": false,
+                    "name": "  dendogram.selectAll('.d3Data').style('fill', (node) => {\r",
+                    "children": [],
+                    "links": [],
+                    "references": [],
+                    "end": 151,
+                    "contents": "  dendogram.selectAll('.d3Data').style('fill', (node) => {\r\n    const color = node.data.id === hoverNodeId\r\n      ? '#ffffff'\r\n      : node.data.type === 'dir'\r\n        ? '#5ffcab'\r\n        : node.data.type === 'file' ? '#32fcee' : node.data.type === 'class' ? '#d14ee8' : '#fc8a32'\r\n    return color\r\n  })\r"
+                  }
+                ],
+                "links": [
+                  {
+                    "source": 30,
+                    "target": 29,
+                    "ref": false
+                  }
+                ],
+                "references": [],
+                "end": 153,
+                "contents": "export function updateDendogram (hoverId) {\r\n  hoverNodeId = hoverId\r\n\r\n  dendogram.selectAll('.d3Data').style('fill', (node) => {\r\n    const color = node.data.id === hoverNodeId\r\n      ? '#ffffff'\r\n      : node.data.type === 'dir'\r\n        ? '#5ffcab'\r\n        : node.data.type === 'file' ? '#32fcee' : node.data.type === 'class' ? '#d14ee8' : '#fc8a32'\r\n    return color\r\n  })\r\n    .attr('r', (node) => node.data.id === hoverNodeId ? 10 : 3)\r\n}\r"
+              }
+            ],
+            "links": [
+              {
+                "source": 16,
+                "target": 15,
+                "ref": false
+              },
+              {
+                "source": 17,
+                "target": 15,
+                "ref": false
+              },
+              {
+                "source": 18,
+                "target": 15,
+                "ref": false
+              },
+              {
+                "source": 19,
+                "target": 15,
+                "ref": false
+              },
+              {
+                "source": 20,
+                "target": 15,
+                "ref": false
+              },
+              {
+                "source": 21,
+                "target": 15,
+                "ref": false
+              },
+              {
+                "source": 22,
+                "target": 15,
+                "ref": false
+              },
+              {
+                "source": 24,
+                "target": 15,
+                "ref": false
+              },
+              {
+                "source": 26,
+                "target": 15,
+                "ref": false
+              },
+              {
+                "source": 29,
+                "target": 15,
+                "ref": false
+              }
+            ]
+          },
+          {
+            "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\visualizations\\network.js",
+            "name": "network.js",
+            "id": 31,
+            "collapsed": false,
+            "references": [],
+            "type": "file",
+            "contents": "import ForceGraph3D from '3d-force-graph'\r\nimport * as data from '../../data/new-data.json'\r\nimport { updateDendogram } from './dendogram'\r\n\r\nconst flatTree = (level = 0) => ({ children = [], ...object }) => [\r\n  { ...object, level }, ...children.flatMap(flatTree(level + 1))\r\n]\r\n\r\nconst flattenedData = data.default.flatMap(flatTree())\r\n\r\nlet hoverNodeId = -1\r\n\r\nconst highlightNodes = new Set()\r\nconst highlightLinks = new Set()\r\n\r\nlet graph\r\n\r\nexport const codeData = { nodes: flattenedData, links: flattenedData.map(node => node.links).flat() }\r\n\r\nconsole.log(flattenedData.map(node => node.links).flat().every(l => flattenedData.some(n => n.id === l.source || l.target)))\r\n\r\nexport function drawNetwork (d, el, hasDendogram) {\r\n  graph = ForceGraph3D()(el)\r\n    .graphData(d)\r\n    .showNavInfo(false)\r\n    .linkOpacity(0.25)\r\n    .linkCurvature(0.33)\r\n    .linkWidth((link) => highlightLinks.has(link) ? 6 : 2)\r\n    .linkColor((link) => link.ref ? 0xf7b831 : 0xffffff)\r\n    .nodeOpacity(1)\r\n    .nodeVal(node => node.type === 'dir' ? 30 : node.type === 'file' ? 20 : 5)\r\n    .nodeResolution(24)\r\n    .nodeColor(node => node.id === hoverNodeId\r\n      ? 0xffffff\r\n      : node.type === 'dir'\r\n        ? 0x5ffcab\r\n        : node.type === 'file' ? 0x32fcee : node.type === 'class' ? 0xd14ee8 : 0xfc8a32)\r\n    .onNodeClick((node, e) => {\r\n      if (e.shiftKey) {\r\n        const distance = 80\r\n        const distRatio = 1 + distance / Math.hypot(node.x, node.y, node.z)\r\n\r\n        const newPos = node.x || node.y || node.z\r\n          ? { x: node.x * distRatio, y: node.y * distRatio, z: node.z * distRatio }\r\n          : { x: 0, y: 0, z: distance }\r\n\r\n        graph.cameraPosition(\r\n          newPos,\r\n          node,\r\n          3000\r\n        )\r\n      } else {\r\n        if (node.type !== 'dir') {\r\n          const tooltip = document.getElementById('code-tooltip')\r\n          tooltip.classList.remove('hidden')\r\n          const tooltipContents = document.getElementById('code-tooltip-contents')\r\n          tooltipContents.innerText = node.contents\r\n        }\r\n      }\r\n    })\r\n    .onNodeHover((node, previousNode) => {\r\n      highlightNodes.clear()\r\n      highlightLinks.clear()\r\n\r\n      if (node !== null) {\r\n        hoverNodeId = node.id\r\n        highlightNodes.add(node)\r\n        node.links.forEach(l => highlightLinks.add(l))\r\n      } else {\r\n        hoverNodeId = -1\r\n      }\r\n\r\n      if (hasDendogram) {\r\n        updateDendogram(hoverNodeId)\r\n      }\r\n\r\n      graph.nodeColor(graph.nodeColor())\r\n    })\r\n    .dagMode('radialin')\r\n    .enableNodeDrag(false)\r\n    .zoomToFit()\r\n\r\n  graph.camera().position.z = 5000\r\n  graph.onEngineStop(() => {\r\n    const spinner = document.getElementById('loadingSpinner')\r\n    const button = document.getElementById('loadingButton')\r\n\r\n    spinner.classList.add('hidden')\r\n    button.classList.remove('hidden')\r\n  })\r\n}\r\n\r\nexport function updateNetwork (hoverId) {\r\n  hoverNodeId = hoverId\r\n  graph.nodeColor(graph.nodeColor())\r\n    .linkWidth(graph.linkWidth())\r\n\r\n  const hoverNode = flattenedData.find(n => n.id === hoverNodeId)\r\n\r\n  if (hoverNodeId !== -1) {\r\n    const distance = 200\r\n    const distRatio = 1 + distance / Math.hypot(hoverNode.x, hoverNode.y, hoverNode.z)\r\n\r\n    const newPos = hoverNode.x || hoverNode.y || hoverNode.z\r\n      ? { x: hoverNode.x * distRatio, y: hoverNode.y * distRatio, z: hoverNode.z * distRatio }\r\n      : { x: 0, y: 0, z: distance }\r\n\r\n    graph.cameraPosition(\r\n      newPos,\r\n      hoverNode,\r\n      5000\r\n    )\r\n\r\n    hoverNodeId = hoverNode.id\r\n    graph.nodeColor(graph.nodeColor())\r\n      .linkWidth(graph.linkWidth())\r\n  }\r\n}\r\n\r\n// Code to close the code modal\r\nconst legendChevron = document.getElementById('simpleChevron')\r\nconst legend = document.getElementById('legend')\r\n\r\nlegendChevron.onclick = (e) => {\r\n  if (!legendChevron.classList.contains('legendClick')) {\r\n    legendChevron.classList.add('legendClick')\r\n    legend.classList.add('expand')\r\n  } else {\r\n    legendChevron.classList.remove('legendClick')\r\n    legend.classList.remove('expand')\r\n  }\r\n}\r\n",
+            "children": [
+              {
+                "start": 4,
+                "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\visualizations\\network.js",
+                "depth": 2,
+                "id": 32,
+                "type": "other",
+                "collapsed": false,
+                "name": "const flatTree = (level = 0) => ({ children = [], ...object }) => [\r",
+                "children": [],
+                "links": [],
+                "references": [],
+                "end": 5,
+                "contents": "const flatTree = (level = 0) => ({ children = [], ...object }) => [\r\n  { ...object, level }, ...children.flatMap(flatTree(level + 1))\r"
+              },
+              {
+                "start": 17,
+                "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\visualizations\\network.js",
+                "depth": 2,
+                "id": 33,
+                "type": "other",
+                "collapsed": false,
+                "name": "export const codeData = { nodes: flattenedData, links: flattenedData.map(node => node.links).flat() }\r",
+                "children": [
+                  {
+                    "start": 21,
+                    "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\visualizations\\network.js",
+                    "depth": 2,
+                    "id": 34,
+                    "type": "func",
+                    "collapsed": false,
+                    "name": "export function drawNetwork (d, el, hasDendogram) {\r",
+                    "children": [
+                      {
+                        "start": 37,
+                        "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\visualizations\\network.js",
+                        "depth": 2,
+                        "id": 35,
+                        "type": "other",
+                        "collapsed": false,
+                        "name": "    .onNodeClick((node, e) => {\r",
+                        "children": [
+                          {
+                            "start": 38,
+                            "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\visualizations\\network.js",
+                            "depth": 2,
+                            "id": 36,
+                            "type": "cond",
+                            "collapsed": false,
+                            "name": "      if (e.shiftKey) {\r",
+                            "children": [],
+                            "links": [],
+                            "references": [],
+                            "end": 44,
+                            "contents": "      if (e.shiftKey) {\r\n        const distance = 80\r\n        const distRatio = 1 + distance / Math.hypot(node.x, node.y, node.z)\r\n\r\n        const newPos = node.x || node.y || node.z\r\n          ? { x: node.x * distRatio, y: node.y * distRatio, z: node.z * distRatio }\r\n          : { x: 0, y: 0, z: distance }\r"
+                          }
+                        ],
+                        "links": [
+                          {
+                            "source": 35,
+                            "target": 36,
+                            "ref": false
+                          }
+                        ],
+                        "references": [],
+                        "end": 51,
+                        "contents": "    .onNodeClick((node, e) => {\r\n      if (e.shiftKey) {\r\n        const distance = 80\r\n        const distRatio = 1 + distance / Math.hypot(node.x, node.y, node.z)\r\n\r\n        const newPos = node.x || node.y || node.z\r\n          ? { x: node.x * distRatio, y: node.y * distRatio, z: node.z * distRatio }\r\n          : { x: 0, y: 0, z: distance }\r\n\r\n        graph.cameraPosition(\r\n          newPos,\r\n          node,\r\n          3000\r\n        )\r\n      } else {\r"
+                      },
+                      {
+                        "start": 52,
+                        "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\visualizations\\network.js",
+                        "depth": 2,
+                        "id": 37,
+                        "type": "cond",
+                        "collapsed": false,
+                        "name": "        if (node.type !== 'dir') {\r",
+                        "children": [],
+                        "links": [],
+                        "references": [],
+                        "end": 57,
+                        "contents": "        if (node.type !== 'dir') {\r\n          const tooltip = document.getElementById('code-tooltip')\r\n          tooltip.classList.remove('hidden')\r\n          const tooltipContents = document.getElementById('code-tooltip-contents')\r\n          tooltipContents.innerText = node.contents\r\n        }\r"
+                      }
+                    ],
+                    "links": [
+                      {
+                        "source": 34,
+                        "target": 35,
+                        "ref": false
+                      },
+                      {
+                        "source": 34,
+                        "target": 37,
+                        "ref": false
+                      }
+                    ],
+                    "references": [],
+                    "end": 58,
+                    "contents": "export function drawNetwork (d, el, hasDendogram) {\r\n  graph = ForceGraph3D()(el)\r\n    .graphData(d)\r\n    .showNavInfo(false)\r\n    .linkOpacity(0.25)\r\n    .linkCurvature(0.33)\r\n    .linkWidth((link) => highlightLinks.has(link) ? 6 : 2)\r\n    .linkColor((link) => link.ref ? 0xf7b831 : 0xffffff)\r\n    .nodeOpacity(1)\r\n    .nodeVal(node => node.type === 'dir' ? 30 : node.type === 'file' ? 20 : 5)\r\n    .nodeResolution(24)\r\n    .nodeColor(node => node.id === hoverNodeId\r\n      ? 0xffffff\r\n      : node.type === 'dir'\r\n        ? 0x5ffcab\r\n        : node.type === 'file' ? 0x32fcee : node.type === 'class' ? 0xd14ee8 : 0xfc8a32)\r\n    .onNodeClick((node, e) => {\r\n      if (e.shiftKey) {\r\n        const distance = 80\r\n        const distRatio = 1 + distance / Math.hypot(node.x, node.y, node.z)\r\n\r\n        const newPos = node.x || node.y || node.z\r\n          ? { x: node.x * distRatio, y: node.y * distRatio, z: node.z * distRatio }\r\n          : { x: 0, y: 0, z: distance }\r\n\r\n        graph.cameraPosition(\r\n          newPos,\r\n          node,\r\n          3000\r\n        )\r\n      } else {\r\n        if (node.type !== 'dir') {\r\n          const tooltip = document.getElementById('code-tooltip')\r\n          tooltip.classList.remove('hidden')\r\n          const tooltipContents = document.getElementById('code-tooltip-contents')\r\n          tooltipContents.innerText = node.contents\r\n        }\r\n      }\r"
+                  }
+                ],
+                "links": [
+                  {
+                    "source": 34,
+                    "target": 33,
+                    "ref": false
+                  }
+                ],
+                "references": [],
+                "end": 59,
+                "contents": "export const codeData = { nodes: flattenedData, links: flattenedData.map(node => node.links).flat() }\r\n\r\nconsole.log(flattenedData.map(node => node.links).flat().every(l => flattenedData.some(n => n.id === l.source || l.target)))\r\n\r\nexport function drawNetwork (d, el, hasDendogram) {\r\n  graph = ForceGraph3D()(el)\r\n    .graphData(d)\r\n    .showNavInfo(false)\r\n    .linkOpacity(0.25)\r\n    .linkCurvature(0.33)\r\n    .linkWidth((link) => highlightLinks.has(link) ? 6 : 2)\r\n    .linkColor((link) => link.ref ? 0xf7b831 : 0xffffff)\r\n    .nodeOpacity(1)\r\n    .nodeVal(node => node.type === 'dir' ? 30 : node.type === 'file' ? 20 : 5)\r\n    .nodeResolution(24)\r\n    .nodeColor(node => node.id === hoverNodeId\r\n      ? 0xffffff\r\n      : node.type === 'dir'\r\n        ? 0x5ffcab\r\n        : node.type === 'file' ? 0x32fcee : node.type === 'class' ? 0xd14ee8 : 0xfc8a32)\r\n    .onNodeClick((node, e) => {\r\n      if (e.shiftKey) {\r\n        const distance = 80\r\n        const distRatio = 1 + distance / Math.hypot(node.x, node.y, node.z)\r\n\r\n        const newPos = node.x || node.y || node.z\r\n          ? { x: node.x * distRatio, y: node.y * distRatio, z: node.z * distRatio }\r\n          : { x: 0, y: 0, z: distance }\r\n\r\n        graph.cameraPosition(\r\n          newPos,\r\n          node,\r\n          3000\r\n        )\r\n      } else {\r\n        if (node.type !== 'dir') {\r\n          const tooltip = document.getElementById('code-tooltip')\r\n          tooltip.classList.remove('hidden')\r\n          const tooltipContents = document.getElementById('code-tooltip-contents')\r\n          tooltipContents.innerText = node.contents\r\n        }\r\n      }\r\n    })\r"
+              },
+              {
+                "start": 60,
+                "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\visualizations\\network.js",
+                "depth": 2,
+                "id": 38,
+                "type": "other",
+                "collapsed": false,
+                "name": "    .onNodeHover((node, previousNode) => {\r",
+                "children": [
+                  {
+                    "start": 64,
+                    "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\visualizations\\network.js",
+                    "depth": 2,
+                    "id": 39,
+                    "type": "cond",
+                    "collapsed": false,
+                    "name": "      if (node !== null) {\r",
+                    "children": [
+                      {
+                        "start": 67,
+                        "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\visualizations\\network.js",
+                        "depth": 2,
+                        "id": 40,
+                        "type": "loop",
+                        "collapsed": false,
+                        "name": "        node.links.forEach(l => highlightLinks.add(l))\r",
+                        "children": [],
+                        "links": [],
+                        "references": [],
+                        "end": 68,
+                        "contents": "        node.links.forEach(l => highlightLinks.add(l))\r\n      } else {\r"
+                      }
+                    ],
+                    "links": [
+                      {
+                        "source": 39,
+                        "target": 40,
+                        "ref": false
+                      }
+                    ],
+                    "references": [],
+                    "end": 70,
+                    "contents": "      if (node !== null) {\r\n        hoverNodeId = node.id\r\n        highlightNodes.add(node)\r\n        node.links.forEach(l => highlightLinks.add(l))\r\n      } else {\r\n        hoverNodeId = -1\r\n      }\r"
+                  },
+                  {
+                    "start": 72,
+                    "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\visualizations\\network.js",
+                    "depth": 2,
+                    "id": 41,
+                    "type": "cond",
+                    "collapsed": false,
+                    "name": "      if (hasDendogram) {\r",
+                    "children": [],
+                    "links": [],
+                    "references": [
+                      {
+                        "path": "./dendogram",
+                        "name": "updateDendogram"
+                      }
+                    ],
+                    "end": 74,
+                    "contents": "      if (hasDendogram) {\r\n        updateDendogram(hoverNodeId)\r\n      }\r"
+                  }
+                ],
+                "links": [
+                  {
+                    "source": 39,
+                    "target": 38,
+                    "ref": false
+                  },
+                  {
+                    "source": 41,
+                    "target": 38,
+                    "ref": false
+                  }
+                ],
+                "references": [],
+                "end": 77,
+                "contents": "    .onNodeHover((node, previousNode) => {\r\n      highlightNodes.clear()\r\n      highlightLinks.clear()\r\n\r\n      if (node !== null) {\r\n        hoverNodeId = node.id\r\n        highlightNodes.add(node)\r\n        node.links.forEach(l => highlightLinks.add(l))\r\n      } else {\r\n        hoverNodeId = -1\r\n      }\r\n\r\n      if (hasDendogram) {\r\n        updateDendogram(hoverNodeId)\r\n      }\r\n\r\n      graph.nodeColor(graph.nodeColor())\r\n    })\r"
+              },
+              {
+                "start": 83,
+                "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\visualizations\\network.js",
+                "depth": 2,
+                "id": 42,
+                "type": "other",
+                "collapsed": false,
+                "name": "  graph.onEngineStop(() => {\r",
+                "children": [],
+                "links": [],
+                "references": [],
+                "end": 89,
+                "contents": "  graph.onEngineStop(() => {\r\n    const spinner = document.getElementById('loadingSpinner')\r\n    const button = document.getElementById('loadingButton')\r\n\r\n    spinner.classList.add('hidden')\r\n    button.classList.remove('hidden')\r\n  })\r"
+              },
+              {
+                "start": 92,
+                "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\visualizations\\network.js",
+                "depth": 2,
+                "id": 43,
+                "type": "func",
+                "collapsed": false,
+                "name": "export function updateNetwork (hoverId) {\r",
+                "children": [
+                  {
+                    "start": 99,
+                    "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\visualizations\\network.js",
+                    "depth": 2,
+                    "id": 44,
+                    "type": "cond",
+                    "collapsed": false,
+                    "name": "  if (hoverNodeId !== -1) {\r",
+                    "children": [],
+                    "links": [],
+                    "references": [],
+                    "end": 105,
+                    "contents": "  if (hoverNodeId !== -1) {\r\n    const distance = 200\r\n    const distRatio = 1 + distance / Math.hypot(hoverNode.x, hoverNode.y, hoverNode.z)\r\n\r\n    const newPos = hoverNode.x || hoverNode.y || hoverNode.z\r\n      ? { x: hoverNode.x * distRatio, y: hoverNode.y * distRatio, z: hoverNode.z * distRatio }\r\n      : { x: 0, y: 0, z: distance }\r"
+                  }
+                ],
+                "links": [
+                  {
+                    "source": 44,
+                    "target": 43,
+                    "ref": false
+                  }
+                ],
+                "references": [],
+                "end": 116,
+                "contents": "export function updateNetwork (hoverId) {\r\n  hoverNodeId = hoverId\r\n  graph.nodeColor(graph.nodeColor())\r\n    .linkWidth(graph.linkWidth())\r\n\r\n  const hoverNode = flattenedData.find(n => n.id === hoverNodeId)\r\n\r\n  if (hoverNodeId !== -1) {\r\n    const distance = 200\r\n    const distRatio = 1 + distance / Math.hypot(hoverNode.x, hoverNode.y, hoverNode.z)\r\n\r\n    const newPos = hoverNode.x || hoverNode.y || hoverNode.z\r\n      ? { x: hoverNode.x * distRatio, y: hoverNode.y * distRatio, z: hoverNode.z * distRatio }\r\n      : { x: 0, y: 0, z: distance }\r\n\r\n    graph.cameraPosition(\r\n      newPos,\r\n      hoverNode,\r\n      5000\r\n    )\r\n\r\n    hoverNodeId = hoverNode.id\r\n    graph.nodeColor(graph.nodeColor())\r\n      .linkWidth(graph.linkWidth())\r\n  }\r"
+              },
+              {
+                "start": 123,
+                "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\visualizations\\network.js",
+                "depth": 2,
+                "id": 45,
+                "type": "other",
+                "collapsed": false,
+                "name": "legendChevron.onclick = (e) => {\r",
+                "children": [
+                  {
+                    "start": 124,
+                    "path": "C:\\Users\\Matt's PC\\Documents\\Code\\3d-vis\\src\\visualizations\\network.js",
+                    "depth": 2,
+                    "id": 46,
+                    "type": "cond",
+                    "collapsed": false,
+                    "name": "  if (!legendChevron.classList.contains('legendClick')) {\r",
+                    "children": [],
+                    "links": [],
+                    "references": [],
+                    "end": 127,
+                    "contents": "  if (!legendChevron.classList.contains('legendClick')) {\r\n    legendChevron.classList.add('legendClick')\r\n    legend.classList.add('expand')\r\n  } else {\r"
+                  }
+                ],
+                "links": [
+                  {
+                    "source": 46,
+                    "target": 45,
+                    "ref": false
+                  }
+                ],
+                "references": [],
+                "end": 130,
+                "contents": "legendChevron.onclick = (e) => {\r\n  if (!legendChevron.classList.contains('legendClick')) {\r\n    legendChevron.classList.add('legendClick')\r\n    legend.classList.add('expand')\r\n  } else {\r\n    legendChevron.classList.remove('legendClick')\r\n    legend.classList.remove('expand')\r\n  }\r"
+              }
+            ],
+            "links": [
+              {
+                "source": 32,
+                "target": 31,
+                "ref": false
+              },
+              {
+                "source": 33,
+                "target": 31,
+                "ref": false
+              },
+              {
+                "source": 38,
+                "target": 31,
+                "ref": false
+              },
+              {
+                "source": 42,
+                "target": 31,
+                "ref": false
+              },
+              {
+                "source": 43,
+                "target": 31,
+                "ref": false
+              },
+              {
+                "source": 45,
+                "target": 31,
+                "ref": false
+              }
+            ]
+          }
+        ],
+        "links": [
+          {
+            "source": 15,
+            "target": 14,
+            "ref": false
+          },
+          {
+            "source": 31,
+            "target": 14,
+            "ref": false
+          }
+        ]
+      }
+    ],
+    "collapsed": false,
+    "references": [],
+    "links": [
+      {
+        "source": 1,
+        "target": 0,
+        "ref": false
+      },
+      {
+        "source": 14,
+        "target": 0,
+        "ref": false
+      }
+    ]
+  }
+]

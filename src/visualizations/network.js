@@ -1,6 +1,7 @@
 import ForceGraph3D from '3d-force-graph'
-import * as data from '../../data/data.json'
+import * as data from '../../data/new-data.json'
 import { updateDendogram } from './dendogram'
+import { getNodeColor } from '../utils'
 
 const flatTree = (level = 0) => ({ children = [], ...object }) => [
   { ...object, level }, ...children.flatMap(flatTree(level + 1))
@@ -17,22 +18,32 @@ let graph
 
 export const codeData = { nodes: flattenedData, links: flattenedData.map(node => node.links).flat() }
 
-export function drawNetwork (d, el, hasDendogram) {
+export function drawNetwork (d, el, hasDendogram, options) {
+  const copy = { ...d }
+
+  const nd = { nodes: [], links: [] }
+  const filterData = () => {
+    if (options === undefined) {
+      return copy
+    } else {
+      nd.nodes = copy.nodes.filter((node) => options[node.type])
+      const nodeIds = new Set(nd.nodes.map((node) => node.id))
+      nd.links = copy.links.filter((link) => nodeIds.has(link.source.id) && nodeIds.has(link.target.id))
+      return nd
+    }
+  }
+
   graph = ForceGraph3D()(el)
-    .graphData(d)
+    .graphData(filterData(d))
     .showNavInfo(false)
-    .linkOpacity(0.4)
+    .linkOpacity(0.25)
     .linkCurvature(0.33)
-    .linkWidth((link) => highlightLinks.has(link) ? 3 : 1)
+    .linkWidth((link) => highlightLinks.has(link) ? 6 : 2)
     .linkColor((link) => link.ref ? 0xf7b831 : 0xffffff)
-    .nodeOpacity(0.5)
-    .nodeVal(node => node.type === 'dir' ? 18 : node.type === 'file' ? 8 : 1)
-    .nodeResolution(32)
-    .nodeColor(node => node.id === hoverNodeId
-      ? 0xffffff
-      : node.type === 'dir'
-        ? 0x5ffcab
-        : node.type === 'file' ? 0x32fcee : node.type === 'class' ? 0xd14ee8 : 0xfc8a32)
+    .nodeOpacity(0.75)
+    .nodeVal(node => node.type === 'dir' ? 30 : node.type === 'file' ? 20 : 5)
+    .nodeResolution(24)
+    .nodeColor((node) => getNodeColor(node, hoverNodeId))
     .onNodeClick((node, e) => {
       if (e.shiftKey) {
         const distance = 80
@@ -76,7 +87,9 @@ export function drawNetwork (d, el, hasDendogram) {
     })
     .dagMode('radialin')
     .enableNodeDrag(false)
+    .zoomToFit()
 
+  graph.camera().position.z = 5000
   graph.onEngineStop(() => {
     const spinner = document.getElementById('loadingSpinner')
     const button = document.getElementById('loadingButton')
@@ -104,7 +117,7 @@ export function updateNetwork (hoverId) {
     graph.cameraPosition(
       newPos,
       hoverNode,
-      2000
+      5000
     )
 
     hoverNodeId = hoverNode.id

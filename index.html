@@ -1,97 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<link rel="stylesheet" href="https://use.typekit.net/dzr8kuf.css">
-		<style> body { margin: 0; } </style>
-		<link rel="stylesheet" href="./style.css" />
-	</head>
-  <body>
-		<div id="nav" class="hidden">
-			<ul id="links">
-				<li class="navLink" id="onboardingLink">Introduction</li>
-				<li class="navLink selected" id="visLink">Visualization</li>
-				<li class="navLink" id="aboutLink">About</li>
-			</ul>
-		</div>
-		<div id="code-tooltip" class="hidden">
-			<p id="tooltip-close">Close</p>
-			<div id="code-tooltip-contents"></div>
-		</div>
-		<div id="onboarding">
-			<h2 id="onboardingTitle">Exploring Hidden Worlds</h2>
-			<div id="onboardInfo">
-				<p id="onboardingText"></p>
-				<p id="onboardingAlt"></p>
-				<div id="onboardingControls">
-					<button class="onboardingButton" id="prevOnboardingStep">&larr; Prev</button>
-					<button class="onboardingButton" id="skipOnboarding">Skip</button>
-					<button class="onboardingButton" id="nextOnboardingStep">Next &rarr;</button>
-				</div>
+
+<head>
+	<link rel="stylesheet" href="https://use.typekit.net/dzr8kuf.css">
+	<style>
+		body {
+			margin: 0;
+		}
+	</style>
+	<link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+	<div id="nav" class="hidden">
+		<ul id="links">
+			<li class="navLink" id="onboardingLink">Introduction</li>
+			<li class="navLink selected" id="visLink">Visualization</li>
+			<li class="navLink" id="aboutLink">About</li>
+		</ul>
+	</div>
+	<div id="code-tooltip" class="hidden">
+		<p id="tooltip-close">Close</p>
+		<div id="code-tooltip-contents"></div>
+	</div>
+	<div id="onboarding">
+		<h2 id="onboardingTitle">Exploring Hidden Worlds</h2>
+		<div id="onboardInfo">
+			<p id="onboardingText"></p>
+			<p id="onboardingAlt"></p>
+			<div id="onboardingControls">
+				<button class="onboardingButton" id="prevOnboardingStep">&larr; Prev</button>
+				<button class="onboardingButton" id="skipOnboarding">Skip</button>
+				<button class="onboardingButton" id="nextOnboardingStep">Next &rarr;</button>
 			</div>
-			<div id="onboardingVis"></div>
 		</div>
-		<div id="main" class="hidden">
-			<div id="loading">
-				<h3 id="loadingTitle">Exploring Hidden Worlds</h3>
-				<p id="loadingText">
-					Now that you know the pieces of the visualization, the network on this page visualizes <a href="https://leafletjs.com/">Leaflet</a> An open-source JavaScript library for building interactive maps. 
-					It's popular tool used on many websites though that you may have never noticed before. Take time to explore the network and see the intricacies of the project, 
-					and remember the previous visualization of this website. Whether we're aware of it or not, the technology we use every day is complicated, but that doesn't mean it shouldn't be understood. 
-					<em>Exploring Hidden Worlds</em> is an example of what it takes to build modern software and the complexity of code. 
-				</p>
-				<div class="lds-dual-ring" id="loadingSpinner"></div>
-				<button type="button" class="hidden" id="loadingButton">Explore</button>
-			</div>
-			<div id="vis-container">
-				<div id="legendContainer">
-					<div id="legend" class="expand">
-						<div id="legendHeader">
-							<h3 id="legendTitle">Legend:</h3>
-							<h2 id="simpleChevron" class="legendClick">^</h2>
-						</div>
-						<p class="legend-title">Node types:</p>
-						<ul id="node-types">
-							<li><div class="node" id="node-dir"></div>Directory</li>
-							<li><div class="node" id="node-file"></div>File</li>
-							<li><div class="node" id="node-class"></div>Class</li>
-							<li><div class="node" id="node-stmnt"></div>Statement</li>
-						</ul>
-						<p class="legend-title">Link types:</p>
-						<ul id="link-types">
-							<li><div class="link" id="link-heir"></div>File Structure</li>
-							<li><div class="link" id="link-ref"></div>Code Reference</li>
-						</ul>
-						<p class="legend-title">Controls:</p>
+		<div id="onboardingVis"></div>
+	</div>
+	<div id="main" class="hidden">
+		<div id="loading">
+			<h3 id="loadingTitle">Exploring Hidden Worlds</h3>
+			<p id="loadingText">
+				Now that you know the pieces of the visualization, the network on this page visualizes <a
+					href="https://leafletjs.com/">Leaflet</a> An open-source JavaScript library for building interactive maps.
+				It's popular tool used on many websites though that you may have never noticed before. Take time to explore the
+				network and see the intricacies of the project,
+				and remember the previous visualization of this website. Whether we're aware of it or not, the technology we use
+				every day is complicated, but that doesn't mean it shouldn't be understood.
+				<em>Exploring Hidden Worlds</em> is an example of what it takes to build modern software and the complexity of
+				code.
+			</p>
+			<div class="lds-dual-ring" id="loadingSpinner"></div>
+			<button type="button" class="hidden" id="loadingButton">Explore</button>
+		</div>
+		<div id="vis-container">
+			<div id="legendContainer">
+				<div id="legend" class="expand">
+					<div id="legendHeader">
+						<h3 id="legendTitle">Legend:</h3>
+						<h2 id="simpleChevron" class="legendClick">^</h2>
+					</div>
+					<p class="legend-title">Node types:</p>
+					<ul id="node-types">
+						<li>
+							<div class="node" id="node-dir"></div>Directory
+						</li>
+						<li>
+							<div class="node" id="node-file"></div>File
+						</li>
+						<li>
+							<div class="node" id="node-class"></div>Class
+						</li>
+						<li>
+							<div class="node" id="node-stmnt"></div>Statement
+						</li>
+					</ul>
+					<p class="legend-title">Link types:</p>
+					<ul id="link-types">
+						<li>
+							<div class="link" id="link-heir"></div>File Structure
+						</li>
+						<li>
+							<div class="link" id="link-ref"></div>Code Reference
+						</li>
+					</ul>
+					<!-- <p class="legend-title">Controls:</p>
 						<ul id="controls">
 							<li>Left-Click: Rotate</li>
 							<li>Right-Click: Pan</li>
 							<li>Mousewheel: Zoom</li>
 							<li>Shift + Left-Click: Center</li>
+						</ul> -->
+				</div>
+			</div>
+			<div id="dendogram"></div>
+			<div id="network"></div>
+			<div id="options" class="clicked">
+				<div id="vis-divider" class="clicked">
+					<div id="settings">
+						<h4>Settings:</h4>
+						<ul>
+							Show Node Types:
+							<li>
+								<input type="checkbox" class="option" id="showDir" name="showDir" value="dir" checked>
+								Directories
+							</li>
+							<li>
+								<input type="checkbox" class="option" id="showFile" name="showFile" value="file" checked>
+								Files
+							</li>
+							<li>
+								<input type="checkbox" class="option" id="showClass" name="showClass" value="class" checked>
+								Classes
+							</li>
+							<li>
+								<input type="checkbox" class="option" id="showFunc" name="showFunc" value="func" checked>
+								Functions
+							</li>
+							<li>
+								<input type="checkbox" class="option" id="showLoops" name="showLoops" value="loop" checked>
+								Loops
+							</li>
+							<li>
+								<input type="checkbox" class="option" id="showCond" name="showCond" value="cond" checked>
+								Conditionals
+							</li>
+							<li>
+								<input type="checkbox" class="option" id="showData" name="showData" value="data" checked>
+								Objects
+							</li>
+							<li>
+								<input type="checkbox" class="option" id="showOther" name="showOther" value="other" checked>
+								Other
+							</li>
+						</ul>
+						<ul>
+							Show Link Types:
+							<li>
+								<input type="checkbox" class="option" id="showHeirarchy" name="showHeirarchy" value="heir" checked>
+								Heirarchy
+							</li>
+							<li>
+								<input type="checkbox" class="option" id="showReferences" name="showReferences" value="ref" checked>
+								References
+							</li>
 						</ul>
 					</div>
 				</div>
-				<div id="dendogram"></div>
-				<div id="vis-border">
-					<img id="chevron" src="/assets/chevron.png"/>
-					<div id="vis-divider"></div>
+				<div id="chevron" class="clicked">
+					<img id="chevron-icon" src="/assets/chevron.png" />
+					<p>Options</p>
 				</div>
-				<div id="network"></div>
-				<script type="module" src="/index.js"></script>
 			</div>
+			<script type="module" src="/learn.js"></script>
 		</div>
-		<div id="about" class="hidden">
-      <h2 id="aboutTitle">
-        About the project
-      </h2>
-      <p id="summary">
-        We are becoming more dependent on technology, and yet fewer people know how it works. Software should not be created behind closed doors especially when it can have larger ramifications on our day-to-day lives. 
-        <em>Exploring Hidden Worlds</em> aims to lift the veil on what it takes to build modern software through an explorable 3D visualization. Through learning what it takes to build modern software, 
-        and having the ability to understand it people can have more agency when deciding whether to adopt new, potentially harmful, technologies
-        <br><br>
-        Created by <a href="http:/www.mattblanco.me">Matt Blanco</a> as a Honors in the Discipline project at Northeastern University, the project combines software engineering with information design to create something beautiful but usable.
-        Building off of an idea from 2020, the project explores how software can look different posing the question: what does it mean to code?. 
-      </p>
-    </div>
-		<div id="footer">This project was created by <a href="https://matt-blanco.github.io" target="_blank">Matt Blanco</a></div>
-  </body>
+	</div>
+	<div id="about" class="hidden">
+		<h2 id="aboutTitle">
+			About the project
+		</h2>
+		<p id="summary">
+			We are becoming more dependent on technology, and yet fewer people know how it works. Software should not be
+			created behind closed doors especially when it can have larger ramifications on our day-to-day lives.
+			<em>Exploring Hidden Worlds</em> aims to lift the veil on what it takes to build modern software through an
+			explorable 3D visualization. Through learning what it takes to build modern software,
+			and having the ability to understand it people can have more agency when deciding whether to adopt new,
+			potentially harmful, technologies
+			<br><br>
+			Created by <a href="http:/www.mattblanco.me">Matt Blanco</a> as a Honors in the Discipline project at Northeastern
+			University, the project combines software engineering with information design to create something beautiful but
+			usable.
+			Building off of an idea from 2020, the project explores how software can look different posing the question: what
+			does it mean to code?.
+		</p>
+	</div>
+	<div id="footer">This project was created by <a href="https://matt-blanco.github.io" target="_blank">Matt Blanco</a>
+	</div>
+</body>
+
 </html>
