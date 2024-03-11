@@ -10,8 +10,9 @@ let hoverNodeId = -1
 
 export function drawDendogram (data, id, showDendogram) {
   show = showDendogram
-  const width = window.innerWidth * 0.3
-  const height = window.innerHeight / 2
+  const renderedElement = document.getElementById(id)
+  const width = renderedElement.offsetWidth
+  const height = renderedElement.offsetHeight
 
   dendogram = d3.select(`#${id}`)
     .append('svg')
@@ -23,9 +24,9 @@ export function drawDendogram (data, id, showDendogram) {
 
   const cluster = d3
     .cluster()
-    .size([360, width / 3])
+    .size([360, (height / 2 - 5)])
 
-  const root = d3.hierarchy(heirarchyData.default[0], d => d.children)
+  const root = d3.hierarchy(heirarchyData.default.d[0], d => d.children)
 
   cluster(root)
 

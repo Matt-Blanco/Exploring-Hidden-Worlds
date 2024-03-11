@@ -171,9 +171,8 @@ ul {
 }
 
 #minimuzedView {
-  position: absolute;
-  width: 30%;
-  top: 50%;
+  height: 36vh;
+  width: 30vw;
   z-index: 7;
   overflow-y: hidden;
   overflow-x: hidden;
@@ -259,11 +258,13 @@ ul {
   z-index: 1;
 }
 
+#hud {
+  width: 30vw;
+}
+
 #legendContainer {
-  position: absolute;
   opacity: 60%;
   z-index: 2;
-  margin-left: 2rem;
   top: 8vh;
   width: auto;
 }
@@ -280,10 +281,6 @@ ul {
 #legend.expand {
   transition: ease-in-out 0.5s;
   height: fit-content
-}
-
-#legend > * {
-  padding-left: 1vw;
 }
 
 #legendTitle {

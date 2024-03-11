@@ -7,7 +7,8 @@ const flatTree = (level = 0) => ({ children = [], ...object }) => [
   { ...object, level }, ...children.flatMap(flatTree(level + 1))
 ]
 
-const flattenedData = data.default.flatMap(flatTree())
+console.log(data.d)
+const flattenedData = data.d.flatMap(flatTree())
 
 let hoverNodeId = -1
 
@@ -135,3 +136,9 @@ tooltipClose.onclick = (e) => {
 //     legend.classList.remove('expand')
 //   }
 // }
+
+const projectTitle = document.getElementById('projectTitle')
+const projectDescr = document.getElementById('projectDescription')
+
+projectTitle.innerText = `Project Name: ${data.title}`
+projectDescr.innerText = data.descr
