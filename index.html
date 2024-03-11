@@ -55,14 +55,14 @@
 		<div id="vis-container">
 			<div id="hud">
 				<div id="projectInfo">
-					<h2 id="projectTitle"></h2>
-					<p id="projectDescription"></p>
+					<h2 id="projectTitle" style="margin-bottom: 0;"></h2>
+					<p id="projectDescription" style="margin-bottom: 0;"></p>
 				</div>
 				<div id="legendContainer">
 					<div id="legend" class="expand">
 						<div id="legendHeader">
-							<h3 style="width: 100%;" id="legendTitle">Legend:</h3>
-							<p style="font-size: 8pt;"><em>Note: Node and Link types can be toggled<br> to update the shape of the
+							<h3 style="width: 100%; margin-bottom: 0;" id="legendTitle">Legend:</h3>
+							<p style="font-size: 8pt; margin-bottom: 0;"><em>Note: Node and Link types can be toggled<br> to update the shape of the
 									visualization.</em></p>
 							<!-- <h2 id="simpleChevron" class="legendClick">^</h2> -->
 						</div>
@@ -144,8 +144,11 @@
 					</div>
 				</div>
 				<div id="minimuzedView">
-					<img title="button to swap the views of the 2D and 3D Visualizations"
+					<div id="minimizedTitle">
+						<h3>Minimized View </h3>
+						<img title="button to swap the views of the 2D and 3D Visualizations"
 						alt="button to swap the views of the 2D and 3D Visualizations" id="swapIcon" src="/assets/swap.png" />
+					</div>
 				</div>
 			</div>
 			<div id="mainView"></div>

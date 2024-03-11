@@ -140,5 +140,5 @@ tooltipClose.onclick = (e) => {
 const projectTitle = document.getElementById('projectTitle')
 const projectDescr = document.getElementById('projectDescription')
 
-projectTitle.innerText = `Project Name: ${data.title}`
+projectTitle.innerText = `Visualized Project: ${data.title}`
 projectDescr.innerText = data.descr

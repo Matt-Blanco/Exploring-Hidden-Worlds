@@ -163,12 +163,24 @@ ul {
   z-index: 1;
 }
 
-#swapIcon {
-  position: absolute;
-  width: 1rem;
-  top: 45%;
-  left: 90%;
+#minimizedTitle {
   opacity: 80%;
+  margin-left: 4vw;
+  display: flex;
+  width: 100%;
+  margin-bottom: 1vh;
+}
+
+#minimizedTitle > h3 {
+  margin: 0;
+  font-size: 12pt;
+}
+
+#swapIcon {
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-top: 1%;
+  margin-left: 2%;
 }
 
 #swapIcon:hover {
@@ -176,7 +188,7 @@ ul {
 }
 
 #minimuzedView {
-  height: 36vh;
+  height: 40vh;
   width: 30vw;
   z-index: 7;
   overflow-y: hidden;

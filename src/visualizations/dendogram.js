@@ -12,7 +12,7 @@ export function drawDendogram (data, id, showDendogram) {
   show = showDendogram
   const renderedElement = document.getElementById(id)
   const width = renderedElement.offsetWidth
-  const height = renderedElement.offsetHeight
+  const height = renderedElement.offsetHeight - (document.getElementById('minimizedTitle').offsetHeight + 10)
 
   dendogram = d3.select(`#${id}`)
     .append('svg')

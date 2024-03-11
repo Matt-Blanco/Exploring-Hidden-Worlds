@@ -27,7 +27,7 @@ function incrementOnboarding () {
 function closeOnboarding () {
   document.getElementById('onboarding').classList.add('hidden')
   document.getElementById('nav').classList.remove('hidden')
-  // drawNetwork(codeData, document.getElementById('mainView'), true)
+  drawNetwork(codeData, document.getElementById('mainView'), true)
   drawDendogram(codeData, 'minimuzedView', true)
 }
 
