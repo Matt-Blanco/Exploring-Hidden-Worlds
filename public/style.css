@@ -45,7 +45,8 @@ body {
 #nav {
   width: 100%;
   background-color: transparent;
-  z-index: 6;
+  z-index: 10;
+  position: relative
 }
 
 #nav > ul {
@@ -187,6 +188,11 @@ ul {
   cursor: pointer;
 }
 
+#mainView {
+  position: absolute;
+  top: 0vh;
+}
+
 #minimuzedView {
   height: 40vh;
   width: 30vw;
@@ -277,6 +283,8 @@ ul {
 
 #hud {
   width: 30vw;
+  position: relative;
+  z-index: 5;
 }
 
 #projectInfo {
