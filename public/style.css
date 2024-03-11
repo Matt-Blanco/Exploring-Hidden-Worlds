@@ -43,24 +43,25 @@ body {
 }
 
 #nav {
-  position: absolute;
   width: 100%;
   background-color: transparent;
-  /* background-color: #000011; */
-  /* border-bottom: #ccc solid 1px; */
   z-index: 6;
 }
 
 #nav > ul {
   list-style: none;
   display: flex;
-  margin-top: 2vh;
-  margin-left: 70vw;
+  margin-top: 6vh;
+  margin-left: 75vw;
 }
 
 ul {
   padding-left: 0;
   list-style: none;
+}
+
+#links {
+  margin-bottom: 0;
 }
 
 #links > li {
@@ -123,6 +124,10 @@ ul {
 
 #hideLoading {
   display: none;
+}
+
+#main {
+  margin-top: -4vh;
 }
 
 .lds-dual-ring {
@@ -262,7 +267,17 @@ ul {
   width: 30vw;
 }
 
+#projectInfo {
+  margin-left: 4vw;
+  opacity: 80%;
+}
+
+#projectDescription {
+  font-size: 10pt;
+}
+
 #legendContainer {
+  margin-left: 4vw;
   opacity: 60%;
   z-index: 2;
   top: 8vh;
