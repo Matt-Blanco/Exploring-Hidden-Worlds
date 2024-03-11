@@ -119,19 +119,19 @@ export function updateNetwork (hoverId) {
 // Code to close the code modal
 const tooltipClose = document.getElementById('tooltip-close')
 const tooltip = document.getElementById('code-tooltip')
-const legendChevron = document.getElementById('simpleChevron')
-const legend = document.getElementById('legend')
+// const legendChevron = document.getElementById('simpleChevron')
+// const legend = document.getElementById('legend')
 
 tooltipClose.onclick = (e) => {
   tooltip.classList.add('hidden')
 }
 
-legendChevron.onclick = (e) => {
-  if (!legendChevron.classList.contains('legendClick')) {
-    legendChevron.classList.add('legendClick')
-    legend.classList.add('expand')
-  } else {
-    legendChevron.classList.remove('legendClick')
-    legend.classList.remove('expand')
-  }
-}
+// legendChevron.onclick = (e) => {
+//   if (!legendChevron.classList.contains('legendClick')) {
+//     legendChevron.classList.add('legendClick')
+//     legend.classList.add('expand')
+//   } else {
+//     legendChevron.classList.remove('legendClick')
+//     legend.classList.remove('expand')
+//   }
+// }
