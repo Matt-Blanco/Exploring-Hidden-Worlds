@@ -58,6 +58,11 @@ body {
   margin-left: 70vw;
 }
 
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+
 #links > li {
   padding-left: 1rem;
 }
@@ -314,11 +319,6 @@ body {
   border-radius: 10px;
 }
 
-#node-types {
-  padding-left: 2vw;
-  list-style: none;
-}
-
 #node-types > li {
   width: 100%;
   display: flex;
@@ -330,11 +330,6 @@ body {
   height: 10px;
   border-radius: 100%;
   margin-right: 5px;
-}
-
-#link-types {
-  padding-left: 2vw;
-  list-style: none;
 }
 
 #link-types > li {
