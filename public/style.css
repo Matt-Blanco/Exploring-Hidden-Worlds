@@ -494,7 +494,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: darkgray;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -544,7 +544,7 @@ input:checked + .node-other {
 }
 
 input:checked + .link-heir {
-  background-color: #ffffff;
+  background-color: lightgray;
 }
 
 input:checked + .link-ref {
