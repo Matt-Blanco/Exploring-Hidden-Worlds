@@ -27,8 +27,8 @@ function incrementOnboarding () {
 function closeOnboarding () {
   document.getElementById('onboarding').classList.add('hidden')
   document.getElementById('nav').classList.remove('hidden')
-  drawNetwork(codeData, document.getElementById('network'), true)
-  drawDendogram(codeData, 'dendogram', true)
+  drawNetwork(codeData, document.getElementById('mainView'), true)
+  drawDendogram(codeData, 'minimuzedView', true)
 }
 
 // Code to setup event listeners on elements
