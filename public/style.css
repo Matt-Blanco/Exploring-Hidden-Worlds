@@ -158,7 +158,19 @@ ul {
   z-index: 1;
 }
 
-#dendogram {
+#swapIcon {
+  position: absolute;
+  width: 1rem;
+  top: 45%;
+  left: 90%;
+  opacity: 80%;
+}
+
+#swapIcon:hover {
+  cursor: pointer;
+}
+
+#minimuzedView {
   position: absolute;
   width: 30%;
   top: 50%;
@@ -169,7 +181,7 @@ ul {
   opacity: 80%;
 }
 
-#dendogram.clicked {
+#minimuzedView.clicked {
   transition: ease-in-out 0.5s;
 }
 
