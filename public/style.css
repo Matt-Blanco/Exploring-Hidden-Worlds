@@ -282,6 +282,7 @@ ul {
 }
 
 #hud {
+  margin-top: -10vh;
   width: 30vw;
   position: relative;
   z-index: 5;
