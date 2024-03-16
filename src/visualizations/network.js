@@ -1,14 +1,6 @@
 import ForceGraph3D from '3d-force-graph'
-import * as data from '../../data/new-data.json'
 import { updateDendogram } from './dendogram'
-import { filterData, getNodeColor } from '../utils'
-
-const flatTree = (level = 0) => ({ children = [], ...object }) => [
-  { ...object, level }, ...children.flatMap(flatTree(level + 1))
-]
-
-console.log(data.d)
-const flattenedData = data.d.flatMap(flatTree())
+import { examples, filterData, getNodeColor } from '../utils'
 
 let hoverNodeId = -1
 
@@ -17,10 +9,8 @@ const highlightLinks = new Set()
 
 let graph
 
-export const codeData = { nodes: flattenedData, links: flattenedData.map(node => node.links).flat() }
-
 export function drawNetwork (d, el, hasDendogram, options) {
-  const copy = { ...d }
+  const copy = { nodes: d, links: d.map(node => node.links).flat() }
   const nd = { nodes: [], links: [] }
 
   graph = ForceGraph3D()(el)
@@ -77,9 +67,7 @@ export function drawNetwork (d, el, hasDendogram, options) {
     })
     .dagMode('radialin')
     .enableNodeDrag(false)
-    .zoomToFit()
 
-  graph.cameraPosition({ z: 5000 })
   graph.onEngineStop(() => {
     const spinner = document.getElementById('loadingSpinner')
     const button = document.getElementById('loadingButton')
@@ -95,7 +83,7 @@ export function updateNetwork (hoverId) {
   graph.nodeColor(graph.nodeColor())
     .linkWidth(graph.linkWidth())
 
-  const hoverNode = flattenedData.find(n => n.id === hoverNodeId)
+  const hoverNode = examples[0].network.find(n => n.id === hoverNodeId)
 
   if (hoverNodeId !== -1) {
     const distance = 200
@@ -120,25 +108,13 @@ export function updateNetwork (hoverId) {
 // Code to close the code modal
 const tooltipClose = document.getElementById('tooltip-close')
 const tooltip = document.getElementById('code-tooltip')
-// const legendChevron = document.getElementById('simpleChevron')
-// const legend = document.getElementById('legend')
 
 tooltipClose.onclick = (e) => {
   tooltip.classList.add('hidden')
 }
 
-// legendChevron.onclick = (e) => {
-//   if (!legendChevron.classList.contains('legendClick')) {
-//     legendChevron.classList.add('legendClick')
-//     legend.classList.add('expand')
-//   } else {
-//     legendChevron.classList.remove('legendClick')
-//     legend.classList.remove('expand')
-//   }
-// }
-
 const projectTitle = document.getElementById('projectTitle')
 const projectDescr = document.getElementById('projectDescription')
 
-projectTitle.innerText = `Visualized Project: ${data.title}`
-projectDescr.innerText = data.descr
+projectTitle.innerText = `Visualized Project: ${examples[0].title}`
+projectDescr.innerText = examples[0].descr

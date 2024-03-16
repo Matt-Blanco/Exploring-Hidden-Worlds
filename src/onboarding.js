@@ -1,7 +1,8 @@
-import { codeData, drawNetwork } from './visualizations/network'
+import { drawNetwork } from './visualizations/network'
 import * as data from '../data/onboarding-data.json'
 import * as copyData from '../data/onboarding-copy.json'
 import { drawDendogram } from './visualizations/dendogram'
+import { examples } from './utils'
 
 const copy = copyData.default
 const onboardingData = data.default
@@ -27,8 +28,9 @@ function incrementOnboarding () {
 function closeOnboarding () {
   document.getElementById('onboarding').classList.add('hidden')
   document.getElementById('nav').classList.remove('hidden')
-  drawNetwork(codeData, document.getElementById('mainView'), true)
-  drawDendogram(codeData, 'minimuzedView', true)
+  const g = drawNetwork(examples[0].network, document.getElementById('mainView'), true)
+  g.cameraPosition({ z: 5000 })
+  drawDendogram(examples[0].dendogram, 'minimuzedView', true)
 }
 
 // Code to setup event listeners on elements

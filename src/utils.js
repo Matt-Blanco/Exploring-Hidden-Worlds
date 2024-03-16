@@ -1,5 +1,6 @@
 import { drawDendogram } from './visualizations/dendogram'
-import { codeData, drawNetwork } from './visualizations/network'
+import { drawNetwork } from './visualizations/network'
+import * as baseLeafletData from '../data/data-leaflet.json'
 
 export const getNodeColor = (node, hoverId) => {
   if (node.id === hoverId) {
@@ -34,8 +35,8 @@ Object.keys(settingOptions).forEach((o, i) => {
   settingOptions.item(i).onclick = (valToFilter) => {
     const option = valToFilter.target.checked
     optionMap[valToFilter.target.value] = option
-    drawNetwork(codeData, document.getElementById('mainView'), true, optionMap)
-    drawDendogram(codeData, 'minimuzedView', optionMap)
+    drawNetwork(examples[0], document.getElementById('mainView'), true, optionMap)
+    drawDendogram(examples[0], 'minimuzedView', optionMap)
   }
 })
 
@@ -59,3 +60,14 @@ export const filterData = (data, nd, options) => {
     return nd
   }
 }
+
+export const flatTree = (level = 0) => ({ children = [], ...object }) => [
+  { ...object, level }, ...children.flatMap(flatTree(level + 1))
+]
+
+export const examples = [{
+  title: baseLeafletData.title,
+  descr: baseLeafletData.descr,
+  network: baseLeafletData.d.flatMap(flatTree()),
+  dendogram: baseLeafletData.default.d[0]
+}]

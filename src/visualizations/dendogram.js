@@ -1,5 +1,4 @@
 import * as d3 from 'd3'
-import * as heirarchyData from '../../data/new-data.json'
 import { updateNetwork } from './network'
 import { getNodeColor } from '../utils'
 
@@ -26,7 +25,7 @@ export function drawDendogram (data, id, showDendogram) {
     .cluster()
     .size([360, (height / 2 - 5)])
 
-  const root = d3.hierarchy(heirarchyData.default.d[0], d => d.children)
+  const root = d3.hierarchy(data, d => d.children)
 
   cluster(root)
 
