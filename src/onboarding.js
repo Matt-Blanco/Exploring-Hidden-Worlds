@@ -40,7 +40,7 @@ const nextOnboardingStep = document.getElementById('nextOnboardingStep')
 const prevOnboardingStep = document.getElementById('prevOnboardingStep')
 const skipOnboarding = document.getElementById('skipOnboarding')
 const visLink = document.getElementById('visLink')
-const onboardingLink = document.getElementById('onboardingLink')
+// const onboardingLink = document.getElementById('onboardingLink')
 const aboutLink = document.getElementById('aboutLink')
 
 loadingButton.onclick = (e) => {
@@ -75,14 +75,14 @@ visLink.onclick = (e) => {
   onboarding()
 }
 
-onboardingLink.onclick = (e) => {
-  step = 0
-  document.getElementById('nav').classList.add('hidden')
-  document.getElementById('main').classList.add('hidden')
-  document.getElementById('about').classList.add('hidden')
-  document.getElementById('onboarding').classList.remove('hidden')
-  onboarding()
-}
+// onboardingLink.onclick = (e) => {
+//   step = 0
+//   document.getElementById('nav').classList.add('hidden')
+//   document.getElementById('main').classList.add('hidden')
+//   document.getElementById('about').classList.add('hidden')
+//   document.getElementById('onboarding').classList.remove('hidden')
+//   onboarding()
+// }
 
 aboutLink.onclick = (e) => {
   const about = document.getElementById('about')
