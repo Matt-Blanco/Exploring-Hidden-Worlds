@@ -35,8 +35,8 @@ Object.keys(settingOptions).forEach((o, i) => {
   settingOptions.item(i).onclick = (valToFilter) => {
     const option = valToFilter.target.checked
     optionMap[valToFilter.target.value] = option
-    drawNetwork(examples[0], document.getElementById('mainView'), true, optionMap)
-    drawDendogram(examples[0], 'minimuzedView', optionMap)
+    drawNetwork(examples[0].network, document.getElementById('mainView'), true, optionMap)
+    drawDendogram(examples[0].dendogram, 'minimuzedView', optionMap)
   }
 })
 
