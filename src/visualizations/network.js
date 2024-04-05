@@ -81,12 +81,6 @@ export function drawNetwork (d, el, hasDendogram, options, title = '', descr = '
     }
   })
 
-  const projectTitle = document.getElementById('projectTitle')
-  const projectDescr = document.getElementById('projectDescription')
-
-  projectTitle.innerText = `Visualized Project: ${title}`
-  projectDescr.innerText = descr
-
   return graph
 }
 
@@ -124,3 +118,9 @@ const tooltip = document.getElementById('code-tooltip')
 tooltipClose.onclick = (e) => {
   tooltip.classList.add('hidden')
 }
+
+const projectTitle = document.getElementById('projectTitle')
+const projectDescr = document.getElementById('projectDescription')
+
+projectTitle.innerText = `Visualized Project: ${examples[0].title}`
+projectDescr.innerText = examples[0].descr
