@@ -1,5 +1,6 @@
 import { render } from './renderExhibit'
 import { onboarding } from './src/onboarding'
+import { resolve } from 'path'
 
 const routes = {
   '/': {
@@ -38,9 +39,10 @@ const locationHandler = async () => {
     location = '/'
   }
 
+  resolve('/')
   console.log(location, routes)
   const route = routes[location]
-  const html = await fetch(route.template).then((response) => response.text())
+  const html = await fetch(resolve(route.template)).then((response) => response.text())
   document.getElementById('content').innerHTML = html
   document.title = route.title
   // // set the description of the document to the description of the route
