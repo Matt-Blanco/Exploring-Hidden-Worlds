@@ -41,8 +41,6 @@ export function drawDendogram (data, id, options) {
     .angle(d => { return d.x / 180 * Math.PI })
     .radius(d => { return d.y })
 
-  console.log(root.links())
-
   // Add the links between nodes:
   dendogram.selectAll('path')
     .data(root.links())

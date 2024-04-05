@@ -15,7 +15,6 @@ export const analyze = (path) => {
   }
   schema.children = readDirContents(schema.path, 0)
   schema.links = schema.children.map(child => { return { target: schema.id, source: child.id, ref: false } })
-  console.log(schema)
 
   linkReferences(schema, schema)
 

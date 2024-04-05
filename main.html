@@ -1,0 +1,112 @@
+<div id="main" class="hidden">
+  <div id="vis-container">
+    <div id="hud">
+      <div id="projectInfo">
+        <h2 id="projectTitle" style="margin-bottom: 0;"></h2>
+        <p id="projectDescription" style="margin-bottom: 0;"></p>
+      </div>
+      <div id="legendContainer">
+        <div id="legend" class="expand">
+          <div id="legendHeader">
+            <h3 style="width: 100%; margin-bottom: 0;" id="legendTitle">Legend:</h3>
+            <p style="font-size: 8pt; margin-bottom: 0;"><em>Note: Node and Link types can be toggled<br> to update
+                the shape of the
+                visualization.</em></p>
+            <!-- <h2 id="simpleChevron" class="legendClick">^</h2> -->
+          </div>
+          <div id="legendElements">
+            <div>
+              <p class="legend-title">Node types</p>
+              <ul class="legendType" id="node-types">
+                <li>
+                  <label class="switch node">
+                    <input type="checkbox" checked class="option" value="dir">
+                    <span class="slider round node-dir"></span>
+                  </label>
+                  <span>Directory</span>
+                </li>
+                <li>
+                  <label class="switch node">
+                    <input type="checkbox" checked class="option" value="file">
+                    <span class="slider round node-file"></span>
+                  </label>
+                  <span>File</span>
+                </li>
+                <li>
+                  <label class="switch node">
+                    <input type="checkbox" checked class="option" value="class">
+                    <span class="slider round node-class"></span>
+                  </label>
+                  <span>Class</span>
+                </li>
+                <li>
+                  <label class="switch node">
+                    <input type="checkbox" checked class="option" value="func">
+                    <span class="slider round node-func"></span>
+                  </label>
+                  <span>Function</span>
+                </li>
+                <li>
+                  <label class="switch node">
+                    <input type="checkbox" checked class="option" value="loop">
+                    <span class="slider round node-loop"></span>
+                  </label>
+                  <span>Loop</span>
+                </li>
+                <li>
+                  <label class="switch node">
+                    <input type="checkbox" checked class="option" value="cond">
+                    <span class="slider round node-cond"></span>
+                  </label>
+                  <span>Conditional</span>
+                </li>
+                <li>
+                  <label class="switch node">
+                    <input type="checkbox" checked class="option" value="other">
+                    <span class="slider round node-other"></span>
+                  </label>
+                  <span>Other</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="legend-title">Link types</p>
+              <ul class="legendType" id="link-types">
+                <li>
+                  <label class="switch node">
+                    <input type="checkbox" checked class="option" value="heir">
+                    <span class="slider round link-heir"></span>
+                  </label>
+                  <span>Heirarchy</span>
+                </li>
+                <li>
+                  <label class="switch node">
+                    <input type="checkbox" checked class="option" value="ref">
+                    <span class="slider round link-ref"></span>
+                  </label>
+                  <span>Reference</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="minimizedView">
+        <div id="minimizedTitle">
+          <h3>Minimized View </h3>
+          <img title="button to swap the views of the 2D and 3D Visualizations"
+            alt="button to swap the views of the 2D and 3D Visualizations" id="swapIcon" src="/assets/swap.png" />
+        </div>
+        <div id="minimizedVisualization"></div>
+      </div>
+    </div>
+    <div id="mainView"></div>
+    <div id="options" class="clicked">
+      <div id="vis-divider" class="clicked"></div>
+      <div id="chevron" class="clicked">
+        <img id="chevron-icon" src="/assets/chevron.png" />
+        <p>Options</p>
+      </div>
+    </div>
+  </div>
+</div>

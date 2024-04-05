@@ -3,14 +3,16 @@ import * as data from '../data/onboarding-data.json'
 import * as copyData from '../data/onboarding-copy.json'
 import { drawDendogram } from './visualizations/dendogram'
 import { examples } from './utils'
-
 const copy = copyData.default
 const onboardingData = data.default
 
 let step = 7
 
 export function onboarding () {
+  console.log('3')
   if (step >= 6) {
+    console.log('6')
+    document.getElementById('onboarding').classList.add('hidden')
     document.getElementById('main').classList.remove('hidden')
     closeOnboarding()
   } else {
@@ -43,46 +45,36 @@ const visLink = document.getElementById('visLink')
 // const onboardingLink = document.getElementById('onboardingLink')
 const aboutLink = document.getElementById('aboutLink')
 
-if (loadingButton) {
-  loadingButton.onclick = (e) => {
-    welcomeModal.classList.add('hidden')
-  }
+loadingButton.onclick = (e) => {
+  welcomeModal.classList.add('hidden')
 }
 
-if (nextOnboardingStep) {
-  nextOnboardingStep.onclick = (e) => {
+nextOnboardingStep.onclick = (e) => {
+  document.getElementById('onboardingVis').innerHTML = ''
+  step += 1
+  onboarding()
+}
+
+prevOnboardingStep.onclick = (e) => {
+  if (step >= 1) {
     document.getElementById('onboardingVis').innerHTML = ''
-    step += 1
+    step -= 1
     onboarding()
   }
 }
 
-if (prevOnboardingStep) {
-  prevOnboardingStep.onclick = (e) => {
-    if (step >= 1) {
-      document.getElementById('onboardingVis').innerHTML = ''
-      step -= 1
-      onboarding()
-    }
-  }
+skipOnboarding.onclick = (e) => {
+  welcomeModal.classList.remove('hidden')
+  document.getElementById('onboardingVis').innerHTML = ''
+  step = 7
+  onboarding()
 }
 
-if (skipOnboarding) {
-  skipOnboarding.onclick = (e) => {
-    welcomeModal.classList.remove('hidden')
-    document.getElementById('onboardingVis').innerHTML = ''
-    step = 7
-    onboarding()
-  }
-}
-
-if (visLink) {
-  visLink.onclick = (e) => {
-    document.getElementById('about').classList.add('hidden')
-    welcomeModal.classList.remove('hidden')
-    step = 7
-    onboarding()
-  }
+visLink.onclick = (e) => {
+  document.getElementById('about').classList.add('hidden')
+  welcomeModal.classList.remove('hidden')
+  step = 7
+  onboarding()
 }
 
 // onboardingLink.onclick = (e) => {
@@ -94,14 +86,12 @@ if (visLink) {
 //   onboarding()
 // }
 
-if (aboutLink) {
-  aboutLink.onclick = (e) => {
-    const about = document.getElementById('about')
-    const onboarding = document.getElementById('onboarding')
-    const vis = document.getElementById('main')
+aboutLink.onclick = (e) => {
+  const about = document.getElementById('about')
+  const onboarding = document.getElementById('onboarding')
+  const vis = document.getElementById('main')
 
-    onboarding.classList.add('hidden')
-    vis.classList.add('hidden')
-    about.classList.remove('hidden')
-  }
+  onboarding.classList.add('hidden')
+  vis.classList.add('hidden')
+  about.classList.remove('hidden')
 }

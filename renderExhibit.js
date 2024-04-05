@@ -1,7 +1,8 @@
 import { examples } from './src/utils'
 import { drawNetwork } from './src/visualizations/network'
+export function render () {
+  document.getElementById('loading').classList.add('hidden')
 
-function render () {
   const distance = 7000
   const title = 'Exploring Hidden Worlds'
   const descr = `
@@ -32,5 +33,3 @@ function render () {
   projectTitle.innerText = title
   projectDescr.innerHTML = descr
 }
-
-render()

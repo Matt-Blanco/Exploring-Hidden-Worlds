@@ -1,119 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<link rel="stylesheet" href="https://use.typekit.net/dzr8kuf.css">
-	<style>
-		body {
-			margin: 0;
-		}
-	</style>
-	<link rel="stylesheet" href="./style.css" />
+<div id="main">
 	<link rel="stylesheet" href="./exhibit.css" />
-</head>
-
-<body>
-	<div id="code-tooltip" class="hidden">
-		<p id="tooltip-close">Close</p>
-		<div id="code-tooltip-contents"></div>
-	</div>
-	<div id="main">
-		<div id="vis-container">
-			<div id="hud">
-				<div id="projectInfo">
-					<h2 id="projectTitle" style="margin-bottom: 0;"></h2>
-					<p id="projectDescription" style="margin-bottom: 0;"></p>
-				</div>
-				<div id="legendContainer">
-					<div id="legend" class="expand">
-						<div id="legendHeader">
-							<h3 style="width: 100%; margin-bottom: 0;" id="legendTitle">Legend</h3>
+	<div id="vis-container">
+		<div id="hud">
+			<div id="projectInfo">
+				<h2 id="projectTitle" style="margin-bottom: 0;"></h2>
+				<p id="projectDescription" style="margin-bottom: 0;"></p>
+			</div>
+			<div id="legendContainer">
+				<div id="legend" class="expand">
+					<div id="legendHeader">
+						<h3 style="width: 100%; margin-bottom: 0;" id="legendTitle">Legend</h3>
+					</div>
+					<div id="legendElements">
+						<div>
+							<p class="legend-title">Node types</p>
+							<ul class="legendType" id="node-types">
+								<li>
+									<label class="switch node">
+										<input type="checkbox" checked class="option" value="dir">
+										<span class="slider round node-dir"></span>
+									</label>
+									<span>Directory</span>
+								</li>
+								<li>
+									<label class="switch node">
+										<input type="checkbox" checked class="option" value="file">
+										<span class="slider round node-file"></span>
+									</label>
+									<span>File</span>
+								</li>
+								<li>
+									<label class="switch node">
+										<input type="checkbox" checked class="option" value="class">
+										<span class="slider round node-class"></span>
+									</label>
+									<span>Class</span>
+								</li>
+								<li>
+									<label class="switch node">
+										<input type="checkbox" checked class="option" value="func">
+										<span class="slider round node-func"></span>
+									</label>
+									<span>Function</span>
+								</li>
+								<li>
+									<label class="switch node">
+										<input type="checkbox" checked class="option" value="loop">
+										<span class="slider round node-loop"></span>
+									</label>
+									<span>Loop</span>
+								</li>
+								<li>
+									<label class="switch node">
+										<input type="checkbox" checked class="option" value="cond">
+										<span class="slider round node-cond"></span>
+									</label>
+									<span>Conditional</span>
+								</li>
+								<li>
+									<label class="switch node">
+										<input type="checkbox" checked class="option" value="other">
+										<span class="slider round node-other"></span>
+									</label>
+									<span>Other</span>
+								</li>
+							</ul>
 						</div>
-						<div id="legendElements">
-							<div>
-								<p class="legend-title">Node types</p>
-								<ul class="legendType" id="node-types">
-									<li>
-										<label class="switch node">
-											<input type="checkbox" checked class="option" value="dir">
-											<span class="slider round node-dir"></span>
-										</label>
-										<span>Directory</span>
-									</li>
-									<li>
-										<label class="switch node">
-											<input type="checkbox" checked class="option" value="file">
-											<span class="slider round node-file"></span>
-										</label>
-										<span>File</span>
-									</li>
-									<li>
-										<label class="switch node">
-											<input type="checkbox" checked class="option" value="class">
-											<span class="slider round node-class"></span>
-										</label>
-										<span>Class</span>
-									</li>
-									<li>
-										<label class="switch node">
-											<input type="checkbox" checked class="option" value="func">
-											<span class="slider round node-func"></span>
-										</label>
-										<span>Function</span>
-									</li>
-									<li>
-										<label class="switch node">
-											<input type="checkbox" checked class="option" value="loop">
-											<span class="slider round node-loop"></span>
-										</label>
-										<span>Loop</span>
-									</li>
-									<li>
-										<label class="switch node">
-											<input type="checkbox" checked class="option" value="cond">
-											<span class="slider round node-cond"></span>
-										</label>
-										<span>Conditional</span>
-									</li>
-									<li>
-										<label class="switch node">
-											<input type="checkbox" checked class="option" value="other">
-											<span class="slider round node-other"></span>
-										</label>
-										<span>Other</span>
-									</li>
-								</ul>
-							</div>
-							<div>
-								<p class="legend-title">Link types</p>
-								<ul class="legendType" id="link-types">
-									<li>
-										<label class="switch node">
-											<input type="checkbox" checked class="option" value="heir">
-											<span class="slider round link-heir"></span>
-										</label>
-										<span>Heirarchy</span>
-									</li>
-									<li>
-										<label class="switch node">
-											<input type="checkbox" checked class="option" value="ref">
-											<span class="slider round link-ref"></span>
-										</label>
-										<span>Reference</span>
-									</li>
-								</ul>
-							</div>
+						<div>
+							<p class="legend-title">Link types</p>
+							<ul class="legendType" id="link-types">
+								<li>
+									<label class="switch node">
+										<input type="checkbox" checked class="option" value="heir">
+										<span class="slider round link-heir"></span>
+									</label>
+									<span>Heirarchy</span>
+								</li>
+								<li>
+									<label class="switch node">
+										<input type="checkbox" checked class="option" value="ref">
+										<span class="slider round link-ref"></span>
+									</label>
+									<span>Reference</span>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div id="mainView"></div>
-      <script type="module" src="/src/utils.js"></script>
-			<script type="module" src="/exhibit.js"></script>
 		</div>
+		<div id="mainView"></div>
+		<script type="module" src="/src/utils.js"></script>
+		<script type="module" src="/renderExhibit.js"></script>
 	</div>
-	<div id="footer">This project was created by <a href="https://matt-blanco.github.io" target="_blank">Matt Blanco</a>
-	</div>
-</body>
-
-</html>
+</div>
