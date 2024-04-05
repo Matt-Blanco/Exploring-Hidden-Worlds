@@ -9,9 +9,7 @@ const onboardingData = data.default
 let step = 7
 
 export function onboarding () {
-  console.log('3')
   if (step >= 6) {
-    console.log('6')
     document.getElementById('onboarding').classList.add('hidden')
     document.getElementById('main').classList.remove('hidden')
     closeOnboarding()

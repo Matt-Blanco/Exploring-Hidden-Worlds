@@ -40,7 +40,7 @@ const locationHandler = async () => {
   }
 
   resolve('/')
-  console.log(location, routes)
+
   const route = routes[location]
   const html = await fetch(resolve(route.template)).then((response) => response.text())
   document.getElementById('content').innerHTML = html
