@@ -32,11 +32,12 @@ Object.keys(settingOptions).forEach((o, i) => {
   if (optionMap[settingOptions.item(i).value] === undefined) {
     optionMap[settingOptions.item(i).value] = (settingOptions.item(i).checked)
   }
+
   settingOptions.item(i).onclick = (valToFilter) => {
     const option = valToFilter.target.checked
     optionMap[valToFilter.target.value] = option
-    drawNetwork(examples[0].network, document.getElementById('mainView'), true, optionMap)
-    drawDendogram(examples[0].dendogram, 'minimuzedView', optionMap)
+    drawNetwork(examples[0].network, document.getElementById(networkId), true, optionMap)
+    drawDendogram(examples[0].dendogram, dendogramId, optionMap)
   }
 })
 
@@ -71,3 +72,23 @@ export const examples = [{
   network: baseLeafletData.d.flatMap(flatTree()),
   dendogram: baseLeafletData.default.d[0]
 }]
+
+export let networkId = 'mainView'
+export let dendogramId = 'minimizedVisualization'
+const swapVisButton = document.getElementById('swapIcon')
+
+if (swapVisButton) {
+  swapVisButton.onclick = (e) => {
+    document.getElementById(networkId).innerHTML = ''
+    document.getElementById(dendogramId).innerHTML = ''
+    const swap = networkId
+    networkId = dendogramId
+    dendogramId = swap
+
+    document.getElementById('onboarding').classList.add('hidden')
+    document.getElementById('nav').classList.remove('hidden')
+    const g = drawNetwork(examples[0].network, document.getElementById(networkId), true, optionMap)
+    g.cameraPosition({ z: 5000 })
+    drawDendogram(examples[0].dendogram, dendogramId, optionMap)
+  }
+}

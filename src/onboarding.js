@@ -28,9 +28,9 @@ function incrementOnboarding () {
 function closeOnboarding () {
   document.getElementById('onboarding').classList.add('hidden')
   document.getElementById('nav').classList.remove('hidden')
-  const g = drawNetwork(examples[0].network, document.getElementById('mainView'), true)
+  const g = drawNetwork(examples[0].network, document.getElementById('mainView'), true, undefined, examples[0].title, examples[0].descr)
   g.cameraPosition({ z: 5000 })
-  drawDendogram(examples[0].dendogram, 'minimuzedView', true)
+  drawDendogram(examples[0].dendogram, 'minimizedVisualization')
 }
 
 // Code to setup event listeners on elements
@@ -43,36 +43,46 @@ const visLink = document.getElementById('visLink')
 // const onboardingLink = document.getElementById('onboardingLink')
 const aboutLink = document.getElementById('aboutLink')
 
-loadingButton.onclick = (e) => {
-  welcomeModal.classList.add('hidden')
+if (loadingButton) {
+  loadingButton.onclick = (e) => {
+    welcomeModal.classList.add('hidden')
+  }
 }
 
-nextOnboardingStep.onclick = (e) => {
-  document.getElementById('onboardingVis').innerHTML = ''
-  step += 1
-  onboarding()
-}
-
-prevOnboardingStep.onclick = (e) => {
-  if (step >= 1) {
+if (nextOnboardingStep) {
+  nextOnboardingStep.onclick = (e) => {
     document.getElementById('onboardingVis').innerHTML = ''
-    step -= 1
+    step += 1
     onboarding()
   }
 }
 
-skipOnboarding.onclick = (e) => {
-  welcomeModal.classList.remove('hidden')
-  document.getElementById('onboardingVis').innerHTML = ''
-  step = 7
-  onboarding()
+if (prevOnboardingStep) {
+  prevOnboardingStep.onclick = (e) => {
+    if (step >= 1) {
+      document.getElementById('onboardingVis').innerHTML = ''
+      step -= 1
+      onboarding()
+    }
+  }
 }
 
-visLink.onclick = (e) => {
-  document.getElementById('about').classList.add('hidden')
-  welcomeModal.classList.remove('hidden')
-  step = 7
-  onboarding()
+if (skipOnboarding) {
+  skipOnboarding.onclick = (e) => {
+    welcomeModal.classList.remove('hidden')
+    document.getElementById('onboardingVis').innerHTML = ''
+    step = 7
+    onboarding()
+  }
+}
+
+if (visLink) {
+  visLink.onclick = (e) => {
+    document.getElementById('about').classList.add('hidden')
+    welcomeModal.classList.remove('hidden')
+    step = 7
+    onboarding()
+  }
 }
 
 // onboardingLink.onclick = (e) => {
@@ -84,12 +94,14 @@ visLink.onclick = (e) => {
 //   onboarding()
 // }
 
-aboutLink.onclick = (e) => {
-  const about = document.getElementById('about')
-  const onboarding = document.getElementById('onboarding')
-  const vis = document.getElementById('main')
+if (aboutLink) {
+  aboutLink.onclick = (e) => {
+    const about = document.getElementById('about')
+    const onboarding = document.getElementById('onboarding')
+    const vis = document.getElementById('main')
 
-  onboarding.classList.add('hidden')
-  vis.classList.add('hidden')
-  about.classList.remove('hidden')
+    onboarding.classList.add('hidden')
+    vis.classList.add('hidden')
+    about.classList.remove('hidden')
+  }
 }

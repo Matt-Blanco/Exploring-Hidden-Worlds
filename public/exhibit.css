@@ -1,0 +1,20 @@
+.slider::before {
+  display: none;
+}
+
+.slider {
+  width: 10px;
+}
+
+.switch {
+  width: 10px;
+  margin-top: 1px;
+}
+
+#node-types > li {
+  width: fit-content;
+}
+
+#mainView {
+  margin-left: 10vw;
+}

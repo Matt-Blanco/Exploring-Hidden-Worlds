@@ -192,10 +192,11 @@ ul {
 #mainView {
   position: absolute;
   top: 0vh;
+  width: 100vw;
+  height: 100vh;
 }
 
-#minimuzedView {
-  height: 40vh;
+#minimizedView {
   width: 30vw;
   z-index: 7;
   overflow-y: hidden;
@@ -204,7 +205,13 @@ ul {
   opacity: 80%;
 }
 
-#minimuzedView.clicked {
+#minimizedVisualization {
+  height: 40vh;
+  background-color: transparent;
+  width: inherit;
+}
+
+#minimizedView.clicked {
   transition: ease-in-out 0.5s;
 }
 
@@ -326,6 +333,7 @@ ul {
 }
 
 #legendElements {
+  width: max-content;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;

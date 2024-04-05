@@ -9,12 +9,15 @@ const highlightLinks = new Set()
 
 let graph
 
-export function drawNetwork (d, el, hasDendogram, options) {
+export function drawNetwork (d, el, hasDendogram, options, title = '', descr = '') {
   const copy = { nodes: d, links: d.map(node => node.links).flat() }
   const nd = { nodes: [], links: [] }
 
   graph = ForceGraph3D()(el)
     .graphData(filterData(copy, nd, options))
+    .backgroundColor('rgb(0, 0, 17, 0)')
+    .width(el.offsetWidth)
+    .height(el.offsetHeight)
     .showNavInfo(false)
     .linkOpacity(0.25)
     .linkCurvature(0.33)
@@ -72,9 +75,18 @@ export function drawNetwork (d, el, hasDendogram, options) {
     const spinner = document.getElementById('loadingSpinner')
     const button = document.getElementById('loadingButton')
 
-    spinner.classList.add('hidden')
-    button.classList.remove('hidden')
+    if (spinner && button) {
+      spinner.classList.add('hidden')
+      button.classList.remove('hidden')
+    }
   })
+
+  const projectTitle = document.getElementById('projectTitle')
+  const projectDescr = document.getElementById('projectDescription')
+
+  projectTitle.innerText = `Visualized Project: ${title}`
+  projectDescr.innerText = descr
+
   return graph
 }
 
@@ -112,9 +124,3 @@ const tooltip = document.getElementById('code-tooltip')
 tooltipClose.onclick = (e) => {
   tooltip.classList.add('hidden')
 }
-
-const projectTitle = document.getElementById('projectTitle')
-const projectDescr = document.getElementById('projectDescription')
-
-projectTitle.innerText = `Visualized Project: ${examples[0].title}`
-projectDescr.innerText = examples[0].descr

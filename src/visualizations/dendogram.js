@@ -3,16 +3,15 @@ import { updateNetwork } from './network'
 import { getNodeColor } from '../utils'
 
 let dendogram
-let show = false
-
 let hoverNodeId = -1
 
-export function drawDendogram (data, id, showDendogram) {
-  show = showDendogram
+export function drawDendogram (data, id, options) {
+  const dataCopy = { ...data }
   const renderedElement = document.getElementById(id)
   const width = renderedElement.offsetWidth
-  const height = renderedElement.offsetHeight - (document.getElementById('minimizedTitle').offsetHeight + 10)
+  const height = renderedElement.offsetHeight
 
+  d3.select(`#${id}`).selectChild('svg').remove()
   dendogram = d3.select(`#${id}`)
     .append('svg')
     .attr('width', width)
@@ -25,7 +24,8 @@ export function drawDendogram (data, id, showDendogram) {
     .cluster()
     .size([360, (height / 2 - 5)])
 
-  const root = d3.hierarchy(data, d => d.children)
+  const filteredNodes = filterTree(dataCopy, options)[0]
+  const root = d3.hierarchy(filteredNodes, d => d.children)
 
   cluster(root)
 
@@ -41,9 +41,10 @@ export function drawDendogram (data, id, showDendogram) {
     .angle(d => { return d.x / 180 * Math.PI })
     .radius(d => { return d.y })
 
+  console.log(root.links())
+
   // Add the links between nodes:
   dendogram.selectAll('path')
-    // .data(root.descendants().slice(1))
     .data(root.links())
     .enter()
     .append('path')
@@ -98,25 +99,6 @@ export function drawDendogram (data, id, showDendogram) {
         tooltipContents.innerText = d.target.__data__.data.contents
       }
     })
-
-  // Code to minimize and expand the dendogram visualization
-  if (show) {
-    const divider = document.getElementById('chevron')
-    const verticalDivider = document.getElementById('vis-divider')
-    const dendogramDOM = document.getElementById('dendogram')
-
-    divider.onclick = (e) => {
-      if (divider.classList.contains('clicked')) {
-        divider.classList.remove('clicked')
-        verticalDivider.classList.remove('clicked')
-        dendogramDOM.classList.remove('clicked')
-      } else {
-        divider.classList.add('clicked')
-        verticalDivider.classList.add('clicked')
-        dendogramDOM.classList.add('clicked')
-      }
-    }
-  }
 }
 
 export function updateDendogram (hoverId) {
@@ -124,4 +106,31 @@ export function updateDendogram (hoverId) {
 
   dendogram.selectAll('.d3Data').style('fill', (node) => getNodeColor(node.data, hoverNodeId))
     .attr('r', (node) => node.data.id === hoverNodeId ? 10 : 3)
+}
+
+const filterTree = (nodes, options) => {
+  if (options === undefined) {
+    return [nodes]
+  } else {
+    function filterNode (node) {
+      const hasDesiredType = options[node.type]
+
+      if (hasDesiredType) {
+        node.children = node.children.filter(filterNode)
+        return true
+      }
+
+      return false
+    }
+    const filteredNodes = [nodes].slice()
+
+    filteredNodes.forEach((node, index) => {
+      const keepNode = filterNode(node)
+      if (!keepNode) {
+        node.children.forEach(child => (child.parent = nodes[index].parent))
+      }
+    })
+
+    return filteredNodes.filter(node => node)
+  }
 }
