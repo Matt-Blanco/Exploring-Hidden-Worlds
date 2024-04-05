@@ -27,7 +27,7 @@ function incrementOnboarding () {
 
 function closeOnboarding () {
   document.getElementById('onboarding').classList.add('hidden')
-  document.getElementById('nav').classList.remove('hidden')
+  // document.getElementById('nav').classList.remove('hidden')
   const g = drawNetwork(examples[0].network, document.getElementById('mainView'), true, undefined, examples[0].title, examples[0].descr)
   g.cameraPosition({ z: 5000 })
   drawDendogram(examples[0].dendogram, 'minimizedVisualization')
